@@ -1,8 +1,8 @@
 import { isArray } from 'utils-lite'
 import {
   getFormated, itemPoint
-} from '@v-charts/core/utils'
-import { line } from '@v-charts/line/main'
+} from '@v-charts2/core/utils'
+import { line } from '@v-charts2/line/main'
 
 function getScatterLegend (dataLabels, legendName) {
   return {

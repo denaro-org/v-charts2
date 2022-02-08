@@ -1,5 +1,5 @@
 {
-  "name": "@v-charts/hot-chart",
+  "name": "@v-charts2/hot-chart",
   "version": "1.0.0",
   "exports": {
     ".": {
@@ -34,15 +34,15 @@
     "clean": "npx rimraf lib"
   },
   "dependencies": {
-    "@v-charts/bar": "^1.0.0",
-    "@v-charts/core": "^1.0.0",
-    "@v-charts/funnel": "^1.0.0",
-    "@v-charts/histogram": "^1.0.0",
-    "@v-charts/line": "^1.0.0",
-    "@v-charts/pie": "^1.0.0",
-    "@v-charts/radar": "^1.0.0",
-    "@v-charts/ring": "^1.0.0",
-    "@v-charts/waterfall": "^1.0.0"
+    "@v-charts2/bar": "^1.0.0",
+    "@v-charts2/core": "^1.0.0",
+    "@v-charts2/funnel": "^1.0.0",
+    "@v-charts2/histogram": "^1.0.0",
+    "@v-charts2/line": "^1.0.0",
+    "@v-charts2/pie": "^1.0.0",
+    "@v-charts2/radar": "^1.0.0",
+    "@v-charts2/ring": "^1.0.0",
+    "@v-charts2/waterfall": "^1.0.0"
   },
   "devDependencies": {
     "rimraf": "^3.0.2",

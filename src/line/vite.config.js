@@ -13,7 +13,7 @@ export default ({ mode }) => {
       copy({
         targets: [
           {
-            src: resolve(__dirname, '../../node_modules/@v-charts/core/lib/style'), dest: 'lib'
+            src: resolve(__dirname, '../../node_modules/@v-charts2/core/lib/style'), dest: 'lib'
           },
           {
             src: 'src/index.js', dest: 'lib'
@@ -28,7 +28,7 @@ export default ({ mode }) => {
         emptyOutDir: true,
         formats: ['es', 'umd', 'iife'],
         entry: resolve(__dirname, `src/index-${mode === 'vue3' ? 'vue3' : 'vue2'}.js`),
-        name: '@v-charts/line',
+        name: '@v-charts2/line',
         fileName: 'v-charts.line'
       },
       terserOptions: {

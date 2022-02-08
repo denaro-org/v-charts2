@@ -1,12 +1,12 @@
 import {
   name, version
 } from '../package.json'
-import { ring } from '@v-charts/pie/vue3'
-import { createChart } from '@v-charts/core/vue3'
+import { ring } from '@v-charts2/pie/vue3'
+import { createChart } from '@v-charts2/core/vue3'
 import { PieChart } from 'echarts/charts'
 import {
   echartsLib, logCopyRight
-} from '@v-charts/core/utils'
+} from '@v-charts2/core/utils'
 
 echartsLib.use([PieChart])
 

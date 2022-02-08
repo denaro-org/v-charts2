@@ -30,16 +30,16 @@ footer: MIT Licensed | Copyright © 2022 vxhly pengchengou@gmail.com
 ### 安装
 
 ```bash
-yarn add @v-chart/chart
+yarn add @v-chart2/chart
 # or
-npm i @v-chart/chart
+npm i @v-chart2/chart
 ```
 
 ### 使用
 
 ```javascript
 import Vue from "vue";
-import VChart from "@v-chart/chart";
+import VChart from "@v-chart2/chart";
 Vue.use(VChart);
 ```
 

@@ -1,6 +1,6 @@
 import {
   getFormated, getStackMap, itemPoint
-} from '@v-charts/core/utils'
+} from '@v-charts2/core/utils'
 import {
   cloneDeep, get, set
 } from 'utils-lite'

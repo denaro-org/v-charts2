@@ -2,8 +2,8 @@ import { amap } from './main'
 import {
   name, version
 } from '../package.json'
-import { createChart } from '@v-charts/core/vue2'
-import { logCopyRight } from '@v-charts/core/utils'
+import { createChart } from '@v-charts2/core/vue2'
+import { logCopyRight } from '@v-charts2/core/utils'
 import 'echarts-amap'
 
 const VeAmap = Object.assign({}, createChart, {

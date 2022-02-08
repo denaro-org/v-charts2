@@ -3,7 +3,7 @@ import {
   isObject
 } from 'utils-lite'
 
-import { getFormated } from '@v-charts/core/utils'
+import { getFormated } from '@v-charts2/core/utils'
 
 function getTooltip (args) {
   const {

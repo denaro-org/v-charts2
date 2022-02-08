@@ -1,6 +1,6 @@
 import {
   HEAT_BMAP_COLOR, HEAT_MAP_COLOR, echartsLib, getAmap, getBmap, getFormated, getMapJSON, itemPoint
-} from '@v-charts/core/utils'
+} from '@v-charts2/core/utils'
 
 function getAxisList (rows, label) {
   const result = []

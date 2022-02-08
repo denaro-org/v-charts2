@@ -11,9 +11,9 @@
 ### 下载
 
 ```bash
-yarn add @v-charts/amap
+yarn add @v-charts2/amap
 # or
-npm install @v-charts/amap
+npm install @v-charts2/amap
 ```
 
 ### 安装
@@ -21,12 +21,12 @@ npm install @v-charts/amap
 当你当前的打包工具为 webpack 时, 推荐你进行以下的安装步骤
 
 ::: warning
-传统的 webpack4.x 没有 Tree Shaking 的支持, 如果你想引入 `@v-charts/amap/vue2` 或者 `@v-charts/amap/vue3` 的话, 可能会报错
+传统的 webpack4.x 没有 Tree Shaking 的支持, 如果你想引入 `@v-charts2/amap/vue2` 或者 `@v-charts2/amap/vue3` 的话, 可能会报错
 :::
 
 ```javascript
 import Vue from "vue";
-import VeAmap from "@v-charts/amap"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
+import VeAmap from "@v-charts2/amap"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
 Vue.use(VeAmap);
 ```
 
@@ -36,8 +36,8 @@ Vue.use(VeAmap);
 
 ```javascript
 import Vue from "vue";
-import VeAmap from "@v-charts/amap/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
-import "@v-charts/amap/v-charts.css"; // 需要手动引入样式
+import VeAmap from "@v-charts2/amap/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
+import "@v-charts2/amap/v-charts.css"; // 需要手动引入样式
 Vue.use(VeAmap);
 ```
 
@@ -46,8 +46,8 @@ Vue.use(VeAmap);
 ```javascript
 import { createApp } from "vue";
 const app = createApp();
-import VeAmap from "@v-charts/amap/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
-import "@v-charts/amap/v-charts.css"; // 需要手动引入样式
+import VeAmap from "@v-charts2/amap/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
+import "@v-charts2/amap/v-charts.css"; // 需要手动引入样式
 app.use(VeAmap);
 ```
 

@@ -1,5 +1,5 @@
 {
-  "name": "@v-charts/core",
+  "name": "@v-charts2/core",
   "version": "1.0.0",
   "exports": {
     ".": {

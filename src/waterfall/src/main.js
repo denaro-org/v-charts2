@@ -1,4 +1,4 @@
-import { getFormated } from '@v-charts/core/utils'
+import { getFormated } from '@v-charts2/core/utils'
 
 function getWaterfallTooltip (dataType, digit) {
   return {
