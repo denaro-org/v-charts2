@@ -1,6 +1,6 @@
 {
   "name": "@v-charts2/chart",
-  "version": "1.0.1-alpha.4",
+  "version": "1.0.1",
   "description": "v-charts2 全部引入图表专用包",
   "keywords": [
     "echarts",
@@ -40,22 +40,22 @@
     "clean": "npx rimraf lib"
   },
   "dependencies": {
-    "@v-charts2/amap": "1.0.1-alpha.4",
-    "@v-charts2/bar": "1.0.1-alpha.4",
-    "@v-charts2/candle": "1.0.1-alpha.4",
-    "@v-charts2/core": "1.0.1-alpha.4",
-    "@v-charts2/funnel": "1.0.1-alpha.4",
-    "@v-charts2/histogram": "1.0.1-alpha.4",
-    "@v-charts2/line": "1.0.1-alpha.4",
-    "@v-charts2/liquidfill": "1.0.1-alpha.4",
-    "@v-charts2/map": "1.0.1-alpha.4",
-    "@v-charts2/pie": "1.0.1-alpha.4",
-    "@v-charts2/radar": "1.0.1-alpha.4",
-    "@v-charts2/ring": "1.0.1-alpha.4",
-    "@v-charts2/sankey": "1.0.1-alpha.4",
-    "@v-charts2/scatter": "1.0.1-alpha.4",
-    "@v-charts2/tree": "1.0.1-alpha.4",
-    "@v-charts2/waterfall": "1.0.1-alpha.4"
+    "@v-charts2/amap": "1.0.1",
+    "@v-charts2/bar": "1.0.1",
+    "@v-charts2/candle": "1.0.1",
+    "@v-charts2/core": "1.0.1",
+    "@v-charts2/funnel": "1.0.1",
+    "@v-charts2/histogram": "1.0.1",
+    "@v-charts2/line": "1.0.1",
+    "@v-charts2/liquidfill": "1.0.1",
+    "@v-charts2/map": "1.0.1",
+    "@v-charts2/pie": "1.0.1",
+    "@v-charts2/radar": "1.0.1",
+    "@v-charts2/ring": "1.0.1",
+    "@v-charts2/sankey": "1.0.1",
+    "@v-charts2/scatter": "1.0.1",
+    "@v-charts2/tree": "1.0.1",
+    "@v-charts2/waterfall": "1.0.1"
   },
   "devDependencies": {
     "rimraf": "^3.0.2",
