@@ -35,7 +35,7 @@
     "format:md": "eslint --fix \"docs/**/*.md\"",
     "lint": "eslint --fix src/**",
     "prepare": "husky install",
-    "publish-latest": "yarn build:lib && lerna publish",
+    "publish-latest": "yarn build:lib && lerna publish patch --dist-tag latest",
     "release": "yarn build:lib && lerna publish prerelease --dist-tag next",
     "update": "yarn upgrade-interactive --latest"
   },
