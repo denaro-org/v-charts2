@@ -1,6 +1,13 @@
 {
   "name": "@v-charts2/core",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.2",
+  "description": "v-charts2 核心包",
+  "keywords": [
+    "echarts",
+    "v-echarts",
+    "v-charts"
+  ],
+  "license": "MIT",
   "exports": {
     ".": {
       "import": "./lib/index.js",
@@ -46,7 +53,11 @@
     "echarts": ">5.0.0",
     "vue": ">2.6.0 || >3.2.25"
   },
+  "engines": {
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+  },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "b57fb0006cfeb85b8cccd2ca1e9bf488686d71f6"
 }

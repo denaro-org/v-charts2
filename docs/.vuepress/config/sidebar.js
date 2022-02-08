@@ -10,7 +10,7 @@ module.exports = [
   {
     title: '更新日志',
     children: [
-      '/changelog/'
+      '/changelog/CHANGELOG'
     ]
   },
   {

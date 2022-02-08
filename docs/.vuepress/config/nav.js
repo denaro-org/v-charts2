@@ -21,6 +21,6 @@ module.exports = [
   // Nav 3
   {
     text: '更新日志',
-    link: '/changelog/'
+    link: '/changelog/CHANGELOG'
   }
 ]
