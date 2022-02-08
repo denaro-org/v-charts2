@@ -1,0 +1,12 @@
+node_modules/
+.cache/
+.temp/
+lib/
+dist/
+!.vuepress/
+!.*.js
+index.dev.html
+index.ssr.html
+*.min.js
+*.json
+docs/publish-pages

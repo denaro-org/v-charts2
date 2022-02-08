@@ -1,0 +1,29 @@
+{
+  "npmClient": "yarn",
+  "name": "@v-charts2",
+  "packages": [
+    "src/*",
+    "docs"
+  ],
+  "version": "1.0.0",
+  "useWorkspaces": true,
+  "files": [
+    "lib",
+    "LICENSE"
+  ],
+  "command": {
+    "publish": {
+      "message": "chore: 🤖 publish %s",
+      "exact": true,
+      "yes": true,
+      "ignoreChanges": [
+        "ignored-file",
+        "*.md"
+      ]
+    },
+    "version": {
+      "conventionalCommits": true,
+      "allowBranch": "main"
+    }
+  }
+}
