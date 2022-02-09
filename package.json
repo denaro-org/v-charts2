@@ -26,7 +26,7 @@
     "bootstrap": "lerna bootstrap",
     "build:lib": "lerna run build:lib --stream  --concurrency 1",
     "clean": "lerna clean -y && lerna run clean --stream",
-    "clean-install": "yarn clean && npx rimraf node_modules *.log *.lock *-lock.json && yarn bootstrap && yarn build:lib",
+    "clean-install": "yarn clean && npx rimraf node_modules *.log *.lock *-lock.json && yarn bootstrap",
     "commit": "git add .&& git-cz",
     "copy": "cpx \"./CHANGELOG.md\" \"./docs/changelog/\"",
     "deploy-docs": "yarn copy && yarn docs:build",

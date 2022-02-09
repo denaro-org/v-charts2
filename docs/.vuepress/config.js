@@ -4,7 +4,7 @@ module.exports = {
   description: '基于 Vue 的 Echarts5.x 组件',
   host: '127.0.0.1',
   dest: 'publish-pages',
-  base: '/',
+  base: '/v-charts2/',
   head: [
     [
       'link',
