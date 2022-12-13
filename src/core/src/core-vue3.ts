@@ -211,7 +211,7 @@ export const createChart = ({
         const watchedVariable = _watchers.map((watcher) => watcher.expression)
         Object.keys(props).forEach((prop) => {
           if (!~watchedVariable.indexOf(prop) && !~STATIC_PROPS.indexOf(prop)) {
-            const opts = {}
+            const opts = { deep: false }
             if (
               ~['[object Object]', '[object Array]'].indexOf(getType(props[prop]))
             ) {
@@ -234,7 +234,7 @@ export const createChart = ({
         initPayload.canvas = CANVAS.el
         initPayload.options.el = EL.el
 
-        const { echarts: initEcharts } = init(initPayload)
+        const { echarts: initEcharts } = init(initPayload) || {}
         echarts = initEcharts
         addWatchToProps({
           _watchers,

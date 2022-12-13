@@ -23,7 +23,7 @@ export default ({ mode }) => {
       outDir: `lib/${mode === 'vue3' ? 'vue3' : 'vue2'}`,
       lib: {
         formats: ['es', 'umd', 'iife'],
-        entry: resolve(__dirname, `src/index-${mode === 'vue3' ? 'vue3' : 'vue2'}.js`),
+        entry: resolve(__dirname, `src/index-${mode === 'vue3' ? 'vue3' : 'vue2'}`),
         name: '@v-charts2/core',
         fileName: 'v-charts.core'
       },

@@ -140,20 +140,26 @@ export default {
       }
     },
 
-    themeName: (val) => {
-      themeChange(this.initPayload, props)
+    themeName: {
+      deep: true,
+      handler (val) {
+        themeChange(this.initPayload, props)
+      }
     },
 
-    resizeable: (val) => {
-      this.$nextTick(() => {
-        resizeableHandler({
-          resizeable: this.resizeable,
-          _once: this._once,
-          props: this.$props,
-          el: this.$el,
-          echarts: this.echarts
+    resizeable: {
+      deep: true,
+      handler (val) {
+        this.$nextTick(() => {
+          resizeableHandler({
+            resizeable: this.resizeable,
+            _once: this._once,
+            props: this.$props,
+            el: this.$el,
+            echarts: this.echarts
+          })
         })
-      })
+      }
     }
   },
 
@@ -196,7 +202,7 @@ export default {
       nextTick
     }
 
-    const { echarts: initEcharts } = init(initPayload)
+    const { echarts: initEcharts } = init(initPayload) || {}
     this.echarts = initEcharts
     this.initPayload = initPayload
     this.addWatchToProps({
@@ -219,7 +225,7 @@ export default {
       const watchedVariable = this._watchers.map((watcher) => watcher.expression)
       Object.keys(this.$props).forEach((prop) => {
         if (!~watchedVariable.indexOf(prop) && !~STATIC_PROPS.indexOf(prop)) {
-          const opts = {}
+          const opts = { deep: false }
           if (~['[object Object]', '[object Array]'].indexOf(getType(this.$props[prop]))) {
             opts.deep = true
           }

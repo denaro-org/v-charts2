@@ -24,7 +24,7 @@ function getSeries (args) {
           ].join(',') + ')'
         }
     },
-    shape: shape,
+    shape,
     sizeRange: [sizeMin, sizeMax]
   }
 
