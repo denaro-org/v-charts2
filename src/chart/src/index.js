@@ -16,9 +16,9 @@ const useVueVersion = () => {
 let VeChart
 
 if (useVueVersion() === 2) {
-  VeChart = require('./vue2/v-charts.chart.es.js')
+  VeChart = require('./vue2/v-charts.chart.mjs')
 } else {
-  VeChart = require('./vue3/v-charts.chart.es.js')
+  VeChart = require('./vue3/v-charts.chart.mjs')
 }
 
 VeChart = VeChart.default

@@ -17,9 +17,9 @@ const useVueVersion = () => {
 let VeGauge
 
 if (useVueVersion() === 2) {
-  VeGauge = require('./vue2/v-charts.gauge.es.js')
+  VeGauge = require('./vue2/v-charts.gauge.mjs')
 } else {
-  VeGauge = require('./vue3/v-charts.gauge.es.js')
+  VeGauge = require('./vue3/v-charts.gauge.mjs')
 }
 
 VeGauge = VeGauge.default

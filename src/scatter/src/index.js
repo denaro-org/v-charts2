@@ -17,9 +17,9 @@ const useVueVersion = () => {
 let VeScatter
 
 if (useVueVersion() === 2) {
-  VeScatter = require('./vue2/v-charts.scatter.es.js')
+  VeScatter = require('./vue2/v-charts.scatter.mjs')
 } else {
-  VeScatter = require('./vue3/v-charts.scatter.es.js')
+  VeScatter = require('./vue3/v-charts.scatter.mjs')
 }
 
 VeScatter = VeScatter.default

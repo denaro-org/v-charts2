@@ -17,9 +17,9 @@ const useVueVersion = () => {
 let VePie
 
 if (useVueVersion() === 2) {
-  VePie = require('./vue2/v-charts.pie.es.js')
+  VePie = require('./vue2/v-charts.pie.mjs')
 } else {
-  VePie = require('./vue3/v-charts.pie.es.js')
+  VePie = require('./vue3/v-charts.pie.mjs')
 }
 
 VePie = VePie.default

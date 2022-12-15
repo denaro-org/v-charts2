@@ -17,9 +17,9 @@ const useVueVersion = () => {
 let VeFunnel
 
 if (useVueVersion() === 2) {
-  VeFunnel = require('./vue2/v-charts.funnel.es.js')
+  VeFunnel = require('./vue2/v-charts.funnel.mjs')
 } else {
-  VeFunnel = require('./vue3/v-charts.funnel.es.js')
+  VeFunnel = require('./vue3/v-charts.funnel.mjs')
 }
 
 VeFunnel = VeFunnel.default

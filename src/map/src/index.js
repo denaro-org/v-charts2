@@ -17,9 +17,9 @@ const useVueVersion = () => {
 let VeMap
 
 if (useVueVersion() === 2) {
-  VeMap = require('./vue2/v-charts.map.es.js')
+  VeMap = require('./vue2/v-charts.map.mjs')
 } else {
-  VeMap = require('./vue3/v-charts.map.es.js')
+  VeMap = require('./vue3/v-charts.map.mjs')
 }
 
 VeMap = VeMap.default

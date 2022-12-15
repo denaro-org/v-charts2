@@ -43,7 +43,7 @@ export default ({ mode }) => {
       sourcemap: false,
       rollupOptions: {
         external: [
-          'vue',
+          // 'vue',
           'echarts/core',
           'echarts/components',
           'echarts/features',
@@ -59,7 +59,7 @@ export default ({ mode }) => {
           inlineDynamicImports: true,
           assetFileNames: 'v-charts.[ext]',
           globals: {
-            vue: 'Vue',
+            // vue: 'Vue',
             'echarts/core': 'echartsLib',
             'echarts/components': 'echarts/components',
             'echarts/features': 'echarts/features',

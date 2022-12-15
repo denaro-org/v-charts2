@@ -17,9 +17,9 @@ const useVueVersion = () => {
 let VeRadar
 
 if (useVueVersion() === 2) {
-  VeRadar = require('./vue2/v-charts.radar.es.js')
+  VeRadar = require('./vue2/v-charts.radar.mjs')
 } else {
-  VeRadar = require('./vue3/v-charts.radar.es.js')
+  VeRadar = require('./vue3/v-charts.radar.mjs')
 }
 
 VeRadar = VeRadar.default

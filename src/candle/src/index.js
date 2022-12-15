@@ -17,9 +17,9 @@ const useVueVersion = () => {
 let VeCandle
 
 if (useVueVersion() === 2) {
-  VeCandle = require('./vue2/v-charts.candle.es.js')
+  VeCandle = require('./vue2/v-charts.candle.mjs')
 } else {
-  VeCandle = require('./vue3/v-charts.candle.es.js')
+  VeCandle = require('./vue3/v-charts.candle.mjs')
 }
 
 VeCandle = VeCandle.default

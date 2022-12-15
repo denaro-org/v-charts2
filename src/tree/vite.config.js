@@ -28,8 +28,8 @@ export default ({ mode }) => {
         emptyOutDir: true,
         formats: ['es', 'umd', 'iife'],
         entry: resolve(__dirname, `src/index-${mode === 'vue3' ? 'vue3' : 'vue2'}.js`),
-        name: '@v-charts2/wordcloud',
-        fileName: 'v-charts.wordcloud'
+        name: '@v-charts2/tree',
+        fileName: 'v-charts.tree'
       },
       terserOptions: {
         compress: {
@@ -43,7 +43,7 @@ export default ({ mode }) => {
       sourcemap: false,
       rollupOptions: {
         external: [
-          'vue',
+          // 'vue',
           'echarts/core',
           'echarts/components',
           'echarts/features',
@@ -58,7 +58,7 @@ export default ({ mode }) => {
           inlineDynamicImports: true,
           assetFileNames: 'v-charts.[ext]',
           globals: {
-            vue: 'Vue',
+            // vue: 'Vue',
             'echarts/core': 'echartsLib',
             'echarts/components': 'echarts/components',
             'echarts/features': 'echarts/features',

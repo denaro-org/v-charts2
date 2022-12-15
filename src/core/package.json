@@ -9,16 +9,12 @@
   ],
   "license": "MIT",
   "exports": {
-    ".": {
-      "import": "./lib/index.js",
-      "require": "./lib/index.js"
-    },
     "./vue3": {
-      "import": "./src/index-vue3.js",
+      "import": "./src/index-vue3.ts",
       "require": "./lib/vue3/v-charts.core.umd.js"
     },
     "./vue2": {
-      "import": "./src/index-vue2.js",
+      "import": "./src/index-vue2.ts",
       "require": "./lib/vue2/v-charts.core.umd.js"
     },
     "./utils": "./src/utils/index.js",
@@ -33,7 +29,7 @@
   ],
   "scripts": {
     "build:lib": "yarn run clean && yarn run build:lib-all",
-    "build:lib-all": "yarn run build:lib-vue3 & yarn run build:lib-vue2",
+    "build:lib-all": "yarn run build:lib-vue3 && yarn run build:lib-vue2",
     "build:lib-vue2": "vite build --mode vue2",
     "build:lib-vue3": "vite build --mode vue3",
     "clean": "npx rimraf lib"
@@ -46,9 +42,9 @@
   "devDependencies": {
     "rimraf": "^3.0.2",
     "rollup-plugin-copy": "^3.4.0",
-    "vite": "^2.7.13",
-    "vite-plugin-banner": "^0.3.0",
-    "vue": "^3.2.36"
+    "vite": "^4.0.1",
+    "vite-plugin-banner": "^0.7.0",
+    "vue": "^3.2.45"
   },
   "peerDependencies": {
     "echarts": ">5.0.0",

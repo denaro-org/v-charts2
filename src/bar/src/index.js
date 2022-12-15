@@ -17,9 +17,9 @@ const useVueVersion = () => {
 let VeBar
 
 if (useVueVersion() === 2) {
-  VeBar = require('./vue2/v-charts.bar.es.js')
+  VeBar = require('./vue2/v-charts.bar.mjs')
 } else {
-  VeBar = require('./vue3/v-charts.bar.es.js')
+  VeBar = require('./vue3/v-charts.bar.mjs')
 }
 
 VeBar = VeBar.default

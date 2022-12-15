@@ -17,9 +17,9 @@ const useVueVersion = () => {
 let VeWordcloud
 
 if (useVueVersion() === 2) {
-  VeWordcloud = require('./vue2/v-charts.wordcloud.es.js')
+  VeWordcloud = require('./vue2/v-charts.wordcloud.mjs')
 } else {
-  VeWordcloud = require('./vue3/v-charts.wordcloud.es.js')
+  VeWordcloud = require('./vue3/v-charts.wordcloud.mjs')
 }
 
 VeWordcloud = VeWordcloud.default

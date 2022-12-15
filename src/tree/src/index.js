@@ -17,9 +17,9 @@ const useVueVersion = () => {
 let VeTree
 
 if (useVueVersion() === 2) {
-  VeTree = require('./vue2/v-charts.tree.es.js')
+  VeTree = require('./vue2/v-charts.tree.mjs')
 } else {
-  VeTree = require('./vue3/v-charts.tree.es.js')
+  VeTree = require('./vue3/v-charts.tree.mjs')
 }
 
 VeTree = VeTree.default

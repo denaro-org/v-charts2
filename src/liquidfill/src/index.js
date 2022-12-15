@@ -17,9 +17,9 @@ const useVueVersion = () => {
 let VeLiquidfill
 
 if (useVueVersion() === 2) {
-  VeLiquidfill = require('./vue2/v-charts.liquidfill.es.js')
+  VeLiquidfill = require('./vue2/v-charts.liquidfill.mjs')
 } else {
-  VeLiquidfill = require('./vue3/v-charts.liquidfill.es.js')
+  VeLiquidfill = require('./vue3/v-charts.liquidfill.mjs')
 }
 
 VeLiquidfill = VeLiquidfill.default

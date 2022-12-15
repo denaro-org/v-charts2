@@ -17,9 +17,9 @@ const useVueVersion = () => {
 let VeWaterfall
 
 if (useVueVersion() === 2) {
-  VeWaterfall = require('./vue2/v-charts.waterfall.es.js')
+  VeWaterfall = require('./vue2/v-charts.waterfall.mjs')
 } else {
-  VeWaterfall = require('./vue3/v-charts.waterfall.es.js')
+  VeWaterfall = require('./vue3/v-charts.waterfall.mjs')
 }
 
 VeWaterfall = VeWaterfall.default
