@@ -1,6 +1,6 @@
 {
   "name": "@v-charts2/wordcloud",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "echarts 词云图",
   "keywords": [
     "echarts",
@@ -42,7 +42,7 @@
     "clean": "npx rimraf lib"
   },
   "dependencies": {
-    "@v-charts2/core": "1.0.1",
+    "@v-charts2/core": "1.0.2",
     "echarts": "^5.4.1",
     "echarts-wordcloud": "^2.1.0",
     "utils-lite": "^0.1.15"

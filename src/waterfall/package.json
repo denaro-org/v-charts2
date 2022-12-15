@@ -1,6 +1,6 @@
 {
   "name": "@v-charts2/waterfall",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "echarts 瀑布图",
   "keywords": [
     "echarts",
@@ -42,7 +42,7 @@
     "clean": "npx rimraf lib"
   },
   "dependencies": {
-    "@v-charts2/core": "1.0.1",
+    "@v-charts2/core": "1.0.2",
     "echarts": "^5.3.2"
   },
   "devDependencies": {
