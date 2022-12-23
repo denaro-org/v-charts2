@@ -28,7 +28,7 @@
     "clean-install": "npx rimraf **/node_modules *.log *.lock *-lock.json *-lock.yaml && pnpm bootstrap",
     "commit": "git add .&& git-cz",
     "copy": "cpx \"./CHANGELOG.md\" \"./docs/changelog/\"",
-    "deploy-docs": "pnpm build:lib && pnpm copy && pnpm docs:build",
+    "deploy-docs": "pnpm run build:lib && pnpm run copy && pnpm run docs:build",
     "docs:build": "cd docs && pnpm run build",
     "docs:dev": "cd docs && pnpm run dev",
     "format:md": "eslint --fix \"docs/**/*.md\"",

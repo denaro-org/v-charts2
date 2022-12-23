@@ -15,12 +15,12 @@
       "require": "./lib/index.js"
     },
     "./vue3": {
-      "import": "./lib/vue3/v-charts.line.mjs",
-      "require": "./lib/vue3/v-charts.line.umd.js"
+      "import": "./lib/vue3/v-charts.hot-chart.mjs",
+      "require": "./lib/vue3/v-charts.hot-chart.umd.js"
     },
     "./vue2": {
-      "import": "./lib/vue2/v-charts.line.mjs",
-      "require": "./lib/vue2/v-charts.line.umd.js"
+      "import": "./lib/vue2/v-charts.hot-chart.mjs",
+      "require": "./lib/vue2/v-charts.hot-chart.umd.js"
     },
     "./main": "./src/main.js",
     "./v-charts.css": {

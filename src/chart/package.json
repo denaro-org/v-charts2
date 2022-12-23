@@ -21,6 +21,7 @@
       "import": "./lib/vue2/v-charts.chart.mjs",
       "require": "./lib/vue2/v-charts.chart.umd.js"
     },
+    "./main": "./src/main.js",
     "./v-charts.css": {
       "import": "./lib/style/v-charts.css",
       "require": "./lib/style/v-charts.css"

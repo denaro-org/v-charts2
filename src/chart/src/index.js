@@ -1,5 +1,6 @@
 import * as Vue from 'vue'
-import './style/v-charts.css'
+import '~@v-charts2/core/v-charts.css'
+
 const useVueVersion = () => {
   // Make copy to prevent import warning in Vue 2
   const vueObject = { ...Vue }

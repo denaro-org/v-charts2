@@ -13,9 +13,6 @@ export default ({ mode }) => {
       copy({
         targets: [
           {
-            src: resolve(__dirname, '../../node_modules/@v-charts2/core/lib/style'), dest: 'lib'
-          },
-          {
             src: 'src/index.js', dest: 'lib'
           }
         ],

@@ -22,11 +22,7 @@
       "import": "./lib/vue2/v-charts.waterfall.mjs",
       "require": "./lib/vue2/v-charts.waterfall.umd.js"
     },
-    "./main": "./src/main.js",
-    "./v-charts.css": {
-      "import": "./lib/style/v-charts.css",
-      "require": "./lib/style/v-charts.css"
-    }
+    "./main": "./src/main.js"
   },
   "main": "./lib/index.js",
   "module": "./lib/index.js",

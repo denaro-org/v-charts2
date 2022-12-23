@@ -21,10 +21,6 @@
     "./vue2": {
       "import": "./lib/vue2/v-charts.ring.mjs",
       "require": "./lib/vue2/v-charts.ring.umd.js"
-    },
-    "./v-charts.css": {
-      "import": "./lib/style/v-charts.css",
-      "require": "./lib/style/v-charts.css"
     }
   },
   "main": "./lib/index.js",

@@ -9,6 +9,7 @@ export default ({
     if (typeof window !== 'undefined') window.global = window
 
     import('@v-charts2/chart').then((module) => {
+      console.log(module)
       Vue.use(module.default)
     })
 

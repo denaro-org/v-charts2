@@ -1,3 +1,7 @@
+# [1.1.0](https://github.com/denaro-org/v-charts2/compare/v1.0.2...v1.1.0) (2022-12-23)
+
+
+
 # Change Log
 
 All notable changes to this project will be documented in this file.

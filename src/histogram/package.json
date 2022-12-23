@@ -22,6 +22,7 @@
       "import": "./lib/vue2/v-charts.histogram.mjs",
       "require": "./lib/vue2/v-charts.histogram.umd.js"
     },
+    "./main": "./src/main.js",
     "./v-charts.css": {
       "import": "./lib/style/v-charts.css",
       "require": "./lib/style/v-charts.css"
