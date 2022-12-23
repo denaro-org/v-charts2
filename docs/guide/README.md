@@ -11,7 +11,7 @@
 ```bash
 npm i @v-charts2/chart
 # or
-yarn add @v-charts2/chart
+pnpm add @v-charts2/chart
 ```
 
 - 安装

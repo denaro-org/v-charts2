@@ -9,7 +9,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/line
+pnpm add @v-charts2/line
 # or
 npm install @v-charts2/line
 ```

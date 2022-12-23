@@ -20,7 +20,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/sankey
+pnpm add @v-charts2/sankey
 # or
 npm install @v-charts2/sankey
 ```

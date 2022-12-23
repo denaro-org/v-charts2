@@ -20,7 +20,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/funnel
+pnpm add @v-charts2/funnel
 # or
 npm install @v-charts2/funnel
 ```

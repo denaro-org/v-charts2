@@ -35,16 +35,17 @@
     "LICENSE"
   ],
   "scripts": {
-    "build:lib": "yarn run clean && yarn run build:lib-all",
-    "build:lib-all": "yarn run build:lib-vue3 && yarn run build:lib-vue2",
+    "build:lib": "pnpm run clean && pnpm run build:lib-all",
+    "build:lib-all": "pnpm run build:lib-vue3 && pnpm run build:lib-vue2 && pnpm run copy",
     "build:lib-vue2": "vite build --mode vue2",
     "build:lib-vue3": "vite build --mode vue3",
-    "clean": "npx rimraf lib"
+    "clean": "npx rimraf lib",
+    "copy": "cpx \"../../CHANGELOG.md\" \"./\""
   },
   "dependencies": {
-    "@v-charts2/core": "1.0.2",
-    "@v-charts2/pie": "1.0.2",
-    "echarts": "^5.3.2"
+    "@v-charts2/core": "workspace:*",
+    "@v-charts2/pie": "workspace:*",
+    "echarts": "^5.4.1"
   },
   "devDependencies": {
     "rimraf": "^3.0.2",

@@ -30,7 +30,7 @@ footer: MIT Licensed | Copyright © 2022 vxhly pengchengou@gmail.com
 ### 安装
 
 ```bash
-yarn add @v-chart2/chart
+pnpm add @v-chart2/chart
 # or
 npm i @v-chart2/chart
 ```

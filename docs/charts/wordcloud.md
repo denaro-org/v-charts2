@@ -9,7 +9,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/wordcloud
+pnpm add @v-charts2/wordcloud
 # or
 npm install @v-charts2/wordcloud
 ```

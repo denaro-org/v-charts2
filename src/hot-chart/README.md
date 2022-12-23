@@ -20,7 +20,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/hot-chart
+pnpm add @v-charts2/hot-chart
 # or
 npm install @v-charts2/hot-chart
 ```

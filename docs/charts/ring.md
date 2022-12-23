@@ -9,7 +9,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/ring
+pnpm add @v-charts2/ring
 # or
 npm install @v-charts2/ring
 ```

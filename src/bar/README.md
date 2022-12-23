@@ -20,7 +20,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/bar
+pnpm add @v-charts2/bar
 # or
 npm install @v-charts2/bar
 ```

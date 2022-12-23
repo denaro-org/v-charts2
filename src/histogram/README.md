@@ -20,7 +20,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/histogram
+pnpm add @v-charts2/histogram
 # or
 npm install @v-charts2/histogram
 ```

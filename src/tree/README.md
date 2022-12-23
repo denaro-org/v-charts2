@@ -20,7 +20,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/tree
+pnpm add @v-charts2/tree
 # or
 npm install @v-charts2/tree
 ```

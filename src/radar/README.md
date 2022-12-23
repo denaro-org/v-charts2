@@ -20,7 +20,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/radar
+pnpm add @v-charts2/radar
 # or
 npm install @v-charts2/radar
 ```

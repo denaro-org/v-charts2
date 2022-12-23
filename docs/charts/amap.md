@@ -11,7 +11,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/amap
+pnpm add @v-charts2/amap
 # or
 npm install @v-charts2/amap
 ```

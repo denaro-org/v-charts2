@@ -20,7 +20,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/scatter
+pnpm add @v-charts2/scatter
 # or
 npm install @v-charts2/scatter
 ```

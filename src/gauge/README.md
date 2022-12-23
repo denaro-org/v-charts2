@@ -20,7 +20,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/gauge
+pnpm add @v-charts2/gauge
 # or
 npm install @v-charts2/gauge
 ```

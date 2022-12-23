@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "基于 Vue 的 Echarts5.x 组件",
   "keywords": [
@@ -23,21 +23,20 @@
     "docs"
   ],
   "scripts": {
-    "bootstrap": "yarn",
-    "build:lib": "lerna run build:lib",
-    "clean": "lerna clean -y && lerna run clean --stream",
-    "clean-install": "yarn clean && npx rimraf node_modules *.log *.lock *-lock.json && yarn bootstrap",
+    "bootstrap": "pnpm i",
+    "build:lib": "pnpm --filter=\"./src/**\" -r --stream build:lib",
+    "clean-install": "npx rimraf **/node_modules *.log *.lock *-lock.json *-lock.yaml && pnpm bootstrap",
     "commit": "git add .&& git-cz",
     "copy": "cpx \"./CHANGELOG.md\" \"./docs/changelog/\"",
-    "deploy-docs": "yarn build:lib && yarn copy && yarn docs:build",
-    "docs:build": "cd docs && yarn run build",
-    "docs:dev": "cd docs && yarn run dev",
+    "deploy-docs": "pnpm build:lib && pnpm copy && pnpm docs:build",
+    "docs:build": "cd docs && pnpm run build",
+    "docs:dev": "cd docs && pnpm run dev",
     "format:md": "eslint --fix \"docs/**/*.md\"",
     "lint": "eslint --fix src/**",
     "prepare": "husky install",
-    "publish-latest": "yarn build:lib && lerna publish patch --dist-tag latest",
-    "release": "yarn build:lib && lerna publish prerelease --dist-tag next",
-    "update": "yarn upgrade-interactive --latest"
+    "release": "pnpm build:lib && pnpm release:version && pnpm release:publish",
+    "release:publish": "pnpm -r publish --tag next",
+    "release:version": "bumpp package.json docs/*/package.json src/*/package.json --execute=\"pnpm release:changelog\" --commit \"build: publish v%s\" --all"
   },
   "lint-staged": {
     "docs/**/*.md": "eslint --fix",
@@ -54,6 +53,7 @@
     "@commitlint/cli": "^17.0.1",
     "@commitlint/config-conventional": "^17.0.0",
     "@commitlint/cz-commitlint": "^17.0.0",
+    "conventional-changelog-cli": "^2.2.2",
     "cpx": "^1.5.0",
     "echarts": "^5.4.1",
     "eslint": "^8.8.0",

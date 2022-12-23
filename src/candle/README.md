@@ -20,7 +20,7 @@
 ### 下载
 
 ```bash
-yarn add @v-charts2/candle
+pnpm add @v-charts2/candle
 # or
 npm install @v-charts2/candle
 ```
