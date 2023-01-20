@@ -111,8 +111,10 @@ export default {
     settings: {
       deep: true,
       handler (v) {
-        if (v.type && this.chartLib) this.chartHandler = this.chartLib[v.type]
-        this.initPayload.options.chartHandler = this.chartLib[v.type]
+        if (v.type && this.chartLib) {
+          this.chartHandler = this.chartLib[v.type]
+          this.initPayload.options.chartHandler = this.chartLib[v.type]
+        }
         changeHandler({
           props: this.$props, options: this.initPayload.options, echarts: this.echarts
         })
