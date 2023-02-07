@@ -1,4 +1,23 @@
-# [1.1.0](https://github.com/denaro-org/v-charts2/compare/v1.0.2...v1.1.0) (2022-12-23)
+## [1.1.1](https://github.com/denaro-org/v-charts2/compare/v1.1.0...v1.1.1) (2023-02-07)
+
+
+### Bug Fixes
+
+* a typo in theme change handler ([1775543](https://github.com/denaro-org/v-charts2/commit/1775543ef9090b12a5d94156a66203028806080b))
+* settings watcher fix ([f775d76](https://github.com/denaro-org/v-charts2/commit/f775d76872fe885c917ae6b806977cfae53e5490))
+
+
+
+# [1.1.0](https://github.com/denaro-org/v-charts2/compare/v1.0.2...v1.1.0) (2022-12-26)
+
+
+
+# [1.1.0](https://github.com/denaro-org/v-charts2/compare/v1.0.2...v1.1.0) (2022-12-26)
+
+
+
+# [1.1.0](https://github.com/denaro-org/v-charts2/compare/v1.0.2...v1.1.0) (2022-12-26)
+
 
 
 
