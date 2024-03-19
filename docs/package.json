@@ -9,16 +9,16 @@
   "dependencies": {
     "@v-charts2/chart": "workspace:*",
     "@v-charts2/hot-chart": "workspace:*",
-    "vue": "2.7.14"
+    "vue": "3.4.21"
   },
   "devDependencies": {
-    "@vuepress/plugin-pwa": "^1.9.7",
-    "vue-server-renderer": "2.7.14",
-    "vuepress": "^1.9.7",
+    "@vuepress/plugin-pwa": "^1.9.10",
+    "vue-server-renderer": "2.7.16",
+    "vuepress": "^1.9.10",
     "vuepress-plugin-one-click-copy": "^1.0.6",
     "vuepress-plugin-smooth-scroll": "^0.0.10",
     "vuepress-plugin-vue-demo": "^1.0.15",
-    "vuepress-theme-antdocs": "^1.4.4",
-    "watchpack": "2.4.0"
+    "vuepress-theme-antdocs": "^1.4.6",
+    "watchpack": "2.4.1"
   }
 }
