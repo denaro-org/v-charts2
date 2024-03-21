@@ -7,13 +7,13 @@
     "v-echarts",
     "v-charts"
   ],
-  "homepage": "https://github.com/denaro-org/v-charts2#readme",
+  "homepage": "https://github.com/Aolef/v-chartsv2#readme",
   "bugs": {
-    "url": "https://github.com/denaro-org/v-charts2/issues"
+    "url": "https://github.com/Aolef/v-chartsv2/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/denaro-org/v-charts2.git"
+    "url": "git+https://github.com/Aolef/v-chartsv2.git"
   },
   "license": "MIT",
   "author": "vxhly <pengchengou@gmail.com>",
