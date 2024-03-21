@@ -1,6 +1,6 @@
 import {
   getFormated, itemPoint, setArrayValue
-} from '@v-charts2/core/utils'
+} from '@v-chartsv2/core/utils'
 import { cloneDeep } from 'utils-lite'
 
 const pieRadius = 100

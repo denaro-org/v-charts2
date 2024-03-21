@@ -9,9 +9,9 @@
 ### 下载
 
 ```bash
-pnpm add @v-charts2/bar
+pnpm add @v-chartsv2/bar
 # or
-npm install @v-charts2/bar
+npm install @v-chartsv2/bar
 ```
 
 ### 安装
@@ -19,12 +19,12 @@ npm install @v-charts2/bar
 当你当前的打包工具为 webpack 时, 推荐你进行以下的安装步骤
 
 ::: warning
-传统的 webpack4.x 没有 Tree Shaking 的支持, 如果你想引入 `@v-charts2/bar/vue2` 或者 `@v-charts2/bar/vue3` 的话, 可能会报错
+传统的 webpack4.x 没有 Tree Shaking 的支持, 如果你想引入 `@v-chartsv2/bar/vue2` 或者 `@v-chartsv2/bar/vue3` 的话, 可能会报错
 :::
 
 ```javascript
 import Vue from "vue";
-import VeBar from "@v-charts2/bar"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
+import VeBar from "@v-chartsv2/bar"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
 Vue.use(VeBar);
 ```
 
@@ -34,8 +34,8 @@ Vue.use(VeBar);
 
 ```javascript
 import Vue from "vue";
-import VeBar from "@v-charts2/bar/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
-import "@v-charts2/bar/v-charts.css"; // 需要手动引入样式
+import VeBar from "@v-chartsv2/bar/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
+import "@v-chartsv2/bar/v-charts.css"; // 需要手动引入样式
 Vue.use(VeBar);
 ```
 
@@ -44,8 +44,8 @@ Vue.use(VeBar);
 ```javascript
 import { createApp } from "vue";
 const app = createApp();
-import VeBar from "@v-charts2/bar/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
-import "@v-charts2/bar/v-charts.css"; // 需要手动引入样式
+import VeBar from "@v-chartsv2/bar/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
+import "@v-chartsv2/bar/v-charts.css"; // 需要手动引入样式
 app.use(VeBar);
 ```
 

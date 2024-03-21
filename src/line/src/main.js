@@ -1,6 +1,6 @@
 import {
   getFormated, getStackMap
-} from '@v-charts2/core/utils'
+} from '@v-chartsv2/core/utils'
 import { isArray } from 'utils-lite'
 
 function getLineXAxis (args) {

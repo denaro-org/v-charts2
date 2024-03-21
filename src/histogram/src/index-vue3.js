@@ -1,12 +1,12 @@
 import {
   name, version
 } from '../package.json'
-import { histogram } from '@v-charts2/bar/vue3'
-import { createChart } from '@v-charts2/core/vue3'
+import { histogram } from '@v-chartsv2/bar/vue3'
+import { createChart } from '@v-chartsv2/core/vue3'
 import { BarChart } from 'echarts/charts'
 import {
   echartsLib, logCopyRight
-} from '@v-charts2/core/utils'
+} from '@v-chartsv2/core/utils'
 
 echartsLib.use([BarChart])
 

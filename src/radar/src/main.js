@@ -1,6 +1,6 @@
 import {
   getFormated, itemPoint
-} from '@v-charts2/core/utils'
+} from '@v-chartsv2/core/utils'
 
 function getRadarLegend (rows, dimension, legendName) {
   const legendData = rows.map((row) => row[dimension])

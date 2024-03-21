@@ -1,5 +1,5 @@
 {
-  "name": "@v-charts2/radar",
+  "name": "@v-chartsv2/radar",
   "version": "1.1.2",
   "description": "echarts 雷达图",
   "keywords": [
@@ -39,8 +39,8 @@
     "copy": "cpx \"../../CHANGELOG.md\" \"./\""
   },
   "dependencies": {
-    "@v-charts2/core": "workspace:*",
-    "@v-charts2/pie": "workspace:*",
+    "@v-chartsv2/core": "workspace:*",
+    "@v-chartsv2/pie": "workspace:*",
     "echarts": "^5.5.0"
   },
   "devDependencies": {

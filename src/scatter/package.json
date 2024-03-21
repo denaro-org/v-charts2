@@ -1,5 +1,5 @@
 {
-  "name": "@v-charts2/scatter",
+  "name": "@v-chartsv2/scatter",
   "version": "1.1.2",
   "description": "echarts 散点图",
   "keywords": [
@@ -39,8 +39,8 @@
     "copy": "cpx \"../../CHANGELOG.md\" \"./\""
   },
   "dependencies": {
-    "@v-charts2/core": "workspace:*",
-    "@v-charts2/line": "workspace:*",
+    "@v-chartsv2/core": "workspace:*",
+    "@v-chartsv2/line": "workspace:*",
     "echarts": "^5.5.0",
     "utils-lite": "^0.1.15"
   },

@@ -1,5 +1,5 @@
 {
-  "name": "@v-charts2/heatmap",
+  "name": "@v-chartsv2/heatmap",
   "version": "1.1.2",
   "description": "echarts 热力图",
   "keywords": [
@@ -43,7 +43,7 @@
     "copy": "cpx \"../../CHANGELOG.md\" \"./\""
   },
   "dependencies": {
-    "@v-charts2/core": "workspace:*",
+    "@v-chartsv2/core": "workspace:*",
     "echarts": "^5.5.0"
   },
   "devDependencies": {

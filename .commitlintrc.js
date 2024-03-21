@@ -11,7 +11,7 @@ module.exports = {
     'scope-enum': [
       2,
       'always',
-      ['@v-charts2', 'docs', ...packages]
+      ['@v-chartsv2', 'docs', ...packages]
     ]
   }
 }

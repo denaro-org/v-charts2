@@ -1,3 +1,7 @@
+## [1.1.2](https://github.com/denaro-org/v-charts2/compare/v1.1.1...v1.1.2) (2024-03-19)
+
+
+
 ## [1.1.1](https://github.com/denaro-org/v-charts2/compare/v1.1.0...v1.1.1) (2023-02-07)
 
 

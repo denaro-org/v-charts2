@@ -1,6 +1,6 @@
 import {
   getFormated, itemPoint
-} from '@v-charts2/core/utils'
+} from '@v-chartsv2/core/utils'
 import { isArray } from 'utils-lite'
 
 const DEFAULT_MA = [5, 10, 20, 30]
