@@ -28,7 +28,7 @@ export default ({ mode }) => {
         emptyOutDir: true,
         formats: ['es', 'umd', 'iife'],
         entry: resolve(__dirname, `src/index-${mode === 'vue3' ? 'vue3' : 'vue2'}.js`),
-        name: '@v-chartsv2/histogram',
+        name: '@v-charts2/histogram',
         fileName: 'v-charts.histogram'
       },
       terserOptions: {

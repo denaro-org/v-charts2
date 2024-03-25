@@ -25,7 +25,7 @@ export default ({ mode }) => {
         emptyOutDir: true,
         formats: ['es', 'umd', 'iife'],
         entry: resolve(__dirname, `src/index-${mode === 'vue3' ? 'vue3' : 'vue2'}.js`),
-        name: '@v-chartsv2/liquidfill',
+        name: '@v-charts2/liquidfill',
         fileName: 'v-charts.liquidfill'
       },
       terserOptions: {

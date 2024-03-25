@@ -1,4 +1,4 @@
-import { getFormated } from '@v-chartsv2/core/utils'
+import { getFormated } from '@v-charts2/core/utils'
 import { isObject } from 'utils-lite'
 
 function getTooltip (args) {

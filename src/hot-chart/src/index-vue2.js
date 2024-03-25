@@ -1,18 +1,18 @@
 import {
   name, version
 } from '../package.json'
-import { line } from '@v-chartsv2/line/vue2'
+import { line } from '@v-charts2/line/vue2'
 import {
   bar, histogram
-} from '@v-chartsv2/bar/vue2'
+} from '@v-charts2/bar/vue2'
 import {
   pie, ring
-} from '@v-chartsv2/pie/vue2'
-import { funnel } from '@v-chartsv2/funnel/vue2'
-import { radar } from '@v-chartsv2/radar/vue2'
-import { waterfall } from '@v-chartsv2/waterfall/vue2'
-import { createChart } from '@v-chartsv2/core/vue2'
-import { logCopyRight } from '@v-chartsv2/core/utils'
+} from '@v-charts2/pie/vue2'
+import { funnel } from '@v-charts2/funnel/vue2'
+import { radar } from '@v-charts2/radar/vue2'
+import { waterfall } from '@v-charts2/waterfall/vue2'
+import { createChart } from '@v-charts2/core/vue2'
+import { logCopyRight } from '@v-charts2/core/utils'
 
 const charts = {
   bar,
