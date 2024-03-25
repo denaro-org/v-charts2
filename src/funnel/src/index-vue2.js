@@ -2,11 +2,11 @@ import { funnel } from './main'
 import {
   name, version
 } from '../package.json'
-import { createChart } from '@v-chartsv2/core/vue2'
+import { createChart } from '@v-charts2/core/vue2'
 import { FunnelChart } from 'echarts/charts'
 import {
   echartsLib, logCopyRight
-} from '@v-chartsv2/core/utils'
+} from '@v-charts2/core/utils'
 
 echartsLib.use([FunnelChart])
 

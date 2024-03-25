@@ -9,9 +9,9 @@
 ### 下载
 
 ```bash
-pnpm add @v-chartsv2/heatmap
+pnpm add @v-charts2/heatmap
 # or
-npm install @v-chartsv2/heatmap
+npm install @v-charts2/heatmap
 ```
 
 ### 安装
@@ -19,12 +19,12 @@ npm install @v-chartsv2/heatmap
 当你当前的打包工具为 webpack 时, 推荐你进行以下的安装步骤
 
 ::: warning
-传统的 webpack4.x 没有 Tree Shaking 的支持, 如果你想引入 `@v-chartsv2/heatmap/vue2` 或者 `@v-chartsv2/heatmap/vue3` 的话, 可能会报错
+传统的 webpack4.x 没有 Tree Shaking 的支持, 如果你想引入 `@v-charts2/heatmap/vue2` 或者 `@v-charts2/heatmap/vue3` 的话, 可能会报错
 :::
 
 ```javascript
 import Vue from "vue";
-import VeHeatmap from "@v-chartsv2/heatmap"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
+import VeHeatmap from "@v-charts2/heatmap"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
 Vue.use(VeHeatmap);
 ```
 
@@ -34,8 +34,8 @@ Vue.use(VeHeatmap);
 
 ```javascript
 import Vue from "vue";
-import VeHeatmap from "@v-chartsv2/heatmap/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
-import "@v-chartsv2/heatmap/v-charts.css"; // 需要手动引入样式
+import VeHeatmap from "@v-charts2/heatmap/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
+import "@v-charts2/heatmap/v-charts.css"; // 需要手动引入样式
 Vue.use(VeHeatmap);
 ```
 
@@ -44,8 +44,8 @@ Vue.use(VeHeatmap);
 ```javascript
 import { createApp } from "vue";
 const app = createApp();
-import VeHeatmap from "@v-chartsv2/heatmap/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
-import "@v-chartsv2/heatmap/v-charts.css"; // 需要手动引入样式
+import VeHeatmap from "@v-charts2/heatmap/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
+import "@v-charts2/heatmap/v-charts.css"; // 需要手动引入样式
 app.use(VeHeatmap);
 ```
 

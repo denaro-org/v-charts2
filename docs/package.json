@@ -7,8 +7,8 @@
     "dev": "vuepress dev . --temp .temp"
   },
   "dependencies": {
-    "@v-chartsv2/chart": "workspace:*",
-    "@v-chartsv2/hot-chart": "workspace:*",
+    "@v-charts2/chart": "workspace:*",
+    "@v-charts2/hot-chart": "workspace:*",
     "vue": "3.4.21"
   },
   "devDependencies": {

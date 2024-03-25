@@ -303,11 +303,11 @@ export const echartsResize = (echarts) => {
   echarts && echarts.resize()
 }
 
-export const themeChange = (initPayload, props) => {
+export const themeChange = (initPayload, props2) => {
   let {
     echarts,
     options: { _once }
-  } = initPayload
+  } = initPayload;
   clean({
     echarts,
     props,
