@@ -2,11 +2,11 @@ import { line } from './main'
 import {
   name, version
 } from '../package.json'
-import { createChart } from '@v-charts2/core/vue3'
+import { createChart } from '@v-chartsv2/core/vue3'
 import { LineChart } from 'echarts/charts'
 import {
   echartsLib, logCopyRight
-} from '@v-charts2/core/utils'
+} from '@v-chartsv2/core/utils'
 
 echartsLib.use([LineChart])
 

@@ -8,12 +8,12 @@ export default ({
   if (!isServer) {
     if (typeof window !== 'undefined') window.global = window
 
-    import('@v-charts2/chart').then((module) => {
+    import('@v-chartsv2/chart').then((module) => {
       console.log(module)
       Vue.use(module.default)
     })
 
-    import('@v-charts2/hot-chart').then((module) => {
+    import('@v-chartsv2/hot-chart').then((module) => {
       Vue.use(module.default)
     })
   }

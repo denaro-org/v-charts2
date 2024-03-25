@@ -1,4 +1,4 @@
-import { getAmap } from '@v-charts2/core/utils'
+import { getAmap } from '@v-chartsv2/core/utils'
 
 export const amap = (_, __, settings, extra) => {
   const {

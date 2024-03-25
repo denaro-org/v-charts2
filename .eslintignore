@@ -10,3 +10,5 @@ index.ssr.html
 *.min.js
 *.json
 docs/publish-pages
+src/**/LICENSE
+src/**/*.css

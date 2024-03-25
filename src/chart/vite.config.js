@@ -28,7 +28,7 @@ export default ({ mode }) => {
         emptyOutDir: true,
         formats: ['es', 'umd', 'iife'],
         entry: resolve(__dirname, `src/index-${mode === 'vue3' ? 'vue3' : 'vue2'}.js`),
-        name: '@v-charts2/chart',
+        name: '@v-chartsv2/chart',
         fileName: 'v-charts.chart'
       },
       terserOptions: {

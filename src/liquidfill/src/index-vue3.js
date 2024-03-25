@@ -2,8 +2,8 @@ import { liquidfill } from './main'
 import {
   name, version
 } from '../package.json'
-import { createChart } from '@v-charts2/core/vue3'
-import { logCopyRight } from '@v-charts2/core/utils'
+import { createChart } from '@v-chartsv2/core/vue3'
+import { logCopyRight } from '@v-chartsv2/core/utils'
 import 'echarts-liquidfill'
 
 const VeLiquidfill = createChart({

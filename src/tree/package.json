@@ -1,6 +1,6 @@
 {
-  "name": "@v-charts2/tree",
-  "version": "1.1.2",
+  "name": "@v-chartsv2/tree",
+  "version": "1.1.3",
   "description": "echarts 树图",
   "keywords": [
     "echarts",
@@ -39,7 +39,7 @@
     "copy": "cpx \"../../CHANGELOG.md\" \"./\""
   },
   "dependencies": {
-    "@v-charts2/core": "workspace:*",
+    "@v-chartsv2/core": "workspace:*",
     "echarts": "^5.5.0",
     "utils-lite": "^0.1.15"
   },
