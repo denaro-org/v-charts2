@@ -32,9 +32,9 @@ npm install @v-charts2/wordcloud
 > 传统的 webpack4.x 没有 Wordcloud Shaking 的支持, 如果你想引入 `@v-charts2/wordcloud/vue2` 或者 `@v-charts2/wordcloud/vue3` 的话, 可能会报错
 
 ```javascript
-import Vue from "vue";
-import VeWordcloud from "@v-charts2/wordcloud"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
-Vue.use(VeWordcloud);
+import Vue from 'vue'
+import VeWordcloud from '@v-charts2/wordcloud' // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
+Vue.use(VeWordcloud)
 ```
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
@@ -42,18 +42,18 @@ Vue.use(VeWordcloud);
 - Vue 2.x
 
 ```javascript
-import Vue from "vue";
-import VeWordcloud from "@v-charts2/wordcloud/vue2"; // 更好的 Wordcloud Shaking 推荐引入 vue2.x 的专属支持包
-import "@v-charts2/wordcloud/v-charts.css"; // 需要手动引入样式
-Vue.use(VeWordcloud);
+import Vue from 'vue'
+import VeWordcloud from '@v-charts2/wordcloud/vue2' // 更好的 Wordcloud Shaking 推荐引入 vue2.x 的专属支持包
+import '@v-charts2/wordcloud/v-charts.css' // 需要手动引入样式
+Vue.use(VeWordcloud)
 ```
 
 - Vue 3.x
 
 ```javascript
-import { createApp } from "vue";
-const app = createApp();
-import VeWordcloud from "@v-charts2/wordcloud/vue3"; // 更好的 Wordcloud Shaking 推荐引入 vue3.x 的专属支持包
-import "@v-charts2/wordcloud/v-charts.css"; // 需要手动引入样式
-app.use(VeWordcloud);
+import { createApp } from 'vue'
+const app = createApp()
+import VeWordcloud from '@v-charts2/wordcloud/vue3' // 更好的 Wordcloud Shaking 推荐引入 vue3.x 的专属支持包
+import '@v-charts2/wordcloud/v-charts.css' // 需要手动引入样式
+app.use(VeWordcloud)
 ```

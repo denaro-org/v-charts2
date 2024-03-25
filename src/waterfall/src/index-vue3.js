@@ -1,12 +1,9 @@
-import { waterfall } from './main'
-import {
-  name, version
-} from '../package.json'
+import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
 import { createChart } from '@v-charts2/core/vue3'
 import { BarChart } from 'echarts/charts'
-import {
-  echartsLib, logCopyRight
-} from '@v-charts2/core/utils'
+
+import { waterfall } from './main'
+import { name, version } from '../package.json'
 
 echartsLib.use([BarChart])
 
@@ -15,7 +12,7 @@ const VeWaterfall = createChart({
   chartHandler: waterfall
 })
 
-VeWaterfall.install = (app) => {
+VeWaterfall.install = app => {
   logCopyRight(name, version)
   app.component(VeWaterfall.name, VeWaterfall)
 }

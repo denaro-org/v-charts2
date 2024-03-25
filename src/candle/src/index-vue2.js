@@ -1,19 +1,18 @@
-import { candle } from './main'
-import {
-  name, version
-} from '../package.json'
+import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
 import { createChart } from '@v-charts2/core/vue2'
-import {
-  BarChart, CandlestickChart, LineChart
-} from 'echarts/charts'
-import {
-  DataZoomComponent, VisualMapComponent
-} from 'echarts/components'
-import {
-  echartsLib, logCopyRight
-} from '@v-charts2/core/utils'
+import { BarChart, CandlestickChart, LineChart } from 'echarts/charts'
+import { DataZoomComponent, VisualMapComponent } from 'echarts/components'
 
-echartsLib.use([LineChart, BarChart, CandlestickChart, DataZoomComponent, VisualMapComponent])
+import { candle } from './main'
+import { name, version } from '../package.json'
+
+echartsLib.use([
+  LineChart,
+  BarChart,
+  CandlestickChart,
+  DataZoomComponent,
+  VisualMapComponent
+])
 
 const VeCandle = Object.assign({}, createChart, {
   name: 'VeCandle',
@@ -23,7 +22,7 @@ const VeCandle = Object.assign({}, createChart, {
   }
 })
 
-VeCandle.install = (Vue) => {
+VeCandle.install = Vue => {
   logCopyRight(name, version)
   Vue.component(VeCandle.name, VeCandle)
 }

@@ -1,8 +1,6 @@
-import { isArray } from 'utils-lite'
-import {
-  getFormated, itemPoint
-} from '@v-charts2/core/utils'
+import { getFormated, itemPoint } from '@v-charts2/core/utils'
 import { line } from '@v-charts2/line/main'
+import { isArray } from 'utils-lite'
 
 function getScatterLegend (dataLabels, legendName) {
   return {
@@ -19,7 +17,7 @@ function getScatterTooltip (args) {
     trigger: tooltipTrigger,
     formatter (item) {
       if (isArray(item)) {
-        return item.map((i) => getTooltipContent(i, args)).join('')
+        return item.map(i => getTooltipContent(i, args)).join('')
       } else {
         return getTooltipContent(item, args)
       }
@@ -28,12 +26,12 @@ function getScatterTooltip (args) {
 }
 
 function getTooltipContent (item, args) {
-  const {
-    labelMap, columns, dataType, digit
-  } = args
+  const { labelMap, columns, dataType, digit } = args
   const tpl = []
   const {
-    color, seriesName, data: { value }
+    color,
+    seriesName,
+    data: { value }
   } = item
   tpl.push(`${itemPoint(color)} ${seriesName}<br>`)
   value.forEach((d, i) => {
@@ -45,37 +43,30 @@ function getTooltipContent (item, args) {
 }
 
 function getScatterXAxis (args) {
-  const {
-    xAxisName, axisVisible, xAxisType, rows, dataLabels, dimension
-  } = args
+  const { xAxisName, axisVisible, xAxisType, rows, dataLabels, dimension } =
+    args
   const data = []
-  dataLabels.forEach((dataLabel) => {
+  dataLabels.forEach(dataLabel => {
     const itemData = rows[dataLabel]
-    itemData.forEach((item) => {
+    itemData.forEach(item => {
       const name = item[dimension]
       if (name && !~data.indexOf(name)) data.push(name)
     })
   })
 
-  return [{
-    type: xAxisType,
-    show: axisVisible,
-    name: xAxisName,
-    data
-  }]
+  return [
+    {
+      type: xAxisType,
+      show: axisVisible,
+      name: xAxisName,
+      data
+    }
+  ]
 }
 
 function getScatterYAxis (args) {
-  const {
-    min,
-    max,
-    scale,
-    yAxisName,
-    dataType,
-    metrics,
-    digit,
-    axisVisible
-  } = args
+  const { min, max, scale, yAxisName, dataType, metrics, digit, axisVisible } =
+    args
 
   return {
     type: 'value',
@@ -85,7 +76,11 @@ function getScatterYAxis (args) {
     max,
     axisTick: { show: false },
     name: yAxisName,
-    axisLabel: { formatter (val) { return getFormated(val, dataType[metrics[0]], digit) } }
+    axisLabel: {
+      formatter (val) {
+        return getFormated(val, dataType[metrics[0]], digit)
+      }
+    }
   }
 }
 
@@ -105,26 +100,29 @@ function getScatterSeries (args) {
     symbolOffset,
     cursor
   } = args
-  const extraMetrics = columns.filter((column) => {
+  const extraMetrics = columns.filter(column => {
     return !~metrics.indexOf(column) && column !== dimension
   })
   const numbers = []
-  dataLabels.forEach((dataLabel) => {
-    rows[dataLabel].forEach((row) => {
+  dataLabels.forEach(dataLabel => {
+    rows[dataLabel].forEach(row => {
       numbers.push(row[metrics[1]])
     })
   })
   const maxNum = Math.max.apply(null, numbers)
 
   const series = []
-  dataLabels.forEach((dataLabel) => {
+  dataLabels.forEach(dataLabel => {
     const result = []
     const itemData = rows[dataLabel]
-    itemData.forEach((item) => {
+    itemData.forEach(item => {
       const itemResult = { value: [] }
       itemResult.value.push(item[dimension], item[metrics[0]], item[metrics[1]])
-      extraMetrics.forEach((ext) => { itemResult.value.push(item[ext]) })
-      itemResult.symbolSize = symbolSize || (item[metrics[1]] / maxNum) * symbolSizeMax
+      extraMetrics.forEach(ext => {
+        itemResult.value.push(item[ext])
+      })
+      itemResult.symbolSize =
+        symbolSize || (item[metrics[1]] / maxNum) * symbolSizeMax
       result.push(itemResult)
     })
     series.push({
@@ -179,7 +177,7 @@ const scatter = (columns, rows, settings, extra) => {
     })
     const options = line(columns, rows, lineSettings, extra)
     if (!options || !options.series) return {}
-    options.series.forEach((item) => {
+    options.series.forEach(item => {
       Object.assign(item, {
         type: 'scatter',
         symbol,
@@ -194,19 +192,19 @@ const scatter = (columns, rows, settings, extra) => {
     return options
   }
 
-  const {
-    tooltipVisible, legendVisible
-  } = extra
+  const { tooltipVisible, legendVisible } = extra
   const dataLabels = Object.keys(rows)
 
   const legend = legendVisible && getScatterLegend(dataLabels, legendName)
-  const tooltip = tooltipVisible && getScatterTooltip({
-    tooltipTrigger,
-    labelMap,
-    columns,
-    dataType,
-    digit
-  })
+  const tooltip =
+    tooltipVisible &&
+    getScatterTooltip({
+      tooltipTrigger,
+      labelMap,
+      columns,
+      dataType,
+      digit
+    })
   const xAxis = getScatterXAxis({
     xAxisName,
     axisVisible,
@@ -241,7 +239,11 @@ const scatter = (columns, rows, settings, extra) => {
     cursor
   })
   return {
-    legend, tooltip, xAxis, yAxis, series
+    legend,
+    tooltip,
+    xAxis,
+    yAxis,
+    series
   }
 }
 

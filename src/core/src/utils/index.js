@@ -1,8 +1,7 @@
-import {
-  name, version
-} from '../../package.json'
 import numerify from 'numerify'
 import { isFunction } from 'utils-lite'
+
+import { name, version } from '../../package.json'
 
 export const getFormated = (val, type, digit, defaultVal = '-') => {
   if (isNaN(val)) return defaultVal
@@ -13,30 +12,30 @@ export const getFormated = (val, type, digit, defaultVal = '-') => {
   const digitStr = `.[${new Array(digit).join(0)}]`
   let formatter = type
   switch (type) {
-  case 'KMB':
-    formatter = digit ? `0,0${digitStr}a` : '0,0a'
-    break
-  case 'normal':
-    formatter = digit ? `0,0${digitStr}` : '0,0'
-    break
-  case 'percent':
-    formatter = digit ? `0,0${digitStr}%` : '0,0.[00]%'
-    break
+    case 'KMB':
+      formatter = digit ? `0,0${digitStr}a` : '0,0a'
+      break
+    case 'normal':
+      formatter = digit ? `0,0${digitStr}` : '0,0'
+      break
+    case 'percent':
+      formatter = digit ? `0,0${digitStr}%` : '0,0.[00]%'
+      break
   }
   return numerify(val, formatter)
 }
 
-export const getStackMap = (stack) => {
+export const getStackMap = stack => {
   const stackMap = {}
-  Object.keys(stack).forEach((item) => {
-    stack[item].forEach((name) => {
+  Object.keys(stack).forEach(item => {
+    stack[item].forEach(name => {
       stackMap[name] = item
     })
   })
   return stackMap
 }
 
-export const $get = (url) => {
+export const $get = url => {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest()
     xhr.open('GET', url)
@@ -60,7 +59,7 @@ export const getMapJSON = ({
 }) => {
   const link = positionJsonLink || `${mapURLProfix}${position}.json`
   if (!mapPromise[link]) {
-    mapPromise[link] = $get(link).then((res) => {
+    mapPromise[link] = $get(link).then(res => {
       if (beforeRegisterMapOnce) res = beforeRegisterMapOnce(res)
       return res
     })
@@ -73,7 +72,7 @@ let amapPromise = null
 
 export const getBmap = (key, v) => {
   if (!bmapPromise) {
-    bmapPromise = new Promise((resolve) => {
+    bmapPromise = new Promise(resolve => {
       const callbackName = `bmap${Date.now()}`
       window[callbackName] = resolve
       const script = document.createElement('script')
@@ -91,7 +90,7 @@ export const getBmap = (key, v) => {
 
 export const getAmap = (key, v) => {
   if (!amapPromise) {
-    amapPromise = new Promise((resolve) => {
+    amapPromise = new Promise(resolve => {
       const callbackName = `amap${Date.now()}`
       window[callbackName] = resolve
       const script = document.createElement('script')
@@ -117,6 +116,7 @@ export function setArrayValue (arr, index, value) {
 
 export function logCopyRight (packageName, packageVersion) {
   console.log(
+    // eslint-disable-next-line max-len
     `\n %c author %c vxhly %c %c email %c <pengchengou@gmail.com> %c \n\n %c ${name} %c v${version} %c %c ${packageName} %c v${packageVersion}  \n`,
     'color: #fff; background: #5A5A5A; padding:5px;',
     'color: #fff; background: #4FC921; padding:5px;',

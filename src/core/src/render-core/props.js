@@ -98,7 +98,7 @@ export const props = {
   renderer: {
     type: String,
     default: 'canvas',
-    validator: (val) => {
+    validator: val => {
       return ['svg', 'canvas'].indexOf(val) > -1
     }
   }

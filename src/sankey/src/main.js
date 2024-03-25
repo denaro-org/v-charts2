@@ -1,20 +1,12 @@
-import {
-  getFormated, itemPoint
-} from '@v-charts2/core/utils'
+import { getFormated, itemPoint } from '@v-charts2/core/utils'
 
 function getTooltip (args) {
-  const {
-    itemDataType,
-    linksDataType,
-    digit
-  } = args
+  const { itemDataType, linksDataType, digit } = args
   return {
     trigger: 'item',
     formatter (item) {
       const tpl = []
-      const {
-        name, data, value, color
-      } = item
+      const { name, data, value, color } = item
       tpl.push(itemPoint(color))
       tpl.push(`${name} : `)
       if (data && data.source) {
@@ -40,19 +32,20 @@ function getSeries (args) {
     lineStyle
   } = args
   const dataMap = {}
-  const seriesData = rows.map((row) => {
+  const seriesData = rows.map(row => {
     dataMap[row[dimension]] = row[metrics]
     return {
-      name: row[dimension], value: row[metrics]
+      name: row[dimension],
+      value: row[metrics]
     }
   })
   let innerLinks = null
   if (useDataValue) {
-    innerLinks = links.map((link) => {
+    innerLinks = links.map(link => {
       return Object.assign({}, link, { value: dataMap[link.target] })
     })
   } else if (!valueFull) {
-    innerLinks = links.map((link) => {
+    innerLinks = links.map(link => {
       return link.value == null
         ? Object.assign({}, link, { value: dataMap[link.target] })
         : link
@@ -110,6 +103,7 @@ export const sankey = (columns, rows, settings, extra) => {
     lineStyle
   })
   return {
-    tooltip, series
+    tooltip,
+    series
   }
 }

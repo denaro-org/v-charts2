@@ -1,44 +1,24 @@
-import {
-  isArray,
-  isObject
-} from 'utils-lite'
-
 import { getFormated } from '@v-charts2/core/utils'
+import { isArray, isObject } from 'utils-lite'
 
 function getTooltip (args) {
-  const {
-    tooltipFormatter,
-    dataType,
-    digit
-  } = args
+  const { tooltipFormatter, dataType, digit } = args
 
   return {
     show: true,
     formatter (options) {
-      const {
-        seriesName,
-        value
-      } = options
+      const { seriesName, value } = options
       if (tooltipFormatter) {
         return tooltipFormatter.apply(null, arguments)
       }
 
-      return [
-        `${seriesName}: `,
-        getFormated(value, dataType, digit)
-      ].join('')
+      return [`${seriesName}: `, getFormated(value, dataType, digit)].join('')
     }
   }
 }
 
 function getSeries (args) {
-  const {
-    dimension,
-    metrics,
-    seriesMap,
-    rows,
-    wave
-  } = args
+  const { dimension, metrics, seriesMap, rows, wave } = args
 
   let itemWave = wave
   const len = isArray(seriesMap) ? seriesMap.length : 0
@@ -64,12 +44,17 @@ function getSeries (args) {
     // 根据传入的数据(rows)和额外配置(seriesMap)的数据组合data
     data.push({ value: val })
     if (itemWave && itemWave.length) {
-      data = data.concat(itemWave.map((val) => ({ value: val })))
+      data = data.concat(itemWave.map(val => ({ value: val })))
     }
 
-    result = Object.assign(result, {
-      data, name
-    }, itemMap)
+    result = Object.assign(
+      result,
+      {
+        data,
+        name
+      },
+      itemMap
+    )
     return result
   })
 }
@@ -84,16 +69,15 @@ export const liquidfill = (columns, rows, settings, extra) => {
     wave = []
   } = settings
 
-  const {
-    tooltipVisible,
-    tooltipFormatter
-  } = extra
+  const { tooltipVisible, tooltipFormatter } = extra
 
-  const tooltip = tooltipVisible && getTooltip({
-    tooltipFormatter,
-    dataType,
-    digit
-  })
+  const tooltip =
+    tooltipVisible &&
+    getTooltip({
+      tooltipFormatter,
+      dataType,
+      digit
+    })
   const series = getSeries({
     rows,
     columns,

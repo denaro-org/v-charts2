@@ -1,9 +1,8 @@
-import { wordcloud } from './main'
-import {
-  name, version
-} from '../package.json'
-import { createChart } from '@v-charts2/core/vue2'
 import { logCopyRight } from '@v-charts2/core/utils'
+import { createChart } from '@v-charts2/core/vue2'
+
+import { wordcloud } from './main'
+import { name, version } from '../package.json'
 import 'echarts-wordcloud'
 
 const VeWordcloud = Object.assign({}, createChart, {
@@ -14,7 +13,7 @@ const VeWordcloud = Object.assign({}, createChart, {
   }
 })
 
-VeWordcloud.install = (Vue) => {
+VeWordcloud.install = Vue => {
   logCopyRight(name, version)
   Vue.component(VeWordcloud.name, VeWordcloud)
 }

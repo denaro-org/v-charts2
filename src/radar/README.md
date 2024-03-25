@@ -32,9 +32,9 @@ npm install @v-charts2/radar
 > 传统的 webpack4.x 没有 Tree Shaking 的支持, 如果你想引入 `@v-charts2/radar/vue2` 或者 `@v-charts2/radar/vue3` 的话, 可能会报错
 
 ```javascript
-import Vue from "vue";
-import VeRadar from "@v-charts2/radar"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
-Vue.use(VeRadar);
+import Vue from 'vue'
+import VeRadar from '@v-charts2/radar' // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
+Vue.use(VeRadar)
 ```
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
@@ -42,18 +42,18 @@ Vue.use(VeRadar);
 - Vue 2.x
 
 ```javascript
-import Vue from "vue";
-import VeRadar from "@v-charts2/radar/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
-import "@v-charts2/radar/v-charts.css"; // 需要手动引入样式
-Vue.use(VeRadar);
+import Vue from 'vue'
+import VeRadar from '@v-charts2/radar/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
+import '@v-charts2/radar/v-charts.css' // 需要手动引入样式
+Vue.use(VeRadar)
 ```
 
 - Vue 3.x
 
 ```javascript
-import { createApp } from "vue";
-const app = createApp();
-import VeRadar from "@v-charts2/radar/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
-import "@v-charts2/radar/v-charts.css"; // 需要手动引入样式
-app.use(VeRadar);
+import { createApp } from 'vue'
+const app = createApp()
+import VeRadar from '@v-charts2/radar/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
+import '@v-charts2/radar/v-charts.css' // 需要手动引入样式
+app.use(VeRadar)
 ```

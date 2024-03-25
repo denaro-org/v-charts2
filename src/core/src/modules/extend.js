@@ -1,9 +1,7 @@
-import {
-  isArray, isObject, set
-} from 'utils-lite'
+import { isArray, isObject, set } from 'utils-lite'
 
 export default function (options, extend) {
-  Object.keys(extend).forEach((attr) => {
+  Object.keys(extend).forEach(attr => {
     const value = extend[attr]
     if (~attr.indexOf('.')) {
       // eg: a.b.c a.1.b

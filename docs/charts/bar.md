@@ -2,8 +2,8 @@
 
 ## 下载和安装
 
-::: tip 
-当你不想全部导入所有的图表时请执行以下操作, 安装你想要的图表即可 
+::: tip
+当你不想全部导入所有的图表时请执行以下操作, 安装你想要的图表即可
 :::
 
 ### 下载
@@ -23,9 +23,9 @@ npm install @v-charts2/bar
 :::
 
 ```javascript
-import Vue from "vue";
-import VeBar from "@v-charts2/bar"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
-Vue.use(VeBar);
+import Vue from 'vue'
+import VeBar from '@v-charts2/bar' // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
+Vue.use(VeBar)
 ```
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
@@ -33,20 +33,20 @@ Vue.use(VeBar);
 - Vue 2.x
 
 ```javascript
-import Vue from "vue";
-import VeBar from "@v-charts2/bar/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
-import "@v-charts2/bar/v-charts.css"; // 需要手动引入样式
-Vue.use(VeBar);
+import Vue from 'vue'
+import VeBar from '@v-charts2/bar/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
+import '@v-charts2/bar/v-charts.css' // 需要手动引入样式
+Vue.use(VeBar)
 ```
 
 - Vue 3.x
 
 ```javascript
-import { createApp } from "vue";
-const app = createApp();
-import VeBar from "@v-charts2/bar/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
-import "@v-charts2/bar/v-charts.css"; // 需要手动引入样式
-app.use(VeBar);
+import { createApp } from 'vue'
+const app = createApp()
+import VeBar from '@v-charts2/bar/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
+import '@v-charts2/bar/v-charts.css' // 需要手动引入样式
+app.use(VeBar)
 ```
 
 ## DEMO
@@ -62,7 +62,7 @@ app.use(VeBar);
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       chartData: {
         columns: ['日期', '访问用户', '下单用户', '下单率'],
@@ -119,15 +119,12 @@ export default {
 
 ```vue
 <template>
-  <ve-bar
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-bar :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = {
       dimension: ['日期'],
       metrics: ['访问用户']
@@ -188,15 +185,12 @@ export default {
 
 ```vue
 <template>
-  <ve-bar
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-bar :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = {
       metrics: ['访问用户'],
       dataOrder: {
@@ -260,15 +254,12 @@ export default {
 
 ```vue
 <template>
-  <ve-bar
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-bar :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = {
       xAxisType: ['KMB', 'KMB'],
       xAxisName: ['下单用户', '访问用户'],
@@ -324,15 +315,12 @@ export default {
 
 ```vue
 <template>
-  <ve-bar
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-bar :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = {
       labelMap: {
         PV: '访问用户',
@@ -396,15 +384,12 @@ export default {
 
 ```vue
 <template>
-  <ve-bar
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-bar :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = { stack: { xxx: ['访问用户', '下单用户'] } }
     return {
       chartData: {
@@ -462,15 +447,12 @@ export default {
 
 ```vue
 <template>
-  <ve-bar
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-bar :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = { yAxisType: 'value' }
     return {
       chartData: {
@@ -512,25 +494,25 @@ export default {
 
 ## settings 配置项
 
-| 配置项 | 简介 | 类型 | 备注 |
-| --- | --- | --- | --- |
-| dimension | 维度 | array | 默认 columns 第一项为维度 |
-| metrics | 指标 | array | 默认 columns 第二项起为指标 |
-| xAxisType | 上下坐标轴数据类型 | array | 可选值: KMB, normal, percent |
-| xAxisName | 上下坐标轴标题 | array | - |
-| axisSite | 指标所在的轴 | object | 默认不在 top 轴的指标都在 bottom 轴 |
-| stack | 堆叠选项 | object | - |
-| digit | 设置数据类型为 percent 时保留的位数 | number | 默认为 2 |
-| dataOrder | 设置数据排序方式 | boolean, object | 默认为 false |
-| scale | 是否是脱离 0 值比例 | array | 默认为[false, false], 表示上下两个轴都不会脱离 0 值比例。设置成 true 后坐标刻度不会强制包含零刻度 |
-| min | 上下坐标轴最小值 | array | - |
-| max | 上下坐标轴最大值 | array | - |
-| labelMap | 设置指标的别名, 同时作用于提示框和图例 | object | - |
-| legendName | 设置图表上方图例的别名 | object | - |
-| label | 设置图形上的文本标签 | object | 内容参考[文档](https://echarts.apache.org/zh/option.html#series-bar.label) |
-| itemStyle | 图形样式 | object | 内容参考[文档](https://echarts.apache.org/zh/option.html#series-bar.itemStyle) |
-| yAxisType | 纵轴的类型 | string | 可选值'category', 'value', 默认为'category' |
-| opacity | 透明度 | number | - |
+| 配置项     | 简介                                   | 类型            | 备注                                                                                              |
+| ---------- | -------------------------------------- | --------------- | ------------------------------------------------------------------------------------------------- |
+| dimension  | 维度                                   | array           | 默认 columns 第一项为维度                                                                         |
+| metrics    | 指标                                   | array           | 默认 columns 第二项起为指标                                                                       |
+| xAxisType  | 上下坐标轴数据类型                     | array           | 可选值: KMB, normal, percent                                                                      |
+| xAxisName  | 上下坐标轴标题                         | array           | -                                                                                                 |
+| axisSite   | 指标所在的轴                           | object          | 默认不在 top 轴的指标都在 bottom 轴                                                               |
+| stack      | 堆叠选项                               | object          | -                                                                                                 |
+| digit      | 设置数据类型为 percent 时保留的位数    | number          | 默认为 2                                                                                          |
+| dataOrder  | 设置数据排序方式                       | boolean, object | 默认为 false                                                                                      |
+| scale      | 是否是脱离 0 值比例                    | array           | 默认为[false, false], 表示上下两个轴都不会脱离 0 值比例。设置成 true 后坐标刻度不会强制包含零刻度 |
+| min        | 上下坐标轴最小值                       | array           | -                                                                                                 |
+| max        | 上下坐标轴最大值                       | array           | -                                                                                                 |
+| labelMap   | 设置指标的别名, 同时作用于提示框和图例 | object          | -                                                                                                 |
+| legendName | 设置图表上方图例的别名                 | object          | -                                                                                                 |
+| label      | 设置图形上的文本标签                   | object          | 内容参考[文档](https://echarts.apache.org/zh/option.html#series-bar.label)                        |
+| itemStyle  | 图形样式                               | object          | 内容参考[文档](https://echarts.apache.org/zh/option.html#series-bar.itemStyle)                    |
+| yAxisType  | 纵轴的类型                             | string          | 可选值'category', 'value', 默认为'category'                                                       |
+| opacity    | 透明度                                 | number          | -                                                                                                 |
 
 > 备注 1. axisSite 可以设置 top 和 bottom, 例如示例所示 `axisSite: { top: ['占比'] }` 即将占比的数据置于上轴上。
 

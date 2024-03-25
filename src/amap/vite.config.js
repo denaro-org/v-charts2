@@ -1,8 +1,9 @@
-import pkg from './package.json'
+import { resolve } from 'path'
+import copy from 'rollup-plugin-copy'
 import { defineConfig } from 'vite'
 import Banner from 'vite-plugin-banner'
-import copy from 'rollup-plugin-copy'
-import { resolve } from 'path'
+
+import pkg from './package.json'
 
 export default ({ mode }) => {
   return defineConfig({
@@ -13,10 +14,12 @@ export default ({ mode }) => {
       copy({
         targets: [
           {
-            src: '../core/src/style', dest: 'lib'
+            src: '../core/src/style',
+            dest: 'lib'
           },
           {
-            src: 'src/index.js', dest: 'lib'
+            src: 'src/index.js',
+            dest: 'lib'
           }
         ],
         verbose: true
@@ -27,7 +30,10 @@ export default ({ mode }) => {
       lib: {
         emptyOutDir: true,
         formats: ['es', 'umd', 'iife'],
-        entry: resolve(__dirname, `src/index-${mode === 'vue3' ? 'vue3' : 'vue2'}.js`),
+        entry: resolve(
+          __dirname,
+          `src/index-${mode === 'vue3' ? 'vue3' : 'vue2'}.js`
+        ),
         name: '@v-charts2/amap',
         fileName: 'v-charts.amap'
       },

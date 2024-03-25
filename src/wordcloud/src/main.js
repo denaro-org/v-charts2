@@ -1,35 +1,32 @@
 import { isArray } from 'utils-lite'
 
 function getSeries (args) {
-  const {
-    dimension,
-    metrics,
-    rows,
-    color,
-    sizeMax,
-    sizeMin,
-    shape
-  } = args
+  const { dimension, metrics, rows, color, sizeMax, sizeMin, shape } = args
 
   const baseType = {
     type: 'wordCloud',
     textStyle: {
-      color: !isArray(color) && !!color
-        ? color
-        : () => {
-          return 'rgb(' + [
-            Math.round(Math.random() * 160),
-            Math.round(Math.random() * 160),
-            Math.round(Math.random() * 160)
-          ].join(',') + ')'
-        }
+      color:
+        !isArray(color) && !!color
+          ? color
+          : () => {
+              return (
+                'rgb(' +
+                [
+                  Math.round(Math.random() * 160),
+                  Math.round(Math.random() * 160),
+                  Math.round(Math.random() * 160)
+                ].join(',') +
+                ')'
+              )
+            }
     },
     shape,
     sizeRange: [sizeMin, sizeMax]
   }
 
   const len = isArray(color) ? color.length : 0
-  const data = rows.slice().map((row) => {
+  const data = rows.slice().map(row => {
     const text = {
       name: row[dimension],
       value: row[metrics]
@@ -53,10 +50,7 @@ function getTooltip (args) {
     show: true,
     formatter (params) {
       const {
-        data: {
-          name,
-          value
-        }
+        data: { name, value }
       } = params
 
       if (tooltipFormatter) {
@@ -78,13 +72,16 @@ export const wordcloud = (columns, rows, settings, extra) => {
     shape = 'circle'
   } = settings
 
-  const {
-    tooltipVisible,
-    tooltipFormatter
-  } = extra
+  const { tooltipVisible, tooltipFormatter } = extra
 
   const series = getSeries({
-    dimension, metrics, rows, color, sizeMax, sizeMin, shape
+    dimension,
+    metrics,
+    rows,
+    color,
+    sizeMax,
+    sizeMin,
+    shape
   })
   const tooltip = tooltipVisible && getTooltip({ tooltipFormatter })
 

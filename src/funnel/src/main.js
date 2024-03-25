@@ -1,6 +1,4 @@
-import {
-  getFormated, itemPoint
-} from '@v-charts2/core/utils'
+import { getFormated, itemPoint } from '@v-charts2/core/utils'
 
 function getFunnelTooltip (dataType, digit) {
   return {
@@ -8,16 +6,16 @@ function getFunnelTooltip (dataType, digit) {
     formatter (item) {
       const tpl = []
       tpl.push(itemPoint(item.color))
-      tpl.push(`${item.name}: ${getFormated(item.data.realValue, dataType, digit)}`)
+      tpl.push(
+        `${item.name}: ${getFormated(item.data.realValue, dataType, digit)}`
+      )
       return tpl.join('')
     }
   }
 }
 
 function getFunnelLegend (args) {
-  const {
-    data, legendName
-  } = args
+  const { data, legendName } = args
   return {
     data,
     formatter (name) {
@@ -45,7 +43,7 @@ function getFunnelSeries (args) {
   })
 
   if (filterZero) {
-    innerRows = innerRows.filter((row) => {
+    innerRows = innerRows.filter(row => {
       return row[metrics]
     })
   }
@@ -62,13 +60,16 @@ function getFunnelSeries (args) {
   const step = 100 / innerRows.length
 
   if (falseFunnel && !useDefaultOrder) {
-    series.data = innerRows.slice().reverse().map((row, index) => ({
-      name: row[dimension],
-      value: (index + 1) * step,
-      realValue: row[metrics]
-    }))
+    series.data = innerRows
+      .slice()
+      .reverse()
+      .map((row, index) => ({
+        name: row[dimension],
+        value: (index + 1) * step,
+        realValue: row[metrics]
+      }))
   } else {
-    series.data = innerRows.map((row) => ({
+    series.data = innerRows.map(row => ({
       name: row[dimension],
       value: row[metrics],
       realValue: row[metrics]
@@ -88,7 +89,7 @@ export const funnel = (outerColumns, outerRows, settings, extra) => {
   const {
     dataType = 'normal',
     dimension = columns[0],
-    sequence = rows.map((row) => row[dimension]),
+    sequence = rows.map(row => row[dimension]),
     digit = 2,
     ascending,
     label,
@@ -98,9 +99,7 @@ export const funnel = (outerColumns, outerRows, settings, extra) => {
     filterZero,
     useDefaultOrder
   } = settings
-  const {
-    tooltipVisible, legendVisible
-  } = extra
+  const { tooltipVisible, legendVisible } = extra
   let metrics
   if (settings.metrics) {
     metrics = settings.metrics
@@ -111,9 +110,12 @@ export const funnel = (outerColumns, outerRows, settings, extra) => {
   }
 
   const tooltip = tooltipVisible && getFunnelTooltip(dataType, digit)
-  const legend = legendVisible && getFunnelLegend({
-    data: sequence, legendName
-  })
+  const legend =
+    legendVisible &&
+    getFunnelLegend({
+      data: sequence,
+      legendName
+    })
   const series = getFunnelSeries({
     dimension,
     metrics,
@@ -127,7 +129,9 @@ export const funnel = (outerColumns, outerRows, settings, extra) => {
     useDefaultOrder
   })
   const options = {
-    tooltip, legend, series
+    tooltip,
+    legend,
+    series
   }
   return options
 }

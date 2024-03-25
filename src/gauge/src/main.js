@@ -2,17 +2,12 @@ import { getFormated } from '@v-charts2/core/utils'
 import { isObject } from 'utils-lite'
 
 function getTooltip (args) {
-  const {
-    tooltipFormatter, dataType, digit
-  } = args
+  const { tooltipFormatter, dataType, digit } = args
   return {
     formatter (options) {
       const {
         seriesName,
-        data: {
-          value,
-          name
-        }
+        data: { value, name }
       } = options
       if (tooltipFormatter) {
         return tooltipFormatter.apply(null, arguments)
@@ -37,7 +32,7 @@ function getSeries (args) {
     dataName
   } = args
 
-  const series = rows.map((row) => {
+  const series = rows.map(row => {
     const label = row[dimension]
     const seriesItem = seriesMap[label]
     const result = {
@@ -62,7 +57,7 @@ function getSeries (args) {
     }
 
     if (seriesItem) {
-      Object.keys(seriesItem).forEach((key) => {
+      Object.keys(seriesItem).forEach(key => {
         if (isObject(result[key])) {
           Object.assign(result[key], seriesItem[key])
         } else {
@@ -88,14 +83,14 @@ export const gauge = (columns, rows, settings, extra) => {
     dataName = {}
   } = settings
 
-  const {
-    tooltipFormatter, tooltipVisible
-  } = extra
+  const { tooltipFormatter, tooltipVisible } = extra
 
-  const tooltip = tooltipVisible && getTooltip({
-    tooltipFormatter,
-    dataType
-  })
+  const tooltip =
+    tooltipVisible &&
+    getTooltip({
+      tooltipFormatter,
+      dataType
+    })
 
   const series = getSeries({
     rows,
@@ -108,6 +103,7 @@ export const gauge = (columns, rows, settings, extra) => {
     dataName
   })
   return {
-    tooltip, series
+    tooltip,
+    series
   }
 }

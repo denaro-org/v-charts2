@@ -48,7 +48,7 @@ export const HEAT_MAP_COLOR = [
 
 export const HEAT_BMAP_COLOR = ['blue', 'blue', 'green', 'yellow', 'red']
 
-export const itemPoint = (color) => {
+export const itemPoint = color => {
   return [
     '<span style="',
     `background-color:${color};`,

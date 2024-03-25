@@ -4,8 +4,8 @@
 
 ## 下载和安装
 
-::: tip 
-当你不想全部导入所有的图表时请执行以下操作, 安装你想要的图表即可 
+::: tip
+当你不想全部导入所有的图表时请执行以下操作, 安装你想要的图表即可
 :::
 
 ### 下载
@@ -25,9 +25,9 @@ npm install @v-charts2/amap
 :::
 
 ```javascript
-import Vue from "vue";
-import VeAmap from "@v-charts2/amap"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
-Vue.use(VeAmap);
+import Vue from 'vue'
+import VeAmap from '@v-charts2/amap' // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
+Vue.use(VeAmap)
 ```
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
@@ -35,20 +35,20 @@ Vue.use(VeAmap);
 - Vue 2.x
 
 ```javascript
-import Vue from "vue";
-import VeAmap from "@v-charts2/amap/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
-import "@v-charts2/amap/v-charts.css"; // 需要手动引入样式
-Vue.use(VeAmap);
+import Vue from 'vue'
+import VeAmap from '@v-charts2/amap/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
+import '@v-charts2/amap/v-charts.css' // 需要手动引入样式
+Vue.use(VeAmap)
 ```
 
 - Vue 3.x
 
 ```javascript
-import { createApp } from "vue";
-const app = createApp();
-import VeAmap from "@v-charts2/amap/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
-import "@v-charts2/amap/v-charts.css"; // 需要手动引入样式
-app.use(VeAmap);
+import { createApp } from 'vue'
+const app = createApp()
+import VeAmap from '@v-charts2/amap/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
+import '@v-charts2/amap/v-charts.css' // 需要手动引入样式
+app.use(VeAmap)
 ```
 
 ## DEMO
@@ -62,13 +62,12 @@ app.use(VeAmap);
   <ve-amap
     :settings="chartSettings"
     :series="chartSeries"
-    :tooltip="chartTooltip"
-  />
+    :tooltip="chartTooltip" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = {
       key: '4b5f2cf2cba25200cc6b68c398468899',
       v: '1.4.3',
@@ -99,9 +98,9 @@ export default {
 
 ## settings 配置项
 
-| 配置项 | 简介 | 类型 | 备注 |
-| --- | --- | --- | --- |
-| key | 高德地图 access_key | string | 可[由此](https://console.amap.com/dev/key/app)获取 |
-| v | 高德地图版本 | string | 默认1.4.3(高德) |
-| amap | 高德地图配置项 | object | 参考高德地图文档配置 |
-| useOuterMap | 使用全局的地图依赖 | boolean | - |
+| 配置项      | 简介                | 类型    | 备注                                               |
+| ----------- | ------------------- | ------- | -------------------------------------------------- |
+| key         | 高德地图 access_key | string  | 可[由此](https://console.amap.com/dev/key/app)获取 |
+| v           | 高德地图版本        | string  | 默认1.4.3(高德)                                    |
+| amap        | 高德地图配置项      | object  | 参考高德地图文档配置                               |
+| useOuterMap | 使用全局的地图依赖  | boolean | -                                                  |

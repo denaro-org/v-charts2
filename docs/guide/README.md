@@ -23,9 +23,9 @@ pnpm add @v-charts2/chart
 :::
 
 ```javascript
-import Vue from "vue";
-import VeChart from "@v-charts2/chart"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
-Vue.use(VeChart);
+import Vue from 'vue'
+import VeChart from '@v-charts2/chart' // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
+Vue.use(VeChart)
 ```
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
@@ -33,20 +33,20 @@ Vue.use(VeChart);
 - Vue 2.x
 
 ```javascript
-import Vue from "vue";
-import VeChart from "@v-charts2/chart/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
-import "@v-charts2/chart/v-charts.css"; // 需要手动引入样式
-Vue.use(VeChart);
+import Vue from 'vue'
+import VeChart from '@v-charts2/chart/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
+import '@v-charts2/chart/v-charts.css' // 需要手动引入样式
+Vue.use(VeChart)
 ```
 
 - Vue 3.x
 
 ```javascript
-import { createApp } from "vue";
-const app = createApp();
-import VeChart from "@v-charts2/chart/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
-import "@v-charts2/chart/v-charts.css"; // 需要手动引入样式
-app.use(VeChart);
+import { createApp } from 'vue'
+const app = createApp()
+import VeChart from '@v-charts2/chart/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
+import '@v-charts2/chart/v-charts.css' // 需要手动引入样式
+app.use(VeChart)
 ```
 
 ### 按需引入

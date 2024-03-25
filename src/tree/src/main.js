@@ -1,11 +1,8 @@
 import { isObject } from 'utils-lite'
 
 function getTreeLegend (args) {
-  const {
-    dimension,
-    rows
-  } = args
-  const result = rows.map((row) => row[dimension])
+  const { dimension, rows } = args
+  const result = rows.map(row => row[dimension])
   return { data: result }
 }
 
@@ -20,15 +17,10 @@ function getTreeTooltip (args) {
 }
 
 function getTreeSeries (args) {
-  const {
-    dimension,
-    metrics,
-    rows,
-    seriesMap
-  } = args
+  const { dimension, metrics, rows, seriesMap } = args
 
   const series = []
-  rows.forEach((row) => {
+  rows.forEach(row => {
     const label = row[dimension]
     const seriesItem = seriesMap[label]
     const result = {
@@ -37,7 +29,7 @@ function getTreeSeries (args) {
       data: row[metrics]
     }
     if (seriesMap[row[dimension]]) {
-      Object.keys(seriesItem).forEach((key) => {
+      Object.keys(seriesItem).forEach(key => {
         if (isObject(result[key])) {
           Object.assign(result[key], seriesItem[key])
         } else {
@@ -58,9 +50,7 @@ export const tree = (columns, rows, settings, extra) => {
     seriesMap = {}
   } = settings
 
-  const {
-    legendVisible, tooltipFormatter, tooltipVisible
-  } = extra
+  const { legendVisible, tooltipFormatter, tooltipVisible } = extra
 
   const series = getTreeSeries({
     dimension,
@@ -68,12 +58,17 @@ export const tree = (columns, rows, settings, extra) => {
     rows,
     seriesMap
   })
-  const legend = legendVisible && rows.length > 1 && getTreeLegend({
-    dimension,
-    rows
-  })
+  const legend =
+    legendVisible &&
+    rows.length > 1 &&
+    getTreeLegend({
+      dimension,
+      rows
+    })
   const tooltip = tooltipVisible && getTreeTooltip({ tooltipFormatter })
   return {
-    series, legend, tooltip
+    series,
+    legend,
+    tooltip
   }
 }

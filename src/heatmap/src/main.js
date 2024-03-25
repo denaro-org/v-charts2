@@ -1,10 +1,17 @@
 import {
-  HEAT_BMAP_COLOR, HEAT_MAP_COLOR, echartsLib, getAmap, getBmap, getFormated, getMapJSON, itemPoint
+  echartsLib,
+  getAmap,
+  getBmap,
+  getFormated,
+  getMapJSON,
+  HEAT_BMAP_COLOR,
+  HEAT_MAP_COLOR,
+  itemPoint
 } from '@v-charts2/core/utils'
 
 function getAxisList (rows, label) {
   const result = []
-  rows.forEach((row) => {
+  rows.forEach(row => {
     if (!~result.indexOf(row[label])) result.push(row[label])
   })
   return result
@@ -12,19 +19,26 @@ function getAxisList (rows, label) {
 
 function getData (args) {
   const {
-    rows, innerXAxisList, innerYAxisList, xDim, yDim, metrics, type, extraMetrics
+    rows,
+    innerXAxisList,
+    innerYAxisList,
+    xDim,
+    yDim,
+    metrics,
+    type,
+    extraMetrics
   } = args
   let result = null
   if (type === 'cartesian') {
-    result = rows.map((row) => {
+    result = rows.map(row => {
       const xIndex = innerXAxisList.indexOf(row[xDim])
       const yIndex = innerYAxisList.indexOf(row[yDim])
       const value = metrics ? row[metrics] : 1
-      const extraData = extraMetrics.map((m) => row[m] || '-')
+      const extraData = extraMetrics.map(m => row[m] || '-')
       return { value: [xIndex, yIndex, value].concat(extraData) }
     })
   } else {
-    result = rows.map((row) => {
+    result = rows.map(row => {
       const value = metrics ? row[metrics] : 1
       return { value: [row[xDim], row[yDim], value] }
     })
@@ -43,9 +57,7 @@ function getAxis (list, name) {
 }
 
 function getVisualMap (args) {
-  const {
-    innerMin: min, innerMax: max, type, heatColor, series
-  } = args
+  const { innerMin: min, innerMax: max, type, heatColor, series } = args
   const result = {
     min,
     max,
@@ -83,28 +95,41 @@ function getVisualMap (args) {
 
 function getSeries (args) {
   const { chartData } = args
-  return [{
-    type: 'heatmap',
-    data: chartData
-  }]
+  return [
+    {
+      type: 'heatmap',
+      data: chartData
+    }
+  ]
 }
 
 function getTooltip (args) {
   const {
-    dataType, innerXAxisList, innerYAxisList, digit, extraMetrics, metrics
+    dataType,
+    innerXAxisList,
+    innerYAxisList,
+    digit,
+    extraMetrics,
+    metrics
   } = args
 
   return {
     trigger: 'item',
     formatter ({
-      color, data: { value: [xDim, yDim, value, ...extraData] }
+      color,
+      data: {
+        value: [xDim, yDim, value, ...extraData]
+      }
     }) {
       const tpl = []
       tpl.push(`${innerXAxisList[xDim]} ~ ${innerYAxisList[yDim]}<br>`)
       extraMetrics.forEach((m, index) => {
         tpl.push(`${m}: ${extraData[index]}<br>`)
       })
-      tpl.push(`${itemPoint(color)} ${metrics}: ${getFormated(value, dataType, digit)}<br>`)
+      tpl.push(
+        // eslint-disable-next-line max-len
+        `${itemPoint(color)} ${metrics}: ${getFormated(value, dataType, digit)}<br>`
+      )
       return tpl.join('')
     }
   }
@@ -145,7 +170,7 @@ export const heatmap = (columns, rows, settings, status) => {
   // add extraMetrics prop for data which only display in tooltip
   const extraMetrics = []
   const mainColumn = dimension.concat([metrics])
-  columns.forEach((column) => {
+  columns.forEach(column => {
     if (!~mainColumn.indexOf(column)) extraMetrics.push(column)
   })
 
@@ -176,7 +201,7 @@ export const heatmap = (columns, rows, settings, status) => {
       extraMetrics
     })
   }
-  let metricsList = metrics ? rows.map((row) => row[metrics]) : [0, 5]
+  let metricsList = metrics ? rows.map(row => row[metrics]) : [0, 5]
   if (!metricsList.length) metricsList = [0]
   const innerMin = min || Math.min.apply(null, metricsList)
   const innerMax = max || Math.max.apply(null, metricsList)
@@ -185,26 +210,35 @@ export const heatmap = (columns, rows, settings, status) => {
   const yAxis = getAxis(innerYAxisList, yAxisName)
   const series = getSeries({ chartData })
   const visualMap = getVisualMap({
-    innerMin, innerMax, type, heatColor, series
+    innerMin,
+    innerMax,
+    type,
+    heatColor,
+    series
   })
-  const tooltip = tooltipVisible && getTooltip({
-    dataType,
-    innerXAxisList,
-    innerYAxisList,
-    digit,
-    extraMetrics,
-    metrics
-  })
+  const tooltip =
+    tooltipVisible &&
+    getTooltip({
+      dataType,
+      innerXAxisList,
+      innerYAxisList,
+      digit,
+      extraMetrics,
+      metrics
+    })
 
   const options = {
-    visualMap, series
+    visualMap,
+    series
   }
   if (type === 'bmap') {
     Object.assign(options.series[0], {
-      coordinateSystem: 'bmap', pointSize, blurSize
+      coordinateSystem: 'bmap',
+      pointSize,
+      blurSize
     })
 
-    return getBmap(key, v).then((_) => {
+    return getBmap(key, v).then(_ => {
       return Object.assign({ bmap }, options)
     })
   } else if (type === 'map') {
@@ -214,7 +248,7 @@ export const heatmap = (columns, rows, settings, status) => {
       positionJsonLink,
       beforeRegisterMapOnce,
       mapURLProfix
-    }).then((json) => {
+    }).then(json => {
       const geoAttr = Object.assign({ map: position }, geo)
       if (beforeRegisterMap) json = beforeRegisterMap(json)
       echartsLib.registerMap(position, json, specialAreas)
@@ -222,15 +256,22 @@ export const heatmap = (columns, rows, settings, status) => {
     })
   } else if (type === 'amap') {
     Object.assign(options.series[0], {
-      coordinateSystem: 'amap', pointSize, blurSize
+      coordinateSystem: 'amap',
+      pointSize,
+      blurSize
     })
 
-    return getAmap(key, v).then((_) => {
+    return getAmap(key, v).then(_ => {
       return Object.assign({ amap }, options)
     })
   } else {
-    return Object.assign({
-      xAxis, yAxis, tooltip
-    }, options)
+    return Object.assign(
+      {
+        xAxis,
+        yAxis,
+        tooltip
+      },
+      options
+    )
   }
 }

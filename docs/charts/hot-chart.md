@@ -4,8 +4,8 @@
 
 ## 下载和安装
 
-::: tip 
-当你不想全部导入所有的图表时请执行以下操作, 安装你想要的图表即可 
+::: tip
+当你不想全部导入所有的图表时请执行以下操作, 安装你想要的图表即可
 :::
 
 ### 下载
@@ -25,9 +25,9 @@ npm install @v-charts2/hot-chart
 :::
 
 ```javascript
-import Vue from "vue";
-import VeHotChart from "@v-charts2/hot-chart"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
-Vue.use(VeHotChart);
+import Vue from 'vue'
+import VeHotChart from '@v-charts2/hot-chart' // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
+Vue.use(VeHotChart)
 ```
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
@@ -35,20 +35,20 @@ Vue.use(VeHotChart);
 - Vue 2.x
 
 ```javascript
-import Vue from "vue";
-import VeHotChart from "@v-charts2/hot-chart/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
-import "@v-charts2/hot-chart/v-charts.css"; // 需要手动引入样式
-Vue.use(VeHotChart);
+import Vue from 'vue'
+import VeHotChart from '@v-charts2/hot-chart/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
+import '@v-charts2/hot-chart/v-charts.css' // 需要手动引入样式
+Vue.use(VeHotChart)
 ```
 
 - Vue 3.x
 
 ```javascript
-import { createApp } from "vue";
-const app = createApp();
-import VeHotChart from "@v-charts2/hot-chart/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
-import "@v-charts2/hot-chart/v-charts.css"; // 需要手动引入样式
-app.use(VeHotChart);
+import { createApp } from 'vue'
+const app = createApp()
+import VeHotChart from '@v-charts2/hot-chart/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
+import '@v-charts2/hot-chart/v-charts.css' // 需要手动引入样式
+app.use(VeHotChart)
 ```
 
 ## DEMO
@@ -60,19 +60,14 @@ app.use(VeHotChart);
 ```vue
 <template>
   <div>
-    <button @click="changeType">
-      切换图表类型
-    </button>
-    <ve-hot-chart
-      :data="chartData"
-      :settings="chartSettings"
-    />
+    <button @click="changeType">切换图表类型</button>
+    <ve-hot-chart :data="chartData" :settings="chartSettings" />
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.typeArr = ['line', 'histogram', 'pie']
     this.index = 0
     return {
@@ -80,22 +75,28 @@ export default {
         columns: ['日期', '访问用户'],
         rows: [
           {
-            日期: '1月1日', 访问用户: 1523
+            日期: '1月1日',
+            访问用户: 1523
           },
           {
-            日期: '1月2日', 访问用户: 1223
+            日期: '1月2日',
+            访问用户: 1223
           },
           {
-            日期: '1月3日', 访问用户: 2123
+            日期: '1月3日',
+            访问用户: 2123
           },
           {
-            日期: '1月4日', 访问用户: 4123
+            日期: '1月4日',
+            访问用户: 4123
           },
           {
-            日期: '1月5日', 访问用户: 3123
+            日期: '1月5日',
+            访问用户: 3123
           },
           {
-            日期: '1月6日', 访问用户: 7123
+            日期: '1月6日',
+            访问用户: 7123
           }
         ]
       },
@@ -105,7 +106,9 @@ export default {
   methods: {
     changeType: function () {
       this.index++
-      if (this.index >= this.typeArr.length) { this.index = 0 }
+      if (this.index >= this.typeArr.length) {
+        this.index = 0
+      }
       this.chartSettings = { type: this.typeArr[this.index] }
       console.log(this.chartSettings, '1111')
     }

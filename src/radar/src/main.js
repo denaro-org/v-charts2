@@ -1,9 +1,7 @@
-import {
-  getFormated, itemPoint
-} from '@v-charts2/core/utils'
+import { getFormated, itemPoint } from '@v-charts2/core/utils'
 
 function getRadarLegend (rows, dimension, legendName) {
-  const legendData = rows.map((row) => row[dimension])
+  const legendData = rows.map(row => row[dimension])
 
   return {
     data: legendData,
@@ -43,11 +41,9 @@ function getRadarSetting (rows, metrics, labelMap) {
     splitNumber: 5
   }
   const indicatorTemp = {}
-  rows.forEach((items) => {
-    metrics.forEach((item) => {
-      const key = labelMap[item] != null
-        ? labelMap[item]
-        : item
+  rows.forEach(items => {
+    metrics.forEach(item => {
+      const key = labelMap[item] != null ? labelMap[item] : item
       if (!indicatorTemp[key]) {
         indicatorTemp[key] = [items[item]]
       } else {
@@ -55,7 +51,7 @@ function getRadarSetting (rows, metrics, labelMap) {
       }
     })
   })
-  settingBase.indicator = Object.keys(indicatorTemp).map((key) => {
+  settingBase.indicator = Object.keys(indicatorTemp).map(key => {
     return {
       name: key,
       max: Math.max.apply(null, indicatorTemp[key])
@@ -82,16 +78,17 @@ function getRadarSeries (args) {
     radarIndexObj[name] = index
   })
 
-  const seriesData = rows.map((row) => {
+  const seriesData = rows.map(row => {
     const serieData = {
       value: [],
       name: row[dimension]
     }
-    Object.keys(row).forEach((key) => {
+    Object.keys(row).forEach(key => {
       if (~metrics.indexOf(key)) {
-        const k = labelMap[key] != null
-          ? radarIndexObj[labelMap[key]]
-          : radarIndexObj[key]
+        const k =
+          labelMap[key] != null
+            ? radarIndexObj[labelMap[key]]
+            : radarIndexObj[key]
         serieData.value[k] = row[key]
       }
     })
@@ -121,9 +118,7 @@ export const radar = (columns, rows, settings, extra) => {
     lineStyle,
     areaStyle
   } = settings
-  const {
-    tooltipVisible, legendVisible
-  } = extra
+  const { tooltipVisible, legendVisible } = extra
   let metrics = columns.slice()
   if (settings.metrics) {
     metrics = settings.metrics
@@ -145,7 +140,10 @@ export const radar = (columns, rows, settings, extra) => {
     areaStyle
   })
   const options = {
-    legend, tooltip, radar, series
+    legend,
+    tooltip,
+    radar,
+    series
   }
   return options
 }

@@ -2,8 +2,8 @@
 
 ## 下载和安装
 
-::: tip 
-当你不想全部导入所有的图表时请执行以下操作, 安装你想要的图表即可 
+::: tip
+当你不想全部导入所有的图表时请执行以下操作, 安装你想要的图表即可
 :::
 
 ### 下载
@@ -23,9 +23,9 @@ npm install @v-charts2/tree
 :::
 
 ```javascript
-import Vue from "vue";
-import VeTree from "@v-charts2/tree"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
-Vue.use(VeTree);
+import Vue from 'vue'
+import VeTree from '@v-charts2/tree' // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
+Vue.use(VeTree)
 ```
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
@@ -33,20 +33,20 @@ Vue.use(VeTree);
 - Vue 2.x
 
 ```javascript
-import Vue from "vue";
-import VeTree from "@v-charts2/tree/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
-import "@v-charts2/tree/v-charts.css"; // 需要手动引入样式
-Vue.use(VeTree);
+import Vue from 'vue'
+import VeTree from '@v-charts2/tree/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
+import '@v-charts2/tree/v-charts.css' // 需要手动引入样式
+Vue.use(VeTree)
 ```
 
 - Vue 3.x
 
 ```javascript
-import { createApp } from "vue";
-const app = createApp();
-import VeTree from "@v-charts2/tree/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
-import "@v-charts2/tree/v-charts.css"; // 需要手动引入样式
-app.use(VeTree);
+import { createApp } from 'vue'
+const app = createApp()
+import VeTree from '@v-charts2/tree/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
+import '@v-charts2/tree/v-charts.css' // 需要手动引入样式
+app.use(VeTree)
 ```
 
 ## DEMO
@@ -137,7 +137,7 @@ const treeData = {
   ]
 }
 export default {
-  data () {
+  data() {
     return {
       chartData: {
         columns: ['name', 'value'],
@@ -162,10 +162,7 @@ export default {
 
 ```vue
 <template>
-  <ve-tree
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-tree :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
@@ -245,7 +242,7 @@ const treeData = {
   ]
 }
 export default {
-  data () {
+  data() {
     this.chartSettings = {
       seriesMap: {
         tree1: {
@@ -290,10 +287,7 @@ export default {
 
 ```vue
 <template>
-  <ve-tree
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-tree :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
@@ -373,7 +367,7 @@ const treeData = {
   ]
 }
 export default {
-  data () {
+  data() {
     this.chartSettings = { seriesMap: { tree1: { layout: 'radial' } } }
     return {
       chartData: {
@@ -399,10 +393,7 @@ export default {
 
 ```vue
 <template>
-  <ve-tree
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-tree :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
@@ -482,7 +473,7 @@ const treeData = {
   ]
 }
 export default {
-  data () {
+  data() {
     this.chartSettings = { seriesMap: { tree1: { orient: 'vertical' } } }
     return {
       chartData: {
@@ -512,8 +503,7 @@ export default {
     :data="chartData"
     :extend="chartExtend"
     :tooltip-formatter="tooltipFormatter"
-    :settings="chartSettings"
-  />
+    :settings="chartSettings" />
 </template>
 
 <script>
@@ -593,7 +583,7 @@ const treeData = {
   ]
 }
 export default {
-  data () {
+  data() {
     this.chartSettings = {}
     this.chartExtend = { tooltip: { alwaysShowContent: true } }
     return {
@@ -609,7 +599,7 @@ export default {
     }
   },
   methods: {
-    tooltipFormatter (v) {
+    tooltipFormatter(v) {
       return [
         `${v.seriesName}: ${v.data.value}`,
         `<a target="_blank" href="${v.data.link}">${v.data.link}</a>`
@@ -624,10 +614,10 @@ export default {
 
 ## settings 配置项
 
-| 配置项 | 简介 | 类型 | 备注 |
-| --- | --- | --- | --- |
-| dimension | 维度 | string | 默认columns第一项为维度 |
-| metrics | 指标 | string | 默认columns第二项为指标 |
-| seriesMap | 附加到 series 中的设置 | object | - |
+| 配置项    | 简介                   | 类型   | 备注                    |
+| --------- | ---------------------- | ------ | ----------------------- |
+| dimension | 维度                   | string | 默认columns第一项为维度 |
+| metrics   | 指标                   | string | 默认columns第二项为指标 |
+| seriesMap | 附加到 series 中的设置 | object | -                       |
 
 > 备注1： 通过 seriesMap, 可以为每一个树设置样式, 具体样式的配置可以参考[文档](https://echarts.apache.org/zh/option.html#series-tree)

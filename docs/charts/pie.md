@@ -2,8 +2,8 @@
 
 ## 下载和安装
 
-::: tip 
-当你不想全部导入所有的图表时请执行以下操作, 安装你想要的图表即可 
+::: tip
+当你不想全部导入所有的图表时请执行以下操作, 安装你想要的图表即可
 :::
 
 ### 下载
@@ -23,9 +23,9 @@ npm install @v-charts2/pie
 :::
 
 ```javascript
-import Vue from "vue";
-import VePie from "@v-charts2/pie"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
-Vue.use(VePie);
+import Vue from 'vue'
+import VePie from '@v-charts2/pie' // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
+Vue.use(VePie)
 ```
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
@@ -33,20 +33,20 @@ Vue.use(VePie);
 - Vue 2.x
 
 ```javascript
-import Vue from "vue";
-import VePie from "@v-charts2/pie/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
-import "@v-charts2/pie/v-charts.css"; // 需要手动引入样式
-Vue.use(VePie);
+import Vue from 'vue'
+import VePie from '@v-charts2/pie/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
+import '@v-charts2/pie/v-charts.css' // 需要手动引入样式
+Vue.use(VePie)
 ```
 
 - Vue 3.x
 
 ```javascript
-import { createApp } from "vue";
-const app = createApp();
-import VePie from "@v-charts2/pie/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
-import "@v-charts2/pie/v-charts.css"; // 需要手动引入样式
-app.use(VePie);
+import { createApp } from 'vue'
+const app = createApp()
+import VePie from '@v-charts2/pie/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
+import '@v-charts2/pie/v-charts.css' // 需要手动引入样式
+app.use(VePie)
 ```
 
 ## DEMO
@@ -62,28 +62,34 @@ app.use(VePie);
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       chartData: {
         columns: ['日期', '访问用户'],
         rows: [
           {
-            日期: '1/1', 访问用户: 1393
+            日期: '1/1',
+            访问用户: 1393
           },
           {
-            日期: '1/2', 访问用户: 3530
+            日期: '1/2',
+            访问用户: 3530
           },
           {
-            日期: '1/3', 访问用户: 2923
+            日期: '1/3',
+            访问用户: 2923
           },
           {
-            日期: '1/4', 访问用户: 1723
+            日期: '1/4',
+            访问用户: 1723
           },
           {
-            日期: '1/5', 访问用户: 3792
+            日期: '1/5',
+            访问用户: 3792
           },
           {
-            日期: '1/6', 访问用户: 4593
+            日期: '1/6',
+            访问用户: 4593
           }
         ]
       }
@@ -101,15 +107,12 @@ export default {
 
 ```vue
 <template>
-  <ve-pie
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-pie :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = {
       dimension: '日期',
       metrics: '访问用户'
@@ -119,22 +122,28 @@ export default {
         columns: ['日期', '访问用户'],
         rows: [
           {
-            日期: '1/1', 访问用户: 1393
+            日期: '1/1',
+            访问用户: 1393
           },
           {
-            日期: '1/2', 访问用户: 3530
+            日期: '1/2',
+            访问用户: 3530
           },
           {
-            日期: '1/3', 访问用户: 2923
+            日期: '1/3',
+            访问用户: 2923
           },
           {
-            日期: '1/4', 访问用户: 1723
+            日期: '1/4',
+            访问用户: 1723
           },
           {
-            日期: '1/5', 访问用户: 3792
+            日期: '1/5',
+            访问用户: 3792
           },
           {
-            日期: '1/6', 访问用户: 4593
+            日期: '1/6',
+            访问用户: 4593
           }
         ]
       }
@@ -152,37 +161,40 @@ export default {
 
 ```vue
 <template>
-  <ve-pie
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-pie :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = { roseType: 'radius' }
     return {
       chartData: {
         columns: ['日期', '访问用户'],
         rows: [
           {
-            日期: '1/1', 访问用户: 1393
+            日期: '1/1',
+            访问用户: 1393
           },
           {
-            日期: '1/2', 访问用户: 3530
+            日期: '1/2',
+            访问用户: 3530
           },
           {
-            日期: '1/3', 访问用户: 2923
+            日期: '1/3',
+            访问用户: 2923
           },
           {
-            日期: '1/4', 访问用户: 1723
+            日期: '1/4',
+            访问用户: 1723
           },
           {
-            日期: '1/5', 访问用户: 3792
+            日期: '1/5',
+            访问用户: 3792
           },
           {
-            日期: '1/6', 访问用户: 4593
+            日期: '1/6',
+            访问用户: 4593
           }
         ]
       }
@@ -200,37 +212,40 @@ export default {
 
 ```vue
 <template>
-  <ve-pie
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-pie :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = { limitShowNum: 5 }
     return {
       chartData: {
         columns: ['日期', '访问用户'],
         rows: [
           {
-            日期: '1/1', 访问用户: 1393
+            日期: '1/1',
+            访问用户: 1393
           },
           {
-            日期: '1/2', 访问用户: 3530
+            日期: '1/2',
+            访问用户: 3530
           },
           {
-            日期: '1/3', 访问用户: 2923
+            日期: '1/3',
+            访问用户: 2923
           },
           {
-            日期: '1/4', 访问用户: 1723
+            日期: '1/4',
+            访问用户: 1723
           },
           {
-            日期: '1/5', 访问用户: 3792
+            日期: '1/5',
+            访问用户: 3792
           },
           {
-            日期: '1/6', 访问用户: 4593
+            日期: '1/6',
+            访问用户: 4593
           }
         ]
       }
@@ -248,15 +263,12 @@ export default {
 
 ```vue
 <template>
-  <ve-pie
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-pie :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = {
       level: [
         ['1/1', '1/2', '1/3'],
@@ -268,22 +280,28 @@ export default {
         columns: ['日期', '访问用户'],
         rows: [
           {
-            日期: '1/1', 访问用户: 1393
+            日期: '1/1',
+            访问用户: 1393
           },
           {
-            日期: '1/2', 访问用户: 3530
+            日期: '1/2',
+            访问用户: 3530
           },
           {
-            日期: '1/3', 访问用户: 2923
+            日期: '1/3',
+            访问用户: 2923
           },
           {
-            日期: '1/4', 访问用户: 1723
+            日期: '1/4',
+            访问用户: 1723
           },
           {
-            日期: '1/5', 访问用户: 3792
+            日期: '1/5',
+            访问用户: 3792
           },
           {
-            日期: '1/6', 访问用户: 4593
+            日期: '1/6',
+            访问用户: 4593
           }
         ]
       }
@@ -301,37 +319,40 @@ export default {
 
 ```vue
 <template>
-  <ve-pie
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-pie :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = { dataType: 'percent' }
     return {
       chartData: {
         columns: ['日期', '访问用户'],
         rows: [
           {
-            日期: '1/1', 访问用户: 1393
+            日期: '1/1',
+            访问用户: 1393
           },
           {
-            日期: '1/2', 访问用户: 3530
+            日期: '1/2',
+            访问用户: 3530
           },
           {
-            日期: '1/3', 访问用户: 2923
+            日期: '1/3',
+            访问用户: 2923
           },
           {
-            日期: '1/4', 访问用户: 1723
+            日期: '1/4',
+            访问用户: 1723
           },
           {
-            日期: '1/5', 访问用户: 3792
+            日期: '1/5',
+            访问用户: 3792
           },
           {
-            日期: '1/6', 访问用户: 4593
+            日期: '1/6',
+            访问用户: 4593
           }
         ]
       }
@@ -349,15 +370,12 @@ export default {
 
 ```vue
 <template>
-  <ve-pie
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-pie :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = {
       radius: 50,
       offsetY: 250
@@ -367,22 +385,28 @@ export default {
         columns: ['日期', '访问用户'],
         rows: [
           {
-            日期: '1/1', 访问用户: 1393
+            日期: '1/1',
+            访问用户: 1393
           },
           {
-            日期: '1/2', 访问用户: 3530
+            日期: '1/2',
+            访问用户: 3530
           },
           {
-            日期: '1/3', 访问用户: 2923
+            日期: '1/3',
+            访问用户: 2923
           },
           {
-            日期: '1/4', 访问用户: 1723
+            日期: '1/4',
+            访问用户: 1723
           },
           {
-            日期: '1/5', 访问用户: 3792
+            日期: '1/5',
+            访问用户: 3792
           },
           {
-            日期: '1/6', 访问用户: 4593
+            日期: '1/6',
+            访问用户: 4593
           }
         ]
       }
@@ -396,22 +420,22 @@ export default {
 
 ## settings 配置项
 
-| 配置项 | 简介 | 类型 | 备注 |
-| --- | --- | --- | --- |
-| dimension | 维度 | string | 默认columns第一项为维度 |
-| metrics | 指标 | string | 默认columns第二项为指标 |
-| dataType | 数据类型 | string | 可选值: KMB, normal, percent |
-| legendLimit | legend显示数量限制 | number | legend数量过多会导致饼图样式错误, 限制legend最大值并且当超过此值时, 隐藏legend可以解决这个问题 |
-| selectedMode | 	选中模式 | string | 可选值：single, multiple, 默认为false |
-| hoverAnimation | 是否开启 hover 在扇区上的放大动画效果 | boolean | 默认值为true |
-| radius | 饼图半径 | number | - |
-| offsetY | 	纵向偏移量 | number | - |
-| digit | 设置数据类型为percent时保留的位数 | number | 默认为2 |
-| roseType | 显示为南丁格尔玫瑰图 | string | 默认不展示为南丁格尔玫瑰图, 可设置为`'radius', 'area'` |
-| label | 饼图图形上的文本标签 | object | 内容参考[文档](https://echarts.apache.org/zh/option.html#series-pie.label) |
-| labelLine | 标签的视觉引导线样式 | object | 内容参考[文档](https://echarts.apache.org/zh/option.html#series-pie.labelLine) |
-| itemStyle | 图形样式 | object | 内容参考[文档](https://echarts.apache.org/zh/option.html#series-pie.itemStyle)  |
-| level | 多圆饼图时设置 | array | - |
-| limitShowNum | 设置超过此数字时使用‘其他’代替 | number | 此时数据会按照由大到小顺序显示 |
+| 配置项         | 简介                                  | 类型    | 备注                                                                                           |
+| -------------- | ------------------------------------- | ------- | ---------------------------------------------------------------------------------------------- |
+| dimension      | 维度                                  | string  | 默认columns第一项为维度                                                                        |
+| metrics        | 指标                                  | string  | 默认columns第二项为指标                                                                        |
+| dataType       | 数据类型                              | string  | 可选值: KMB, normal, percent                                                                   |
+| legendLimit    | legend显示数量限制                    | number  | legend数量过多会导致饼图样式错误, 限制legend最大值并且当超过此值时, 隐藏legend可以解决这个问题 |
+| selectedMode   | 选中模式                              | string  | 可选值：single, multiple, 默认为false                                                          |
+| hoverAnimation | 是否开启 hover 在扇区上的放大动画效果 | boolean | 默认值为true                                                                                   |
+| radius         | 饼图半径                              | number  | -                                                                                              |
+| offsetY        | 纵向偏移量                            | number  | -                                                                                              |
+| digit          | 设置数据类型为percent时保留的位数     | number  | 默认为2                                                                                        |
+| roseType       | 显示为南丁格尔玫瑰图                  | string  | 默认不展示为南丁格尔玫瑰图, 可设置为`'radius', 'area'`                                         |
+| label          | 饼图图形上的文本标签                  | object  | 内容参考[文档](https://echarts.apache.org/zh/option.html#series-pie.label)                     |
+| labelLine      | 标签的视觉引导线样式                  | object  | 内容参考[文档](https://echarts.apache.org/zh/option.html#series-pie.labelLine)                 |
+| itemStyle      | 图形样式                              | object  | 内容参考[文档](https://echarts.apache.org/zh/option.html#series-pie.itemStyle)                 |
+| level          | 多圆饼图时设置                        | array   | -                                                                                              |
+| limitShowNum   | 设置超过此数字时使用‘其他’代替        | number  | 此时数据会按照由大到小顺序显示                                                                 |
 
 > 备注1. level 的值接受二维数组, 例如：`[['a', 'b'], ['c', 'd']]`, 表示的含义是内层展示的是维度中的`'a', 'b'`的指标加在一起组成的饼图, 外层为`'c', 'd'`的指标加在一起组成的环图。

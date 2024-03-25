@@ -1,6 +1,4 @@
-import {
-  getFormated, itemPoint, setArrayValue
-} from '@v-charts2/core/utils'
+import { getFormated, itemPoint, setArrayValue } from '@v-charts2/core/utils'
 import { cloneDeep } from 'utils-lite'
 
 const pieRadius = 100
@@ -34,12 +32,14 @@ function getPieSeries (args) {
   const rowsTemp = []
   if (level) {
     level.forEach((levelItems, index) => {
-      levelItems.forEach((item) => { setArrayValue(levelTemp, item, index) })
+      levelItems.forEach(item => {
+        setArrayValue(levelTemp, item, index)
+      })
     })
-    innerRows.forEach((row) => {
+    innerRows.forEach(row => {
       const itemLevel = levelTemp[row[dimension]]
       if (itemLevel && itemLevel.length) {
-        itemLevel.forEach((levelItem) => {
+        itemLevel.forEach(levelItem => {
           setArrayValue(rowsTemp, levelItem, row)
         })
       }
@@ -61,7 +61,8 @@ function getPieSeries (args) {
     if (!index) {
       seriesItem.radius = isRing ? radius : centerWidth
     } else {
-      const outerWidth = centerWidth + radius / (2 * rowsTempLength) * (2 * index - 1)
+      const outerWidth =
+        centerWidth + (radius / (2 * rowsTempLength)) * (2 * index - 1)
       const innerWidth = outerWidth + radius / (2 * rowsTempLength)
       seriesItem.radius = [outerWidth, innerWidth]
     }
@@ -84,7 +85,7 @@ function getPieSeries (args) {
         }
       }
     }
-    seriesItem.data = dataRows.map((row) => ({
+    seriesItem.data = dataRows.map(row => ({
       name: row[dimension],
       value: row[metrics]
     }))
@@ -94,24 +95,26 @@ function getPieSeries (args) {
     const firstData = series[0].data
     const remainArr = firstData.slice(limitShowNum, firstData.length)
     let sum = 0
-    remainArr.forEach((item) => { sum += item.value })
+    remainArr.forEach(item => {
+      sum += item.value
+    })
     series[0].data = firstData.slice(0, limitShowNum)
     series[0].data.push({
-      name: '其他', value: sum
+      name: '其他',
+      value: sum
     })
   }
   return series
 }
 
 function getPieLegend (args) {
-  const {
-    innerRows, dimension, legendLimit, legendName, level, limitShowNum
-  } = args
+  const { innerRows, dimension, legendLimit, legendName, level, limitShowNum } =
+    args
   let legend = []
   const levelTemp = []
   if (level) {
-    level.forEach((levelItem) => {
-      levelItem.forEach((item) => {
+    level.forEach(levelItem => {
+      levelItem.forEach(item => {
         levelTemp.push(item)
       })
     })
@@ -122,7 +125,7 @@ function getPieLegend (args) {
     }
     legend.push('其他')
   } else {
-    legend = innerRows.map((row) => row[dimension])
+    legend = innerRows.map(row => row[dimension])
   }
   if (legend.length) {
     return {
@@ -138,32 +141,25 @@ function getPieLegend (args) {
 }
 
 function getPieTooltip (args) {
-  const {
-    dataType,
-    innerRows,
-    limitShowNum,
-    digit,
-    metrics,
-    dimension
-  } = args
+  const { dataType, innerRows, limitShowNum, digit, metrics, dimension } = args
   let sum = 0
-  const remainArr = innerRows.map((row) => {
-    sum += row[metrics]
-    return {
-      name: row[dimension],
-      value: row[metrics]
-    }
-  }).slice(limitShowNum, innerRows.length)
+  const remainArr = innerRows
+    .map(row => {
+      sum += row[metrics]
+      return {
+        name: row[dimension],
+        value: row[metrics]
+      }
+    })
+    .slice(limitShowNum, innerRows.length)
   return {
     formatter (item) {
       const tpl = []
       tpl.push(itemPoint(item.color))
       if (limitShowNum && item.name === '其他') {
         tpl.push('其他:')
-        remainArr.forEach(({
-          name, value
-        }) => {
-          const percent = getFormated((value / sum), 'percent')
+        remainArr.forEach(({ name, value }) => {
+          const percent = getFormated(value / sum, 'percent')
           tpl.push(`<br>${name}:`)
           tpl.push(getFormated(value, dataType, digit))
           tpl.push(`(${percent})`)
@@ -186,11 +182,7 @@ export const pie = (columns, rows, settings, extra, isRing) => {
     dimension = columns[0],
     metrics = columns[1],
     roseType = false,
-    radius = isRing
-      ? roseType
-        ? roseRingRadius
-        : ringRadius
-      : pieRadius,
+    radius = isRing ? (roseType ? roseRingRadius : ringRadius) : pieRadius,
     offsetY = pieOffsetY,
     legendLimit = 30,
     selectedMode = false,
@@ -203,9 +195,7 @@ export const pie = (columns, rows, settings, extra, isRing) => {
     labelLine,
     itemStyle
   } = settings
-  const {
-    tooltipVisible, legendVisible
-  } = extra
+  const { tooltipVisible, legendVisible } = extra
   if (limitShowNum) innerRows.sort((a, b) => b[metrics] - a[metrics])
   const seriesParams = {
     innerRows,
@@ -237,16 +227,20 @@ export const pie = (columns, rows, settings, extra, isRing) => {
     limitShowNum
   }
   const legend = legendVisible && getPieLegend(legendParams)
-  const tooltip = tooltipVisible && getPieTooltip({
-    dataType,
-    innerRows,
-    limitShowNum,
-    digit,
-    metrics,
-    dimension
-  })
+  const tooltip =
+    tooltipVisible &&
+    getPieTooltip({
+      dataType,
+      innerRows,
+      limitShowNum,
+      digit,
+      metrics,
+      dimension
+    })
   const options = {
-    series, legend, tooltip
+    series,
+    legend,
+    tooltip
   }
   return options
 }

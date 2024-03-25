@@ -2,8 +2,8 @@
 
 ## 下载和安装
 
-::: tip 
-当你不想全部导入所有的图表时请执行以下操作, 安装你想要的图表即可 
+::: tip
+当你不想全部导入所有的图表时请执行以下操作, 安装你想要的图表即可
 :::
 
 ### 下载
@@ -23,9 +23,9 @@ npm install @v-charts2/gauge
 :::
 
 ```javascript
-import Vue from "vue";
-import VeGauge from "@v-charts2/gauge"; // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
-Vue.use(VeGauge);
+import Vue from 'vue'
+import VeGauge from '@v-charts2/gauge' // 兼容 vue2.x 和 vue3.x 的支持, 将会自动加载支持 vue2.x 的支持包或者支持 vue3.x 的支持包
+Vue.use(VeGauge)
 ```
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
@@ -33,20 +33,20 @@ Vue.use(VeGauge);
 - Vue 2.x
 
 ```javascript
-import Vue from "vue";
-import VeGauge from "@v-charts2/gauge/vue2"; // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
-import "@v-charts2/gauge/v-charts.css"; // 需要手动引入样式
-Vue.use(VeGauge);
+import Vue from 'vue'
+import VeGauge from '@v-charts2/gauge/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
+import '@v-charts2/gauge/v-charts.css' // 需要手动引入样式
+Vue.use(VeGauge)
 ```
 
 - Vue 3.x
 
 ```javascript
-import { createApp } from "vue";
-const app = createApp();
-import VeGauge from "@v-charts2/gauge/vue3"; // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
-import "@v-charts2/gauge/v-charts.css"; // 需要手动引入样式
-app.use(VeGauge);
+import { createApp } from 'vue'
+const app = createApp()
+import VeGauge from '@v-charts2/gauge/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
+import '@v-charts2/gauge/v-charts.css' // 需要手动引入样式
+app.use(VeGauge)
 ```
 
 ## DEMO
@@ -62,13 +62,16 @@ app.use(VeGauge);
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       chartData: {
         columns: ['type', 'a', 'b', 'value'],
         rows: [
           {
-            type: '速度', value: 80, a: 1, b: 2
+            type: '速度',
+            value: 80,
+            a: 1,
+            b: 2
           }
         ]
       }
@@ -86,15 +89,12 @@ export default {
 
 ```vue
 <template>
-  <ve-gauge
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-gauge :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = {
       dimension: 'type',
       metrics: 'value'
@@ -104,7 +104,10 @@ export default {
         columns: ['a', 'b', 'type', 'value'],
         rows: [
           {
-            type: '速度', value: 80, a: 1, b: 2
+            type: '速度',
+            value: 80,
+            a: 1,
+            b: 2
           }
         ]
       }
@@ -122,15 +125,12 @@ export default {
 
 ```vue
 <template>
-  <ve-gauge
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-gauge :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = {
       dataType: { 占比: 'percent' },
       seriesMap: {
@@ -145,7 +145,8 @@ export default {
         columns: ['type', 'value'],
         rows: [
           {
-            type: '占比', value: 0.8
+            type: '占比',
+            value: 0.8
           }
         ]
       }
@@ -163,15 +164,12 @@ export default {
 
 ```vue
 <template>
-  <ve-gauge
-    :data="chartData"
-    :settings="chartSettings"
-  />
+  <ve-gauge :data="chartData" :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = {
       labelMap: { speed: '速度' },
       dataName: { speed: 'km/h' }
@@ -181,7 +179,8 @@ export default {
         columns: ['type', 'value'],
         rows: [
           {
-            type: 'speed', value: 60
+            type: 'speed',
+            value: 60
           }
         ]
       }
@@ -202,13 +201,12 @@ export default {
   <ve-gauge
     :data="chartData"
     background-color="#000"
-    :settings="chartSettings"
-  />
+    :settings="chartSettings" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     this.chartSettings = {
       dataName: {
         速度: 'km/h',
@@ -223,7 +221,11 @@ export default {
           radius: '50%',
           axisLine: {
             lineStyle: {
-              color: [[0.09, 'lime'], [0.82, '#1e90ff'], [1, '#ff4500']],
+              color: [
+                [0.09, 'lime'],
+                [0.82, '#1e90ff'],
+                [1, '#ff4500']
+              ],
               width: 3,
               shadowColor: '#fff',
               shadowBlur: 10
@@ -284,7 +286,11 @@ export default {
           splitNumber: 7,
           axisLine: {
             lineStyle: {
-              color: [[0.29, 'lime'], [0.86, '#1e90ff'], [1, '#ff4500']],
+              color: [
+                [0.29, 'lime'],
+                [0.86, '#1e90ff'],
+                [1, '#ff4500']
+              ],
               width: 2,
               shadowColor: '#fff',
               shadowBlur: 10
@@ -347,7 +353,11 @@ export default {
           splitNumber: 2,
           axisLine: {
             lineStyle: {
-              color: [[0.2, 'lime'], [0.8, '#1e90ff'], [1, '#ff4500']],
+              color: [
+                [0.2, 'lime'],
+                [0.8, '#1e90ff'],
+                [1, '#ff4500']
+              ],
               width: 2,
               shadowColor: '#fff',
               shadowBlur: 10
@@ -368,9 +378,12 @@ export default {
             shadowBlur: 10,
             formatter: function (v) {
               switch (v + '') {
-              case '0': return 'E'
-              case '1': return 'Gas'
-              case '2': return 'F'
+                case '0':
+                  return 'E'
+                case '1':
+                  return 'Gas'
+                case '2':
+                  return 'F'
               }
             }
           },
@@ -398,13 +411,16 @@ export default {
         columns: ['type', 'value'],
         rows: [
           {
-            type: '速度', value: 60
+            type: '速度',
+            value: 60
           },
           {
-            type: '转速', value: 80
+            type: '转速',
+            value: 80
           },
           {
-            type: '油表', value: 6000
+            type: '油表',
+            value: 6000
           }
         ]
       }
@@ -418,14 +434,14 @@ export default {
 
 ## settings 配置项
 
-| 配置项 | 简介 | 类型 | 备注 |
-| --- | --- | --- | --- |
-| dimension | 维度 | string | 默认 columns[0] |
-| metrics | 指标 | string | 默认 columns[1] |
-| dataType | 数据类型 | object | - |
-| digit | 设置数据类型为percent时保留的位数 | number | 默认为2 |
-| labelMap | 设置指标的别名 | object | - |
-| seriesMap | 附加到 series 中的设置 | object | - |
-| dataName | 表盘上显示的单位 | object | - |
+| 配置项    | 简介                              | 类型   | 备注            |
+| --------- | --------------------------------- | ------ | --------------- |
+| dimension | 维度                              | string | 默认 columns[0] |
+| metrics   | 指标                              | string | 默认 columns[1] |
+| dataType  | 数据类型                          | object | -               |
+| digit     | 设置数据类型为percent时保留的位数 | number | 默认为2         |
+| labelMap  | 设置指标的别名                    | object | -               |
+| seriesMap | 附加到 series 中的设置            | object | -               |
+| dataName  | 表盘上显示的单位                  | object | -               |
 
 > 备注1： 通过 seriesMap, 可以为每一个仪表设置样式, 具体样式的配置可以参考[文档](https://echarts.apache.org/zh/option.html#series-gauge)

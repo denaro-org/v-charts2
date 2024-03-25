@@ -1,12 +1,9 @@
-import { scatter } from './main'
-import {
-  name, version
-} from '../package.json'
+import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
 import { createChart } from '@v-charts2/core/vue2'
 import { ScatterChart } from 'echarts/charts'
-import {
-  echartsLib, logCopyRight
-} from '@v-charts2/core/utils'
+
+import { scatter } from './main'
+import { name, version } from '../package.json'
 
 echartsLib.use([ScatterChart])
 
@@ -18,7 +15,7 @@ const VeScatter = Object.assign({}, createChart, {
   }
 })
 
-VeScatter.install = (Vue) => {
+VeScatter.install = Vue => {
   logCopyRight(name, version)
   Vue.component(VeScatter.name, VeScatter)
 }

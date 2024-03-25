@@ -1,31 +1,24 @@
+import { camelToKebab, getType } from 'utils-lite'
+import { computed, h, nextTick, onBeforeUnmount, onMounted, watch } from 'vue'
+
 import {
-  DEFAULT_COLORS,
-  STATIC_PROPS,
   changeHandler,
   clean,
   createEventProxy,
+  DEFAULT_COLORS,
   init,
   props,
   resize,
   resizeableHandler,
+  STATIC_PROPS,
   themeChange
 } from './render-core'
-import {
-  computed, h, nextTick, onBeforeUnmount, onMounted, watch
-} from 'vue'
-import {
-  camelToKebab, getType
-} from 'utils-lite'
 
-export const createChart = ({
-  name, chartHandler, chartLib
-}) => {
+export const createChart = ({ name, chartHandler, chartLib }) => {
   return {
     name,
     props,
-    setup (props, {
-      slots, emit
-    }) {
+    setup (props, { slots, emit }) {
       let echarts = null
       const registeredEvents = []
       const _once = {}
@@ -58,18 +51,22 @@ export const createChart = ({
       const Loading = h('div', { class: 'v-charts-component-loading' }, [
         h('div', { class: 'loader' }, [
           h('div', { class: 'loading-spinner' }, [
-            h('svg', {
-              class: 'circular',
-              viewBox: '25 25 50 50'
-            }, [
-              h('circle', {
-                class: 'path',
-                cx: '50',
-                cy: '50',
-                r: '20',
-                fill: 'none'
-              })
-            ])
+            h(
+              'svg',
+              {
+                class: 'circular',
+                viewBox: '25 25 50 50'
+              },
+              [
+                h('circle', {
+                  class: 'path',
+                  cx: '50',
+                  cy: '50',
+                  r: '20',
+                  fill: 'none'
+                })
+              ]
+            )
           ])
         ])
       ])
@@ -114,7 +111,7 @@ export const createChart = ({
       }
 
       const nextTickResize = () => {
-        nextTick(
+        nextTick(() =>
           resize({
             props,
             el: EL.el,
@@ -125,7 +122,7 @@ export const createChart = ({
 
       watch(
         () => props?.data,
-        (v) => {
+        v => {
           if (v) {
             stateChangeHandler({
               props,
@@ -138,7 +135,7 @@ export const createChart = ({
       )
       watch(
         () => props?.settings,
-        (v) => {
+        v => {
           if (v.type && chartLib) chartHandler = chartLib[v.type]
           initPayload.options.chartHandler = chartLib[v.type]
           stateChangeHandler({
@@ -192,7 +189,7 @@ export const createChart = ({
       )
       watch(
         () => props?.resizeable,
-        (resizeable) => {
+        resizeable => {
           nextTick(() => {
             resizeableHandler({
               resizeable,
@@ -205,25 +202,26 @@ export const createChart = ({
         }
       )
 
-      const addWatchToProps = ({
-        _watchers, props, options, echarts
-      }) => {
-        const watchedVariable = _watchers.map((watcher) => watcher.expression)
-        Object.keys(props).forEach((prop) => {
+      const addWatchToProps = ({ _watchers, props, options, echarts }) => {
+        const watchedVariable = _watchers.map(watcher => watcher.expression)
+        Object.keys(props).forEach(prop => {
           if (!~watchedVariable.indexOf(prop) && !~STATIC_PROPS.indexOf(prop)) {
             const opts = { deep: false }
             if (
-              ~['[object Object]', '[object Array]'].indexOf(getType(props[prop]))
+              ~['[object Object]', '[object Array]'].indexOf(
+                getType(props[prop])
+              )
             ) {
               opts.deep = true
             }
             watch(
               () => prop,
-              () => stateChangeHandler({
-                props,
-                options,
-                echarts
-              }),
+              () =>
+                stateChangeHandler({
+                  props,
+                  options,
+                  echarts
+                }),
               opts
             )
           }

@@ -1,12 +1,9 @@
-import {
-  name, version
-} from '../package.json'
 import { histogram } from '@v-charts2/bar/vue2'
+import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
 import { createChart } from '@v-charts2/core/vue2'
 import { BarChart } from 'echarts/charts'
-import {
-  echartsLib, logCopyRight
-} from '@v-charts2/core/utils'
+
+import { name, version } from '../package.json'
 
 echartsLib.use([BarChart])
 
@@ -18,7 +15,7 @@ const VeHistogram = Object.assign({}, createChart, {
   }
 })
 
-VeHistogram.install = (Vue) => {
+VeHistogram.install = Vue => {
   logCopyRight(name, version)
   Vue.component(VeHistogram.name, VeHistogram)
 }

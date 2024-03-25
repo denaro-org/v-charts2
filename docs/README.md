@@ -15,7 +15,7 @@ features:
   - title: 简化的配置项
     details: 通过简化的配置项, 可以轻松实现复杂需求。
   - title: 定制简单
-    details: 提供多种自定义 Echarts 方式, 可以方便的设置图表配置项。  
+    details: 提供多种自定义 Echarts 方式, 可以方便的设置图表配置项。
   - title: 更多的支持
     details: 同时支持 Vue2.x 和 Vue3.x, 全部由你自主选择使用。
   - title: 更好的 Tree Shaking
@@ -38,9 +38,9 @@ npm i @v-chart2/chart
 ### 使用
 
 ```javascript
-import Vue from "vue";
-import VChart from "@v-chart2/chart";
-Vue.use(VChart);
+import Vue from 'vue'
+import VChart from '@v-chart2/chart'
+Vue.use(VChart)
 ```
 
 ## 前方高能

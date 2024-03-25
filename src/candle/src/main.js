@@ -1,6 +1,4 @@
-import {
-  getFormated, itemPoint
-} from '@v-charts2/core/utils'
+import { getFormated, itemPoint } from '@v-charts2/core/utils'
 import { isArray } from 'utils-lite'
 
 const DEFAULT_MA = [5, 10, 20, 30]
@@ -12,12 +10,10 @@ const DEFAULT_END = 100
 const SHOW_FALSE = { show: false }
 
 function getCandleLegend (args) {
-  const {
-    showMA, MA, legendName, labelMap
-  } = args
+  const { showMA, MA, legendName, labelMap } = args
   let data = [DEFAULT_K_NAME]
-  if (showMA) data = data.concat(MA.map((v) => `MA${v}`))
-  if (labelMap) data = data.map((v) => labelMap[v] == null ? v : labelMap[v])
+  if (showMA) data = data.concat(MA.map(v => `MA${v}`))
+  if (labelMap) data = data.map(v => (labelMap[v] == null ? v : labelMap[v]))
   return {
     data,
     formatter (name) {
@@ -27,9 +23,7 @@ function getCandleLegend (args) {
 }
 
 function getCandleTooltip (args) {
-  const {
-    metrics, dataType, digit, labelMap
-  } = args
+  const { metrics, dataType, digit, labelMap } = args
   return {
     trigger: 'axis',
     axisPointer: { type: 'cross' },
@@ -42,11 +36,10 @@ function getCandleTooltip (args) {
     formatter (options) {
       const tpl = []
       tpl.push(`${options[0].axisValue}<br>`)
-      options.forEach((option) => {
-        const {
-          data, seriesName, componentSubType, color
-        } = option
-        const name = labelMap[seriesName] == null ? seriesName : labelMap[seriesName]
+      options.forEach(option => {
+        const { data, seriesName, componentSubType, color } = option
+        const name =
+          labelMap[seriesName] == null ? seriesName : labelMap[seriesName]
         tpl.push(`${itemPoint(color)} ${name}: `)
         if (componentSubType === 'candlestick') {
           tpl.push('<br>')
@@ -69,19 +62,19 @@ function getCandleTooltip (args) {
 }
 
 function getCandleVisualMap (args) {
-  const {
-    downColor, upColor, MA, showMA
-  } = args
+  const { downColor, upColor, MA, showMA } = args
   return {
     show: false,
     seriesIndex: showMA ? 1 + MA.length : 1,
     dimension: 2,
     pieces: [
       {
-        value: 1, color: downColor
+        value: 1,
+        color: downColor
       },
       {
-        value: -1, color: upColor
+        value: -1,
+        color: upColor
       }
     ]
   }
@@ -122,18 +115,33 @@ function getCandleXAxis (args) {
 
   return [
     {
-      type, data, scale, boundaryGap, axisLine, splitLine, min, max
+      type,
+      data,
+      scale,
+      boundaryGap,
+      axisLine,
+      splitLine,
+      min,
+      max
     },
     {
-      type, gridIndex, data, scale, boundaryGap, axisLine, axisTick, splitLine, axisLabel, min, max
+      type,
+      gridIndex,
+      data,
+      scale,
+      boundaryGap,
+      axisLine,
+      axisTick,
+      splitLine,
+      axisLabel,
+      min,
+      max
     }
   ]
 }
 
 function getCandleYAxis (args) {
-  const {
-    dataType, digit
-  } = args
+  const { dataType, digit } = args
   const scale = true
   const gridIndex = 1
   const splitNumber = 2
@@ -141,24 +149,30 @@ function getCandleYAxis (args) {
   const axisTick = SHOW_FALSE
   const axisLabel = SHOW_FALSE
   const splitLine = SHOW_FALSE
-  const formatter = (val) => {
+  const formatter = val => {
     return getFormated(val, dataType, digit)
   }
 
   return [
     {
-      scale, axisTick, axisLabel: { formatter }
+      scale,
+      axisTick,
+      axisLabel: { formatter }
     },
     {
-      scale, gridIndex, splitNumber, axisLine, axisTick, splitLine, axisLabel
+      scale,
+      gridIndex,
+      splitNumber,
+      axisLine,
+      axisTick,
+      splitLine,
+      axisLabel
     }
   ]
 }
 
 function getCandleDataZoom (args) {
-  const {
-    start, end
-  } = args
+  const { start, end } = args
 
   return [
     {
@@ -200,9 +214,10 @@ function getCandleSeries (args) {
   const lineStyle = { opacity: 0.5 }
   const series = [
     {
-      name: labelMap[DEFAULT_K_NAME] == null
-        ? DEFAULT_K_NAME
-        : labelMap[DEFAULT_K_NAME],
+      name:
+        labelMap[DEFAULT_K_NAME] == null
+          ? DEFAULT_K_NAME
+          : labelMap[DEFAULT_K_NAME],
       type: 'candlestick',
       data: values,
       itemStyle: style
@@ -210,7 +225,7 @@ function getCandleSeries (args) {
   ]
 
   if (showMA) {
-    MA.forEach((d) => {
+    MA.forEach(d => {
       const name = `MA${d}`
       series.push({
         name: labelMap[name] == null ? name : labelMap[name],
@@ -267,9 +282,7 @@ export const candle = (columns, rows, settings, status) => {
     end = DEFAULT_END,
     dataType
   } = settings
-  const {
-    tooltipVisible, legendVisible
-  } = status
+  const { tooltipVisible, legendVisible } = status
 
   const isLiteData = isArray(rows[0])
   const dims = []
@@ -279,10 +292,12 @@ export const candle = (columns, rows, settings, status) => {
   const volumeMetrics = metrics[4]
 
   if (isLiteData) {
-    rows.forEach((row) => {
+    rows.forEach(row => {
       const itemResult = []
       dims.push(row[columns.indexOf(dimension)])
-      candleMetrics.forEach((item) => { itemResult.push(row[columns.indexOf(item)]) })
+      candleMetrics.forEach(item => {
+        itemResult.push(row[columns.indexOf(item)])
+      })
       values.push(itemResult)
       if (volumeMetrics) volumes.push(row[columns.indexOf(volumeMetrics)])
     })
@@ -290,7 +305,9 @@ export const candle = (columns, rows, settings, status) => {
     rows.forEach((row, index) => {
       const itemResult = []
       dims.push(row[dimension])
-      candleMetrics.forEach((item) => { itemResult.push(row[item]) })
+      candleMetrics.forEach(item => {
+        itemResult.push(row[item])
+      })
       values.push(itemResult)
       if (volumeMetrics) {
         const status = row[metrics[0]] > row[metrics[1]] ? 1 : -1
@@ -299,22 +316,41 @@ export const candle = (columns, rows, settings, status) => {
     })
   }
 
-  const legend = legendVisible && getCandleLegend({
-    showMA, MA, legendName, labelMap
-  })
-  const tooltip = tooltipVisible && getCandleTooltip({
-    metrics, dataType, digit, labelMap
-  })
-  const visualMap = showVol && getCandleVisualMap({
-    downColor, upColor, MA, showMA
-  })
-  const dataZoom = showDataZoom && getCandleDataZoom({
-    start, end
-  })
+  const legend =
+    legendVisible &&
+    getCandleLegend({
+      showMA,
+      MA,
+      legendName,
+      labelMap
+    })
+  const tooltip =
+    tooltipVisible &&
+    getCandleTooltip({
+      metrics,
+      dataType,
+      digit,
+      labelMap
+    })
+  const visualMap =
+    showVol &&
+    getCandleVisualMap({
+      downColor,
+      upColor,
+      MA,
+      showMA
+    })
+  const dataZoom =
+    showDataZoom &&
+    getCandleDataZoom({
+      start,
+      end
+    })
   const grid = getCandleGrid({ showVol })
   const xAxis = getCandleXAxis({ dims })
   const yAxis = getCandleYAxis({
-    dataType, digit
+    dataType,
+    digit
   })
   const series = getCandleSeries({
     values,
@@ -330,6 +366,14 @@ export const candle = (columns, rows, settings, status) => {
   })
   const axisPointer = { link: { xAxisIndex: 'all' } }
   return {
-    legend, tooltip, visualMap, grid, xAxis, yAxis, dataZoom, series, axisPointer
+    legend,
+    tooltip,
+    visualMap,
+    grid,
+    xAxis,
+    yAxis,
+    dataZoom,
+    series,
+    axisPointer
   }
 }

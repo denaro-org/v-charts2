@@ -25,7 +25,7 @@ function getWaterfallXAxis (args) {
     xAxisName,
     axisVisible
   } = args
-  let xAxisData = [totalName].concat(rows.map((row) => row[dimension]))
+  let xAxisData = [totalName].concat(rows.map(row => row[dimension]))
   if (remainStatus === 'have-remain') {
     xAxisData = xAxisData.concat([remainName])
   }
@@ -40,9 +40,7 @@ function getWaterfallXAxis (args) {
 }
 
 function getWaterfallYAxis (args) {
-  const {
-    dataType, yAxisName, axisVisible, digit, labelMap
-  } = args
+  const { dataType, yAxisName, axisVisible, digit, labelMap } = args
   return {
     type: 'value',
     name: labelMap[yAxisName] != null ? labelMap[yAxisName] : yAxisName,
@@ -57,57 +55,67 @@ function getWaterfallYAxis (args) {
 }
 
 function getWaterfallSeries (args) {
-  const {
-    dataType,
-    rows,
-    metrics,
-    totalNum,
-    remainStatus,
-    dataSum,
-    digit
-  } = args
+  const { dataType, rows, metrics, totalNum, remainStatus, dataSum, digit } =
+    args
   const seriesBase = {
-    type: 'bar', stack: '总量'
+    type: 'bar',
+    stack: '总量'
   }
   let dataSumTemp = dataSum
   let totalNumTemp = totalNum
   let assistData
   let mainData
-  const rowData = rows.map((row) => row[metrics])
+  const rowData = rows.map(row => row[metrics])
 
   if (remainStatus === 'have-remain') {
-    assistData = [0].concat(rows.map((row) => {
-      totalNumTemp -= row[metrics]
-      return totalNumTemp
-    })).concat([0])
+    assistData = [0]
+      .concat(
+        rows.map(row => {
+          totalNumTemp -= row[metrics]
+          return totalNumTemp
+        })
+      )
+      .concat([0])
     mainData = [totalNum].concat(rowData).concat([totalNum - dataSum])
   } else {
-    assistData = [0].concat(rows.map((row) => {
-      dataSumTemp -= row[metrics]
-      return dataSumTemp
-    }))
+    assistData = [0].concat(
+      rows.map(row => {
+        dataSumTemp -= row[metrics]
+        return dataSumTemp
+      })
+    )
     mainData = [dataSum].concat(rowData)
   }
   const series = []
 
-  series.push(Object.assign({
-    name: '辅助',
-    itemStyle: { opacity: 0 },
-    emphasis: { itemStyle: { opacity: 0 } },
-    data: assistData
-  }, seriesBase))
+  series.push(
+    Object.assign(
+      {
+        name: '辅助',
+        itemStyle: { opacity: 0 },
+        emphasis: { itemStyle: { opacity: 0 } },
+        data: assistData
+      },
+      seriesBase
+    )
+  )
 
-  series.push(Object.assign({
-    name: '数值',
-    label: {
-      show: true,
-      position: 'top',
-      formatter (item) {
-        return getFormated(item.value, dataType, digit)
-      }
-    },
-    data: mainData
-  }, seriesBase))
+  series.push(
+    Object.assign(
+      {
+        name: '数值',
+        label: {
+          show: true,
+          position: 'top',
+          formatter (item) {
+            return getFormated(item.value, dataType, digit)
+          }
+        },
+        data: mainData
+      },
+      seriesBase
+    )
+  )
   return series
 }
 
@@ -134,9 +142,13 @@ export const waterfall = (columns, rows, settings, extra) => {
   const metrics = metricsTemp[0]
   const yAxisName = metrics
   const tooltip = tooltipVisible && getWaterfallTooltip(dataType, digit)
-  const dataSum = parseFloat(rows.reduce((pre, cur) => {
-    return pre + Number(cur[metrics])
-  }, 0).toFixed(digit))
+  const dataSum = parseFloat(
+    rows
+      .reduce((pre, cur) => {
+        return pre + Number(cur[metrics])
+      }, 0)
+      .toFixed(digit)
+  )
   const remainStatus = getWaterfallRemainStatus(dataSum, totalNum)
   const xAxisParams = {
     dimension,
@@ -150,7 +162,11 @@ export const waterfall = (columns, rows, settings, extra) => {
   }
   const xAxis = getWaterfallXAxis(xAxisParams)
   const yAxis = getWaterfallYAxis({
-    dataType, yAxisName, axisVisible, digit, labelMap
+    dataType,
+    yAxisName,
+    axisVisible,
+    digit,
+    labelMap
   })
   const seriesParams = {
     dataType,
@@ -164,7 +180,10 @@ export const waterfall = (columns, rows, settings, extra) => {
   }
   const series = getWaterfallSeries(seriesParams)
   const options = {
-    tooltip, xAxis, yAxis, series
+    tooltip,
+    xAxis,
+    yAxis,
+    series
   }
   return options
 }

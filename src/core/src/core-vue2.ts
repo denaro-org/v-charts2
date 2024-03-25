@@ -1,19 +1,18 @@
+import numerify from 'numerify'
+import { camelToKebab, getType } from 'utils-lite'
+
 import {
-  DEFAULT_COLORS,
-  STATIC_PROPS,
   changeHandler,
   clean,
   createEventProxy,
+  DEFAULT_COLORS,
   init,
   props,
   resize,
   resizeableHandler,
+  STATIC_PROPS,
   themeChange
 } from './render-core'
-import numerify from 'numerify'
-import {
-  camelToKebab, getType
-} from 'utils-lite'
 
 export default {
   render (h) {
@@ -102,7 +101,9 @@ export default {
       handler (v) {
         if (v) {
           changeHandler({
-            props: this.$props, options: this.initPayload.options, echarts: this.echarts
+            props: this.$props,
+            options: this.initPayload.options,
+            echarts: this.echarts
           })
         }
       }
@@ -116,7 +117,9 @@ export default {
           this.initPayload.options.chartHandler = this.chartLib[v.type]
         }
         changeHandler({
-          props: this.$props, options: this.initPayload.options, echarts: this.echarts
+          props: this.$props,
+          options: this.initPayload.options,
+          echarts: this.echarts
         })
       }
     },
@@ -180,8 +183,15 @@ export default {
   },
   mounted () {
     const {
-      echarts, $props: props, $el: el, registeredEvents, chartHandler,
-      _once, _store, $nextTick: nextTick, _watchers
+      echarts,
+      $props: props,
+      $el: el,
+      registeredEvents,
+      chartHandler,
+      _once,
+      _store,
+      $nextTick: nextTick,
+      _watchers
     } = this
     const initPayload = {
       echarts,
@@ -224,29 +234,39 @@ export default {
 
   methods: {
     addWatchToProps () {
-      const watchedVariable = this._watchers.map((watcher) => watcher.expression)
-      Object.keys(this.$props).forEach((prop) => {
+      const watchedVariable = this._watchers.map(watcher => watcher.expression)
+      Object.keys(this.$props).forEach(prop => {
         if (!~watchedVariable.indexOf(prop) && !~STATIC_PROPS.indexOf(prop)) {
           const opts = { deep: false }
-          if (~['[object Object]', '[object Array]'].indexOf(getType(this.$props[prop]))) {
+          if (
+            ~['[object Object]', '[object Array]'].indexOf(
+              getType(this.$props[prop])
+            )
+          ) {
             opts.deep = true
           }
-          this.$watch(prop, () => {
-            changeHandler({
-              props: this.$props, options: this.initPayload.options, echarts: this.echarts
-            })
-          }, opts)
+          this.$watch(
+            prop,
+            () => {
+              changeHandler({
+                props: this.$props,
+                options: this.initPayload.options,
+                echarts: this.echarts
+              })
+            },
+            opts
+          )
         }
       })
     },
     nextTickResize () {
-      this.$nextTick(resize(
-        {
+      this.$nextTick(
+        resize({
           props: this.$props,
           el: this.$el,
           echarts: this.echarts
-        }
-      ))
+        })
+      )
     }
   },
   _numerify: numerify

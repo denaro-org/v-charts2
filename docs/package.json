@@ -9,11 +9,10 @@
   "dependencies": {
     "@v-charts2/chart": "workspace:*",
     "@v-charts2/hot-chart": "workspace:*",
-    "vue": "3.4.21"
+    "vue": "2.7.16"
   },
   "devDependencies": {
     "@vuepress/plugin-pwa": "^1.9.10",
-    "vue-server-renderer": "2.7.16",
     "vuepress": "^1.9.10",
     "vuepress-plugin-one-click-copy": "^1.0.6",
     "vuepress-plugin-smooth-scroll": "^0.0.10",

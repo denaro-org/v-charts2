@@ -1,20 +1,12 @@
-import {
-  DEFAULT_THEME, ECHARTS_SETTINGS, echartsLib
-} from '.'
-import {
-  setAnimation, setExtend, setMark
-} from '../modules'
-import {
-  cloneDeep, debounce, isArray, isEqual, isObject
-} from 'utils-lite'
+import { cloneDeep, debounce, isArray, isEqual, isObject } from 'utils-lite'
 
-export const init = ({
-  echarts, props, canvas, options
-} = {}) => {
+import { setAnimation, setExtend, setMark } from '../modules'
+
+import { DEFAULT_THEME, ECHARTS_SETTINGS, echartsLib } from '.'
+
+export const init = ({ echarts, props, canvas, options } = {}) => {
   if (echarts) return
-  const {
-    registeredEvents, _once, el
-  } = options
+  const { registeredEvents, _once, el } = options
   const themeName = props?.themeName || props?.theme || DEFAULT_THEME
   echarts = echartsLib.init(canvas, themeName, {
     renderer: props?.renderer,
@@ -44,9 +36,7 @@ export const init = ({
   return { echarts }
 }
 
-export const changeHandler = ({
-  props, options, echarts
-} = {}) => {
+export const changeHandler = ({ props, options, echarts } = {}) => {
   return debounce(
     dataHandler({
       props,
@@ -57,9 +47,7 @@ export const changeHandler = ({
   )
 }
 
-export const resizeHandler = ({
-  props, el, echarts
-} = {}) => {
+export const resizeHandler = ({ props, el, echarts } = {}) => {
   return debounce(
     resize({
       props,
@@ -70,15 +58,13 @@ export const resizeHandler = ({
   )
 }
 
-export const createEventProxy = ({
-  registeredEvents, echarts, props
-}) => {
+export const createEventProxy = ({ registeredEvents, echarts, props }) => {
   // 只要用户使用 on 方法绑定的事件都做一层代理,
   // 是否真正执行相应的事件方法取决于该方法是否仍然存在 events 中
   // 实现 events 的动态响应
   const keys = Object.keys(props?.events || {})
   keys.length &&
-    keys.forEach((ev) => {
+    keys.forEach(ev => {
       if (registeredEvents.indexOf(ev) === -1) {
         registeredEvents.push(ev)
         echarts.on(
@@ -95,9 +81,7 @@ export const createEventProxy = ({
     })
 }
 
-export const addResizeListener = ({
-  _once, props, el, echarts
-}) => {
+export const addResizeListener = ({ _once, props, el, echarts }) => {
   window.addEventListener('resize', () =>
     resizeHandler({
       props,
@@ -113,18 +97,12 @@ export const removeResizeListener = ({ _once }) => {
   _once.onresize = false
 }
 
-export const dataHandler = ({
-  props, options, echarts
-} = {}) => {
-  const {
-    chartHandler, chartColor, _once
-  } = options
+export const dataHandler = ({ props, options, echarts } = {}) => {
+  const { chartHandler, chartColor, _once } = options
 
   if (!chartHandler) return
   let data = props?.data
-  const {
-    columns = [], rows = []
-  } = data
+  const { columns = [], rows = [] } = data
   const extra = {
     tooltipVisible: props?.tooltipVisible,
     legendVisible: props?.legendVisible,
@@ -139,7 +117,7 @@ export const dataHandler = ({
 
   if (chartOptions) {
     if (typeof chartOptions.then === 'function') {
-      chartOptions.then((res) => {
+      chartOptions.then(res => {
         optionsHandler({
           chartOptions: res,
           props,
@@ -165,9 +143,8 @@ export const optionsHandler = ({
   echarts,
   nextTick
 }) => {
-  const {
-    chartColor, _store, _once, el, readyCallback, readyOnceCallback
-  } = options
+  const { chartColor, _store, _once, el, readyCallback, readyOnceCallback } =
+    options
   // legend
   if (props?.legendPosition && chartOptions.legend) {
     chartOptions.legend[props?.legendPosition] = 10
@@ -179,7 +156,7 @@ export const optionsHandler = ({
   // color
   chartOptions.color = chartColor
   // echarts self settings
-  ECHARTS_SETTINGS.forEach((setting) => {
+  ECHARTS_SETTINGS.forEach(setting => {
     if (props?.[setting]) chartOptions[setting] = props?.[setting]
   })
   // animation
@@ -193,7 +170,7 @@ export const optionsHandler = ({
     }
     const series = chartOptions.series
     if (isArray(series)) {
-      series.forEach((item) => {
+      series.forEach(item => {
         setMark(item, marks)
       })
     } else if (isObject(series)) {
@@ -213,7 +190,7 @@ export const optionsHandler = ({
   }
   // exclude unchange options
   if (props?.notSetUnchange && props?.notSetUnchange.length) {
-    props?.notSetUnchange.forEach((item) => {
+    props?.notSetUnchange.forEach(item => {
       const value = chartOptions[item]
       if (value) {
         if (isEqual(value, _store[item])) {
@@ -232,10 +209,12 @@ export const optionsHandler = ({
 
   if (props?.log) console.log(chartOptions)
   echarts.setOption(chartOptions, setOptionOpts)
-  readyCallback instanceof Function && readyCallback(echarts, chartOptions, echartsLib)
+  readyCallback instanceof Function &&
+    readyCallback(echarts, chartOptions, echartsLib)
   if (!_once['ready-once']) {
     _once['ready-once'] = true
-    readyOnceCallback instanceof Function && readyOnceCallback(echarts, chartOptions, echartsLib)
+    readyOnceCallback instanceof Function &&
+      readyOnceCallback(echarts, chartOptions, echartsLib)
   }
   if (props?.judgeWidth) {
     judgeWidthHandler({
@@ -254,9 +233,7 @@ export const optionsHandler = ({
   }
 }
 
-export const judgeWidthHandler = ({
-  props, el, nextTick, echarts
-}) => {
+export const judgeWidthHandler = ({ props, el, nextTick, echarts }) => {
   if (el.clientWidth || el.clientHeight) {
     resize({
       props,
@@ -287,9 +264,7 @@ export const judgeWidthHandler = ({
   }
 }
 
-export const resize = ({
-  props, el, echarts
-} = {}) => {
+export const resize = ({ props, el, echarts } = {}) => {
   if (!props?.cancelResizeCheck) {
     if (el && el.clientWidth && el.clientHeight) {
       echartsResize(echarts)
@@ -299,15 +274,15 @@ export const resize = ({
   }
 }
 
-export const echartsResize = (echarts) => {
+export const echartsResize = echarts => {
   echarts && echarts.resize()
 }
 
-export const themeChange = (initPayload, props2) => {
+export const themeChange = (initPayload, props) => {
   let {
     echarts,
     options: { _once }
-  } = initPayload;
+  } = initPayload
   clean({
     echarts,
     props,
@@ -317,9 +292,7 @@ export const themeChange = (initPayload, props2) => {
   init(initPayload)
 }
 
-export const clean = ({
-  echarts, props, _once
-}) => {
+export const clean = ({ echarts, props, _once }) => {
   if (props?.resizeable) {
     removeResizeListener({ _once })
   }

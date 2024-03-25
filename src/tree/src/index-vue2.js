@@ -1,12 +1,9 @@
-import { tree } from './main'
-import {
-  name, version
-} from '../package.json'
+import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
 import { createChart } from '@v-charts2/core/vue2'
 import { TreeChart } from 'echarts/charts'
-import {
-  echartsLib, logCopyRight
-} from '@v-charts2/core/utils'
+
+import { tree } from './main'
+import { name, version } from '../package.json'
 
 echartsLib.use([TreeChart])
 
@@ -18,7 +15,7 @@ const VeTree = Object.assign({}, createChart, {
   }
 })
 
-VeTree.install = (Vue) => {
+VeTree.install = Vue => {
   logCopyRight(name, version)
   Vue.component(VeTree.name, VeTree)
 }

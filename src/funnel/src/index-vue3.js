@@ -1,12 +1,9 @@
-import { funnel } from './main'
-import {
-  name, version
-} from '../package.json'
+import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
 import { createChart } from '@v-charts2/core/vue3'
 import { FunnelChart } from 'echarts/charts'
-import {
-  echartsLib, logCopyRight
-} from '@v-charts2/core/utils'
+
+import { funnel } from './main'
+import { name, version } from '../package.json'
 
 echartsLib.use([FunnelChart])
 
@@ -15,7 +12,7 @@ const VeFunnel = createChart({
   chartHandler: funnel
 })
 
-VeFunnel.install = (app) => {
+VeFunnel.install = app => {
   logCopyRight(name, version)
   app.component(VeFunnel.name, VeFunnel)
 }

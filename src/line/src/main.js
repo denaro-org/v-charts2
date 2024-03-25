@@ -1,12 +1,8 @@
-import {
-  getFormated, getStackMap
-} from '@v-charts2/core/utils'
+import { getFormated, getStackMap } from '@v-charts2/core/utils'
 import { isArray } from 'utils-lite'
 
 function getLineXAxis (args) {
-  const {
-    dimension, rows, xAxisName, axisVisible, xAxisType
-  } = args
+  const { dimension, rows, xAxisName, axisVisible, xAxisType } = args
   return dimension.map((item, index) => ({
     type: xAxisType,
     nameLocation: 'middle',
@@ -16,7 +12,7 @@ function getLineXAxis (args) {
       show: true,
       lineStyle: { color: '#eee' }
     },
-    data: rows.map((row) => row[item]),
+    data: rows.map(row => row[item]),
     show: axisVisible
   }))
 }
@@ -39,11 +35,11 @@ function getLineSeries (args) {
   const series = []
   const dataTemp = {}
   const stackMap = stack && getStackMap(stack)
-  metrics.forEach((item) => {
+  metrics.forEach(item => {
     dataTemp[item] = []
   })
-  rows.forEach((row) => {
-    metrics.forEach((item) => {
+  rows.forEach(row => {
+    metrics.forEach(item => {
       let value = null
       if (row[item] != null) {
         value = row[item]
@@ -53,7 +49,7 @@ function getLineSeries (args) {
       dataTemp[item].push([row[dimension[0]], value])
     })
   })
-  metrics.forEach((item) => {
+  metrics.forEach(item => {
     const seriesItem = {
       name: labelMap[item] != null ? labelMap[item] : item,
       type: 'line',
@@ -61,7 +57,7 @@ function getLineSeries (args) {
     }
 
     if (area) {
-      seriesItem.areaStyle = { }
+      seriesItem.areaStyle = {}
     }
     if (axisSite.right) {
       seriesItem.yAxisIndex = ~axisSite.right.indexOf(item) ? 1 : 0
@@ -80,9 +76,7 @@ function getLineSeries (args) {
 }
 
 function getLineYAxis (args) {
-  const {
-    yAxisName, yAxisType, axisVisible, scale, min, max, digit
-  } = args
+  const { yAxisName, yAxisType, axisVisible, scale, min, max, digit } = args
   const yAxisBase = {
     type: 'value',
     axisTick: { show: false },
@@ -110,12 +104,10 @@ function getLineYAxis (args) {
 }
 
 function getLineTooltip (args) {
-  const {
-    axisSite, yAxisType, digit, labelMap, tooltipFormatter
-  } = args
+  const { axisSite, yAxisType, digit, labelMap, tooltipFormatter } = args
   const rightItems = axisSite.right || []
   const rightList = labelMap
-    ? rightItems.map((item) => {
+    ? rightItems.map(item => {
       return labelMap[item] === undefined ? item : labelMap[item]
     })
     : rightItems
@@ -126,14 +118,10 @@ function getLineTooltip (args) {
         return tooltipFormatter.apply(null, arguments)
       }
       const tpl = []
-      const {
-        name, axisValueLabel
-      } = items[0]
+      const { name, axisValueLabel } = items[0]
       const title = name || axisValueLabel
       tpl.push(`${title}<br>`)
-      items.forEach(({
-        seriesName, data, marker
-      }) => {
+      items.forEach(({ seriesName, data, marker }) => {
         let showData = null
         const type = ~rightList.indexOf(seriesName)
           ? yAxisType[1]
@@ -150,14 +138,12 @@ function getLineTooltip (args) {
 }
 
 function getLegend (args) {
-  const {
-    metrics, legendName, labelMap
-  } = args
+  const { metrics, legendName, labelMap } = args
   if (!legendName && !labelMap) {
     return { data: metrics }
   }
   const data = labelMap
-    ? metrics.map((item) => (labelMap[item] == null ? item : labelMap[item]))
+    ? metrics.map(item => (labelMap[item] == null ? item : labelMap[item]))
     : metrics
   return {
     data,
@@ -192,9 +178,7 @@ export const line = (columns, rows, settings, extra) => {
     lineStyle,
     areaStyle
   } = settings
-  const {
-    tooltipVisible, legendVisible, tooltipFormatter
-  } = extra
+  const { tooltipVisible, legendVisible, tooltipFormatter } = extra
   let metrics = columns.slice()
 
   if (axisSite.left && axisSite.right) {

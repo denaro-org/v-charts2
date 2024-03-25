@@ -1,5 +1,8 @@
 import {
-  echartsLib, getFormated, getMapJSON, itemPoint
+  echartsLib,
+  getFormated,
+  getMapJSON,
+  itemPoint
 } from '@v-charts2/core/utils'
 
 function getTooltip (dataType, digit, dataStore, metrics, color, labelMap) {
@@ -12,7 +15,9 @@ function getTooltip (dataType, digit, dataStore, metrics, color, labelMap) {
         const title = labelMap[label] != null ? labelMap[label] : label
         tpl.push(`${itemPoint(color[index])} ${title} : `)
         if (dataStore[item.name]) {
-          tpl.push(getFormated(dataStore[item.name][label], dataType[label], digit))
+          tpl.push(
+            getFormated(dataStore[item.name][label], dataType[label], digit)
+          )
         } else {
           tpl.push('-')
         }
@@ -48,21 +53,24 @@ function getSeries (args) {
     map: position
   }
 
-  metrics.forEach((itemName) => {
-    const itemResult = Object.assign({
-      name: labelMap[itemName] != null ? labelMap[itemName] : itemName,
-      data: [],
-      selectedMode,
-      roam,
-      center,
-      aspectScale,
-      boundingCoords,
-      zoom,
-      scaleLimit
-    }, mapBase)
+  metrics.forEach(itemName => {
+    const itemResult = Object.assign(
+      {
+        name: labelMap[itemName] != null ? labelMap[itemName] : itemName,
+        data: [],
+        selectedMode,
+        roam,
+        center,
+        aspectScale,
+        boundingCoords,
+        zoom,
+        scaleLimit
+      },
+      mapBase
+    )
 
     if (mapGrid) {
-      Object.keys(mapGrid).forEach((key) => {
+      Object.keys(mapGrid).forEach(key => {
         itemResult[key] = mapGrid[key]
       })
     }
@@ -70,7 +78,7 @@ function getSeries (args) {
     setGeoLabel(itemStyle, itemResult, 'itemStyle')
     setGeoLabel(label, itemResult, 'label')
 
-    rows.forEach((row) => {
+    rows.forEach(row => {
       itemResult.data.push({
         name: row[dimension],
         value: row[itemName],
@@ -92,12 +100,10 @@ function setGeoLabel (value, target, label) {
 }
 
 function getLegendMap (args) {
-  const {
-    metrics, legendName, labelMap
-  } = args
+  const { metrics, legendName, labelMap } = args
   if (!legendName && !labelMap) return { data: metrics }
   const data = labelMap
-    ? metrics.map((item) => (labelMap[item] == null ? item : labelMap[item]))
+    ? metrics.map(item => (labelMap[item] == null ? item : labelMap[item]))
     : metrics
   return {
     data,
@@ -160,15 +166,21 @@ export const map = (columns, rows, settings, extra) => {
   } else {
     metrics.splice(columns.indexOf(dimension), 1)
   }
-  const {
-    tooltipVisible, legendVisible, color, _once
-  } = extra
+  const { tooltipVisible, legendVisible, color, _once } = extra
   const dataStore = {}
-  rows.forEach((row) => { dataStore[row[dimension]] = row })
-  const tooltip = tooltipVisible && getTooltip(dataType, digit, dataStore, metrics, color, labelMap)
-  const legend = legendVisible && getLegendMap({
-    metrics, legendName, labelMap
+  rows.forEach(row => {
+    dataStore[row[dimension]] = row
   })
+  const tooltip =
+    tooltipVisible &&
+    getTooltip(dataType, digit, dataStore, metrics, color, labelMap)
+  const legend =
+    legendVisible &&
+    getLegendMap({
+      metrics,
+      legendName,
+      labelMap
+    })
   const seriesParams = {
     position,
     selectData,
@@ -200,7 +212,9 @@ export const map = (columns, rows, settings, extra) => {
   if (mapOrigin) {
     registerMap(registerOptions, mapOrigin)
     return {
-      series, tooltip, legend
+      series,
+      tooltip,
+      legend
     }
   } else {
     return getMapJSON({
@@ -208,10 +222,12 @@ export const map = (columns, rows, settings, extra) => {
       positionJsonLink,
       beforeRegisterMapOnce,
       mapURLProfix
-    }).then((json) => {
+    }).then(json => {
       registerMap(registerOptions, json)
       return {
-        series, tooltip, legend
+        series,
+        tooltip,
+        legend
       }
     })
   }
