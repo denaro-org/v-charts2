@@ -10,14 +10,17 @@
   "license": "MIT",
   "exports": {
     "./vue3": {
-      "import": "./src/index-vue3.ts",
+      "import": "./lib/vue3/v-charts.core.mjs",
       "require": "./lib/vue3/v-charts.core.umd.js"
     },
     "./vue2": {
-      "import": "./src/index-vue2.ts",
+      "import": "./lib/vue2/v-charts.core.mjs",
       "require": "./lib/vue2/v-charts.core.umd.js"
     },
-    "./utils": "./src/utils/index.js",
+    "./utils": {
+      "import": "./lib/vue2/v-charts.core.mjs",
+      "require": "./lib/vue2/v-charts.core.umd.js"
+    },
     "./v-charts.css": {
       "import": "./lib/style/v-charts.css",
       "require": "./lib/style/v-charts.css"
