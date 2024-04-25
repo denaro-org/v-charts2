@@ -15,7 +15,7 @@ import {
 } from './render-core'
 
 export default {
-  render (h) {
+  render(h) {
     return h(
       'div',
       {
@@ -76,7 +76,7 @@ export default {
 
   props,
 
-  created () {
+  created() {
     this.echarts = null
     this.registeredEvents = []
     this._once = {}
@@ -84,7 +84,7 @@ export default {
     this._watchers = []
     this.initPayload = {}
   },
-  data () {
+  data() {
     return {
       chartLib: null,
       echarts: null,
@@ -98,7 +98,7 @@ export default {
   watch: {
     data: {
       deep: true,
-      handler (v) {
+      handler(v) {
         if (v) {
           changeHandler({
             props: this.$props,
@@ -111,7 +111,7 @@ export default {
 
     settings: {
       deep: true,
-      handler (v) {
+      handler(v) {
         if (v.type && this.chartLib) {
           this.chartHandler = this.chartLib[v.type]
           this.initPayload.options.chartHandler = this.chartLib[v.type]
@@ -129,7 +129,7 @@ export default {
 
     events: {
       deep: true,
-      handler () {
+      handler() {
         createEventProxy({
           registeredEvents: this.registeredEvents,
           echarts: this.echarts,
@@ -140,21 +140,21 @@ export default {
 
     theme: {
       deep: true,
-      handler (val) {
+      handler(val) {
         themeChange(this.initPayload, props)
       }
     },
 
     themeName: {
       deep: true,
-      handler (val) {
+      handler(val) {
         themeChange(this.initPayload, props)
       }
     },
 
     resizeable: {
       deep: true,
-      handler (val) {
+      handler(val) {
         this.$nextTick(() => {
           resizeableHandler({
             resizeable: this.resizeable,
@@ -169,7 +169,7 @@ export default {
   },
 
   computed: {
-    canvasStyle () {
+    canvasStyle() {
       return {
         width: this.width,
         height: this.height,
@@ -177,11 +177,11 @@ export default {
       }
     },
 
-    chartColor () {
+    chartColor() {
       return this.colors || (this.theme && this.theme.color) || DEFAULT_COLORS
     }
   },
-  mounted () {
+  mounted() {
     const {
       echarts,
       $props: props,
@@ -224,7 +224,7 @@ export default {
       echarts: this.echarts
     })
   },
-  beforeDestroy () {
+  beforeDestroy() {
     clean({
       echarts: this.echarts,
       props: this.$props,
@@ -233,7 +233,7 @@ export default {
   },
 
   methods: {
-    addWatchToProps () {
+    addWatchToProps() {
       const watchedVariable = this._watchers.map(watcher => watcher.expression)
       Object.keys(this.$props).forEach(prop => {
         if (!~watchedVariable.indexOf(prop) && !~STATIC_PROPS.indexOf(prop)) {
@@ -259,7 +259,7 @@ export default {
         }
       })
     },
-    nextTickResize () {
+    nextTickResize() {
       this.$nextTick(
         resize({
           props: this.$props,

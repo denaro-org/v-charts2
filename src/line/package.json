@@ -43,19 +43,18 @@
     "copy": "cpx \"../../CHANGELOG.md\" \"./\""
   },
   "dependencies": {
-    "@v-charts2/core": "^1.1.3",
+    "@v-charts2/core": "workspace:^",
     "echarts": "^5.5.0",
     "utils-lite": "^0.1.15"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",
     "rollup-plugin-copy": "^3.5.0",
-    "vite": "^5.1.6",
+    "vite": "^5.2.10",
     "vite-plugin-banner": "^0.7.1"
   },
   "peerDependencies": {
-    "echarts": ">5.0.0",
-    "vue": ">2.6.0 || >3.2.25"
+    "echarts": "^5.5.0"
   },
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.0.0"

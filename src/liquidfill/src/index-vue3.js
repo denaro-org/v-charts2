@@ -1,11 +1,11 @@
 import { logCopyRight } from '@v-charts2/core/utils'
-import { createChart } from '@v-charts2/core/vue3'
+import { createChartVue3 } from '@v-charts2/core/vue3'
 
 import { liquidfill } from './main'
 import { name, version } from '../package.json'
 import 'echarts-liquidfill'
 
-const VeLiquidfill = createChart({
+const VeLiquidfill = createChartVue3({
   name: 'VeLiquidfill',
   chartHandler: liquidfill
 })

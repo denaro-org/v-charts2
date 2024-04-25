@@ -1,5 +1,5 @@
 import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
-import { createChart } from '@v-charts2/core/vue3'
+import { createChartVue3 } from '@v-charts2/core/vue3'
 import { LineChart } from 'echarts/charts'
 
 import { line } from './main'
@@ -7,7 +7,7 @@ import { name, version } from '../package.json'
 
 echartsLib.use([LineChart])
 
-const VeLine = createChart({
+const VeLine = createChartVue3({
   name: 'VeLine',
   chartHandler: line
 })

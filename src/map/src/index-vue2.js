@@ -1,5 +1,5 @@
 import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
-import { createChart } from '@v-charts2/core/vue2'
+import { createChartVue2 } from '@v-charts2/core/vue2'
 import { MapChart } from 'echarts/charts'
 
 import { map } from './main'
@@ -7,9 +7,9 @@ import { name, version } from '../package.json'
 
 echartsLib.use([MapChart])
 
-const VeMap = Object.assign({}, createChart, {
+const VeMap = Object.assign({}, createChartVue2, {
   name: 'VeMap',
-  data () {
+  data() {
     this.chartHandler = map
     return {}
   }

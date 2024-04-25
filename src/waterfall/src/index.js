@@ -19,9 +19,9 @@ let VeWaterfall
 if (useVueVersion() === 2) {
   VeWaterfall = require('./vue2/v-charts.waterfall.mjs')
 } else {
-  VeWaterfall = require('./vue3/v-charts.waterfall.mjs')
+  VeWaterfall = await import('./vue3/v-charts.waterfall.mjs')
 }
 
-VeWaterfall = VeWaterfall.default
+VeWaterfall = VeWaterfall.default || VeWaterfall
 
 export default VeWaterfall

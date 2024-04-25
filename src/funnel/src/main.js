@@ -1,9 +1,9 @@
 import { getFormated, itemPoint } from '@v-charts2/core/utils'
 
-function getFunnelTooltip (dataType, digit) {
+function getFunnelTooltip(dataType, digit) {
   return {
     trigger: 'item',
-    formatter (item) {
+    formatter(item) {
       const tpl = []
       tpl.push(itemPoint(item.color))
       tpl.push(
@@ -14,17 +14,17 @@ function getFunnelTooltip (dataType, digit) {
   }
 }
 
-function getFunnelLegend (args) {
+function getFunnelLegend(args) {
   const { data, legendName } = args
   return {
     data,
-    formatter (name) {
+    formatter(name) {
       return legendName[name] != null ? legendName[name] : name
     }
   }
 }
 
-function getFunnelSeries (args) {
+function getFunnelSeries(args) {
   const {
     dimension,
     metrics,

@@ -1,5 +1,5 @@
 import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
-import { createChart } from '@v-charts2/core/vue3'
+import { createChartVue3 } from '@v-charts2/core/vue3'
 import { BarChart } from 'echarts/charts'
 
 import { bar, histogram } from './main'
@@ -7,7 +7,7 @@ import { name, version } from '../package.json'
 
 echartsLib.use([BarChart])
 
-const VeBar = createChart({
+const VeBar = createChartVue3({
   name: 'VeBar',
   chartHandler: bar
 })

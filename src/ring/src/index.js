@@ -19,9 +19,9 @@ let VeRing
 if (useVueVersion() === 2) {
   VeRing = require('./vue2/v-charts.ring.mjs')
 } else {
-  VeRing = require('./vue3/v-charts.ring.mjs')
+  VeRing = await import('./vue3/v-charts.ring.mjs')
 }
 
-VeRing = VeRing.default
+VeRing = VeRing.default || VeRing
 
 export default VeRing

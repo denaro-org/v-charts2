@@ -57,7 +57,7 @@ export default ({ mode }) => {
           'echarts/charts',
           'numerify',
           'utils-lite',
-          'echarts-amap',
+          'echarts-extension-amap',
           '@v-charts2/core/vue3',
           '@v-charts2/core/vue2'
         ],
@@ -75,7 +75,7 @@ export default ({ mode }) => {
             'echarts/charts': 'echarts/charts',
             numerify: 'numerify',
             'utils-lite': 'utilsLite',
-            'echarts-amap': 'echarts-amap',
+            'echarts-extension-amap': 'echarts-extension-amap',
             '@v-charts2/core/vue3': 'vCore3',
             '@v-charts2/core/vue2': 'vCore2'
           }

@@ -1,5 +1,5 @@
 import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
-import { createChart } from '@v-charts2/core/vue3'
+import { createChartVue3 } from '@v-charts2/core/vue3'
 import { BarChart, CandlestickChart, LineChart } from 'echarts/charts'
 import { DataZoomComponent, VisualMapComponent } from 'echarts/components'
 
@@ -14,7 +14,7 @@ echartsLib.use([
   VisualMapComponent
 ])
 
-const VeCandle = createChart({
+const VeCandle = createChartVue3({
   name: 'VeCandle',
   chartHandler: candle
 })

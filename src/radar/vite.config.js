@@ -56,7 +56,9 @@ export default ({ mode }) => {
           'echarts/renderers',
           'echarts/charts',
           'numerify',
-          'utils-lite'
+          'utils-lite',
+          '@v-charts2/core/vue3',
+          '@v-charts2/core/vue2'
         ],
         output: {
           exports: 'named',
@@ -71,7 +73,9 @@ export default ({ mode }) => {
             'echarts/renderers': 'echarts/renderers',
             'echarts/charts': 'echarts/charts',
             numerify: 'numerify',
-            'utils-lite': 'utilsLite'
+            'utils-lite': 'utilsLite',
+            '@v-charts2/core/vue3': 'vCore3',
+            '@v-charts2/core/vue2': 'vCore2'
           }
         }
       }

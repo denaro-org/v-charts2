@@ -1,5 +1,5 @@
 import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
-import { createChart } from '@v-charts2/core/vue2'
+import { createChartVue2 } from '@v-charts2/core/vue2'
 import { ScatterChart } from 'echarts/charts'
 
 import { scatter } from './main'
@@ -7,9 +7,9 @@ import { name, version } from '../package.json'
 
 echartsLib.use([ScatterChart])
 
-const VeScatter = Object.assign({}, createChart, {
+const VeScatter = Object.assign({}, createChartVue2, {
   name: 'VeScatter',
-  data () {
+  data() {
     this.chartHandler = scatter
     return {}
   }

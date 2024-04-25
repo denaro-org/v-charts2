@@ -6,7 +6,7 @@ const ringRadius = [80, 100]
 const roseRingRadius = [20, 100]
 const pieOffsetY = 200
 
-function getPieSeries (args) {
+function getPieSeries(args) {
   const {
     innerRows,
     dataType,
@@ -76,7 +76,7 @@ function getPieSeries (args) {
       seriesItem.label = {
         show: true,
         position: rowsTempLength > 1 && index === 0 ? 'inner' : 'outside',
-        formatter (item) {
+        formatter(item) {
           const tpl = []
           tpl.push(`${item.name}:`)
           tpl.push(getFormated(item.value, dataType, digit))
@@ -107,7 +107,7 @@ function getPieSeries (args) {
   return series
 }
 
-function getPieLegend (args) {
+function getPieLegend(args) {
   const { innerRows, dimension, legendLimit, legendName, level, limitShowNum } =
     args
   let legend = []
@@ -131,7 +131,7 @@ function getPieLegend (args) {
     return {
       data: legend,
       show: legend.length < legendLimit,
-      formatter (name) {
+      formatter(name) {
         return legendName[name] != null ? legendName[name] : name
       }
     }
@@ -140,7 +140,7 @@ function getPieLegend (args) {
   }
 }
 
-function getPieTooltip (args) {
+function getPieTooltip(args) {
   const { dataType, innerRows, limitShowNum, digit, metrics, dimension } = args
   let sum = 0
   const remainArr = innerRows
@@ -153,7 +153,7 @@ function getPieTooltip (args) {
     })
     .slice(limitShowNum, innerRows.length)
   return {
-    formatter (item) {
+    formatter(item) {
       const tpl = []
       tpl.push(itemPoint(item.color))
       if (limitShowNum && item.name === '其他') {

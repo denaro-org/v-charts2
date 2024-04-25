@@ -61,7 +61,9 @@ export default ({ mode }) => {
           'echarts-amap',
           'echarts-liquidfill',
           'echarts-wordcloud',
-          'echarts/extension/bmap/bmap'
+          'echarts-extension-amap',
+          '@v-charts2/core/vue3',
+          '@v-charts2/core/vue2'
         ],
         output: {
           exports: 'named',
@@ -80,7 +82,9 @@ export default ({ mode }) => {
             'echarts-amap': 'echarts-amap',
             'echarts-liquidfill': 'echarts-liquidfill',
             'echarts-wordcloud': 'echarts-wordcloud',
-            'echarts/extension/bmap/bmap': 'echarts/extension/bmap/bmap'
+            'echarts-extension-amap': 'echarts-extension-amap',
+            '@v-charts2/core/vue3': 'vCore3',
+            '@v-charts2/core/vue2': 'vCore2'
           }
         }
       }

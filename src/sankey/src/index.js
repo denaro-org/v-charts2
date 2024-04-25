@@ -19,9 +19,9 @@ let VeSankey
 if (useVueVersion() === 2) {
   VeSankey = require('./vue2/v-charts.sankey.mjs')
 } else {
-  VeSankey = require('./vue3/v-charts.sankey.mjs')
+  VeSankey = await import('./vue3/v-charts.sankey.mjs')
 }
 
-VeSankey = VeSankey.default
+VeSankey = VeSankey.default || VeSankey
 
 export default VeSankey

@@ -9,7 +9,7 @@ import {
   itemPoint
 } from '@v-charts2/core/utils'
 
-function getAxisList (rows, label) {
+function getAxisList(rows, label) {
   const result = []
   rows.forEach(row => {
     if (!~result.indexOf(row[label])) result.push(row[label])
@@ -17,7 +17,7 @@ function getAxisList (rows, label) {
   return result
 }
 
-function getData (args) {
+function getData(args) {
   const {
     rows,
     innerXAxisList,
@@ -46,7 +46,7 @@ function getData (args) {
   return result
 }
 
-function getAxis (list, name) {
+function getAxis(list, name) {
   return {
     type: 'category',
     data: list,
@@ -56,7 +56,7 @@ function getAxis (list, name) {
   }
 }
 
-function getVisualMap (args) {
+function getVisualMap(args) {
   const { innerMin: min, innerMax: max, type, heatColor, series } = args
   const result = {
     min,
@@ -93,7 +93,7 @@ function getVisualMap (args) {
   return Object.assign(result, extra)
 }
 
-function getSeries (args) {
+function getSeries(args) {
   const { chartData } = args
   return [
     {
@@ -103,7 +103,7 @@ function getSeries (args) {
   ]
 }
 
-function getTooltip (args) {
+function getTooltip(args) {
   const {
     dataType,
     innerXAxisList,
@@ -115,7 +115,7 @@ function getTooltip (args) {
 
   return {
     trigger: 'item',
-    formatter ({
+    formatter({
       color,
       data: {
         value: [xDim, yDim, value, ...extraData]

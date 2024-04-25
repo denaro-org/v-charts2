@@ -19,9 +19,9 @@ let VeGauge
 if (useVueVersion() === 2) {
   VeGauge = require('./vue2/v-charts.gauge.mjs')
 } else {
-  VeGauge = require('./vue3/v-charts.gauge.mjs')
+  VeGauge = await import('./vue3/v-charts.gauge.mjs')
 }
 
-VeGauge = VeGauge.default
+VeGauge = VeGauge.default || VeGauge
 
 export default VeGauge

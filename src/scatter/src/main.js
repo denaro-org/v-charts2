@@ -2,20 +2,20 @@ import { getFormated, itemPoint } from '@v-charts2/core/utils'
 import { line } from '@v-charts2/line/main'
 import { isArray } from 'utils-lite'
 
-function getScatterLegend (dataLabels, legendName) {
+function getScatterLegend(dataLabels, legendName) {
   return {
     data: dataLabels,
-    formatter (name) {
+    formatter(name) {
       return legendName[name] != null ? legendName[name] : name
     }
   }
 }
 
-function getScatterTooltip (args) {
+function getScatterTooltip(args) {
   const { tooltipTrigger } = args
   return {
     trigger: tooltipTrigger,
-    formatter (item) {
+    formatter(item) {
       if (isArray(item)) {
         return item.map(i => getTooltipContent(i, args)).join('')
       } else {
@@ -25,7 +25,7 @@ function getScatterTooltip (args) {
   }
 }
 
-function getTooltipContent (item, args) {
+function getTooltipContent(item, args) {
   const { labelMap, columns, dataType, digit } = args
   const tpl = []
   const {
@@ -42,7 +42,7 @@ function getTooltipContent (item, args) {
   return tpl.join('')
 }
 
-function getScatterXAxis (args) {
+function getScatterXAxis(args) {
   const { xAxisName, axisVisible, xAxisType, rows, dataLabels, dimension } =
     args
   const data = []
@@ -64,7 +64,7 @@ function getScatterXAxis (args) {
   ]
 }
 
-function getScatterYAxis (args) {
+function getScatterYAxis(args) {
   const { min, max, scale, yAxisName, dataType, metrics, digit, axisVisible } =
     args
 
@@ -77,14 +77,14 @@ function getScatterYAxis (args) {
     axisTick: { show: false },
     name: yAxisName,
     axisLabel: {
-      formatter (val) {
+      formatter(val) {
         return getFormated(val, dataType[metrics[0]], digit)
       }
     }
   }
 }
 
-function getScatterSeries (args) {
+function getScatterSeries(args) {
   const {
     rows,
     dataLabels,

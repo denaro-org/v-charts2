@@ -9,31 +9,31 @@ const DEFAULT_START = 50
 const DEFAULT_END = 100
 const SHOW_FALSE = { show: false }
 
-function getCandleLegend (args) {
+function getCandleLegend(args) {
   const { showMA, MA, legendName, labelMap } = args
   let data = [DEFAULT_K_NAME]
   if (showMA) data = data.concat(MA.map(v => `MA${v}`))
   if (labelMap) data = data.map(v => (labelMap[v] == null ? v : labelMap[v]))
   return {
     data,
-    formatter (name) {
+    formatter(name) {
       return legendName[name] != null ? legendName[name] : name
     }
   }
 }
 
-function getCandleTooltip (args) {
+function getCandleTooltip(args) {
   const { metrics, dataType, digit, labelMap } = args
   return {
     trigger: 'axis',
     axisPointer: { type: 'cross' },
-    position (pos, params, el, elRect, size) {
+    position(pos, params, el, elRect, size) {
       const result = { top: 10 }
       const side = pos[0] < size.viewSize[0] / 2 ? 'right' : 'left'
       result[side] = 60
       return result
     },
-    formatter (options) {
+    formatter(options) {
       const tpl = []
       tpl.push(`${options[0].axisValue}<br>`)
       options.forEach(option => {
@@ -61,7 +61,7 @@ function getCandleTooltip (args) {
   }
 }
 
-function getCandleVisualMap (args) {
+function getCandleVisualMap(args) {
   const { downColor, upColor, MA, showMA } = args
   return {
     show: false,
@@ -80,7 +80,7 @@ function getCandleVisualMap (args) {
   }
 }
 
-function getCandleGrid (args) {
+function getCandleGrid(args) {
   const { showVol } = args
   return [
     {
@@ -100,7 +100,7 @@ function getCandleGrid (args) {
   ]
 }
 
-function getCandleXAxis (args) {
+function getCandleXAxis(args) {
   const { dims: data } = args
   const type = 'category'
   const scale = true
@@ -140,7 +140,7 @@ function getCandleXAxis (args) {
   ]
 }
 
-function getCandleYAxis (args) {
+function getCandleYAxis(args) {
   const { dataType, digit } = args
   const scale = true
   const gridIndex = 1
@@ -171,7 +171,7 @@ function getCandleYAxis (args) {
   ]
 }
 
-function getCandleDataZoom (args) {
+function getCandleDataZoom(args) {
   const { start, end } = args
 
   return [
@@ -192,7 +192,7 @@ function getCandleDataZoom (args) {
   ]
 }
 
-function getCandleSeries (args) {
+function getCandleSeries(args) {
   const {
     values,
     volumes,
@@ -250,7 +250,7 @@ function getCandleSeries (args) {
   return series
 }
 
-function calculateMA (dayCount, data, digit) {
+function calculateMA(dayCount, data, digit) {
   const result = []
   data.forEach((d, i) => {
     if (i < dayCount) {

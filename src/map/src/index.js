@@ -19,9 +19,9 @@ let VeMap
 if (useVueVersion() === 2) {
   VeMap = require('./vue2/v-charts.map.mjs')
 } else {
-  VeMap = require('./vue3/v-charts.map.mjs')
+  VeMap = await import('./vue3/v-charts.map.mjs')
 }
 
-VeMap = VeMap.default
+VeMap = VeMap.default || VeMap
 
 export default VeMap

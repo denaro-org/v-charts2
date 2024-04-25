@@ -18,13 +18,13 @@ export const createChart = ({ name, chartHandler, chartLib }) => {
   return {
     name,
     props,
-    setup (props, { slots, emit }) {
+    setup(props, { slots, emit }) {
       let echarts = null
       const registeredEvents = []
       const _once = {}
       const _store = {}
       const _watchers = []
-      let stateChangeHandler = null
+      let stateChangeHandler
 
       if (!changeHandler) {
         stateChangeHandler = chartLib[props.settings.type]

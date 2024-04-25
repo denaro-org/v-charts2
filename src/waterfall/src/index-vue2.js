@@ -1,5 +1,5 @@
 import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
-import { createChart } from '@v-charts2/core/vue2'
+import { createChartVue2 } from '@v-charts2/core/vue2'
 import { BarChart } from 'echarts/charts'
 
 import { waterfall } from './main'
@@ -7,9 +7,9 @@ import { name, version } from '../package.json'
 
 echartsLib.use([BarChart])
 
-const VeWaterfall = Object.assign({}, createChart, {
+const VeWaterfall = Object.assign({}, createChartVue2, {
   name: 'VeWaterfall',
-  data () {
+  data() {
     this.chartHandler = waterfall
     return {}
   }

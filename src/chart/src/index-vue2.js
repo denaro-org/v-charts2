@@ -41,7 +41,7 @@ const charts = [
   VeHeatmap
 ]
 
-function install (Vue) {
+function install(Vue) {
   logCopyRight(name, version)
   charts.forEach(component => {
     Vue.component(component.name, component)

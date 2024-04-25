@@ -19,9 +19,9 @@ let VeHistogram
 if (useVueVersion() === 2) {
   VeHistogram = require('./vue2/v-charts.histogram.mjs')
 } else {
-  VeHistogram = require('./vue3/v-charts.histogram.mjs')
+  VeHistogram = await import('./vue3/v-charts.histogram.mjs')
 }
 
-VeHistogram = VeHistogram.default
+VeHistogram = VeHistogram.default || VeHistogram
 
 export default VeHistogram

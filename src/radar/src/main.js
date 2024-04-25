@@ -1,17 +1,17 @@
 import { getFormated, itemPoint } from '@v-charts2/core/utils'
 
-function getRadarLegend (rows, dimension, legendName) {
+function getRadarLegend(rows, dimension, legendName) {
   const legendData = rows.map(row => row[dimension])
 
   return {
     data: legendData,
-    formatter (name) {
+    formatter(name) {
       return legendName[name] != null ? legendName[name] : name
     }
   }
 }
 
-function getRadarTooltip (dataType, radar, digit) {
+function getRadarTooltip(dataType, radar, digit) {
   const typeTemp = []
   const nameTemp = []
   radar.indicator.map((item, index) => {
@@ -20,7 +20,7 @@ function getRadarTooltip (dataType, radar, digit) {
     return item
   })
   return {
-    formatter (item) {
+    formatter(item) {
       const tpl = []
       tpl.push(itemPoint(item.color))
       tpl.push(`${item.name}<br />`)
@@ -33,7 +33,7 @@ function getRadarTooltip (dataType, radar, digit) {
   }
 }
 
-function getRadarSetting (rows, metrics, labelMap) {
+function getRadarSetting(rows, metrics, labelMap) {
   const settingBase = {
     center: ['50%', '60%'],
     indicator: [],
@@ -60,7 +60,7 @@ function getRadarSetting (rows, metrics, labelMap) {
   return settingBase
 }
 
-function getRadarSeries (args) {
+function getRadarSeries(args) {
   const {
     rows,
     dimension,

@@ -1,10 +1,10 @@
 import { getFormated } from '@v-charts2/core/utils'
 import { isObject } from 'utils-lite'
 
-function getTooltip (args) {
+function getTooltip(args) {
   const { tooltipFormatter, dataType, digit } = args
   return {
-    formatter (options) {
+    formatter(options) {
       const {
         seriesName,
         data: { value, name }
@@ -20,7 +20,7 @@ function getTooltip (args) {
   }
 }
 
-function getSeries (args) {
+function getSeries(args) {
   const {
     rows,
     dimension,
@@ -45,12 +45,12 @@ function getSeries (args) {
         }
       ],
       detail: {
-        formatter (v) {
+        formatter(v) {
           return getFormated(v, dataType[label], digit)
         }
       },
       axisLabel: {
-        formatter (v) {
+        formatter(v) {
           return getFormated(v, dataType[label], digit)
         }
       }

@@ -1,5 +1,5 @@
-import createChart from './core-vue2'
+import createChartVue2 from './core-vue2'
 import { name, version } from '../package.json'
 
-export { createChart, name, version }
+export { createChartVue2, name, version }
 export * from './utils/index'

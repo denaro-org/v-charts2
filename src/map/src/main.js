@@ -5,9 +5,9 @@ import {
   itemPoint
 } from '@v-charts2/core/utils'
 
-function getTooltip (dataType, digit, dataStore, metrics, color, labelMap) {
+function getTooltip(dataType, digit, dataStore, metrics, color, labelMap) {
   return {
-    formatter (item) {
+    formatter(item) {
       const tpl = []
       if (!item.name) return ''
       tpl.push(`${item.name}<br>`)
@@ -28,7 +28,7 @@ function getTooltip (dataType, digit, dataStore, metrics, color, labelMap) {
   }
 }
 
-function getSeries (args) {
+function getSeries(args) {
   const {
     position,
     selectData,
@@ -91,7 +91,7 @@ function getSeries (args) {
   return result
 }
 
-function setGeoLabel (value, target, label) {
+function setGeoLabel(value, target, label) {
   if (typeof value === 'object') {
     target[label] = value
   } else if (value) {
@@ -99,7 +99,7 @@ function setGeoLabel (value, target, label) {
   }
 }
 
-function getLegendMap (args) {
+function getLegendMap(args) {
   const { metrics, legendName, labelMap } = args
   if (!legendName && !labelMap) return { data: metrics }
   const data = labelMap
@@ -107,13 +107,13 @@ function getLegendMap (args) {
     : metrics
   return {
     data,
-    formatter (name) {
+    formatter(name) {
       return legendName[name] != null ? legendName[name] : name
     }
   }
 }
 
-function registerMap (args, mapOrigin) {
+function registerMap(args, mapOrigin) {
   const {
     _once,
     registerSign,

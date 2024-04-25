@@ -1,13 +1,13 @@
 export const props = {
   data: {
     type: [Object, Array],
-    default () {
+    default() {
       return {}
     }
   },
   settings: {
     type: Object,
-    default () {
+    default() {
       return {}
     }
   },
@@ -43,7 +43,7 @@ export const props = {
   toolbox: { type: [Object, Array] },
   initOptions: {
     type: Object,
-    default () {
+    default() {
       return {}
     }
   },

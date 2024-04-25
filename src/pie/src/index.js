@@ -19,9 +19,9 @@ let VePie
 if (useVueVersion() === 2) {
   VePie = require('./vue2/v-charts.pie.mjs')
 } else {
-  VePie = require('./vue3/v-charts.pie.mjs')
+  VePie = await import('./vue3/v-charts.pie.mjs')
 }
 
-VePie = VePie.default
+VePie = VePie.default || VePie
 
 export default VePie

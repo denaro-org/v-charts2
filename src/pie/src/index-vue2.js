@@ -1,5 +1,5 @@
 import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
-import { createChart } from '@v-charts2/core/vue2'
+import { createChartVue2 } from '@v-charts2/core/vue2'
 import { PieChart } from 'echarts/charts'
 
 import { pie, ring } from './main'
@@ -7,9 +7,9 @@ import { name, version } from '../package.json'
 
 echartsLib.use([PieChart])
 
-const VePie = Object.assign({}, createChart, {
+const VePie = Object.assign({}, createChartVue2, {
   name: 'VePie',
-  data () {
+  data() {
     this.chartHandler = pie
     return {}
   }

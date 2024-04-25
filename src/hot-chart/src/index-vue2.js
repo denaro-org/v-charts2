@@ -1,6 +1,6 @@
 import { bar, histogram } from '@v-charts2/bar/vue2'
 import { logCopyRight } from '@v-charts2/core/utils'
-import { createChart } from '@v-charts2/core/vue2'
+import { createChartVue2 } from '@v-charts2/core/vue2'
 import { funnel } from '@v-charts2/funnel/vue2'
 import { line } from '@v-charts2/line/vue2'
 import { pie, ring } from '@v-charts2/pie/vue2'
@@ -20,9 +20,9 @@ const charts = {
   waterfall
 }
 
-const VeHotChart = Object.assign({}, createChart, {
+const VeHotChart = Object.assign({}, createChartVue2, {
   name: 'VeHotChart',
-  data () {
+  data() {
     this.chartLib = charts
     this.chartHandler = this.chartLib[this.settings.type]
     return {}

@@ -1,5 +1,5 @@
 import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
-import { createChart } from '@v-charts2/core/vue2'
+import { createChartVue2 } from '@v-charts2/core/vue2'
 import { BarChart } from 'echarts/charts'
 
 import { bar, histogram } from './main'
@@ -7,9 +7,9 @@ import { name, version } from '../package.json'
 
 echartsLib.use([BarChart])
 
-const VeBar = Object.assign({}, createChart, {
+const VeBar = Object.assign({}, createChartVue2, {
   name: 'VeBar',
-  data () {
+  data() {
     this.chartHandler = bar
     return {}
   }

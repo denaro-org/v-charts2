@@ -42,35 +42,34 @@
     "copy": "cpx \"../../CHANGELOG.md\" \"./\""
   },
   "dependencies": {
-    "@v-charts2/amap": "workspace:*",
-    "@v-charts2/bar": "workspace:*",
-    "@v-charts2/candle": "workspace:*",
-    "@v-charts2/core": "workspace:*",
-    "@v-charts2/funnel": "workspace:*",
-    "@v-charts2/gauge": "workspace:*",
-    "@v-charts2/heatmap": "workspace:*",
-    "@v-charts2/histogram": "workspace:*",
-    "@v-charts2/line": "workspace:*",
-    "@v-charts2/liquidfill": "workspace:*",
-    "@v-charts2/map": "workspace:*",
-    "@v-charts2/pie": "workspace:*",
-    "@v-charts2/radar": "workspace:*",
-    "@v-charts2/ring": "workspace:*",
-    "@v-charts2/sankey": "workspace:*",
-    "@v-charts2/scatter": "workspace:*",
-    "@v-charts2/tree": "workspace:*",
-    "@v-charts2/waterfall": "workspace:*",
-    "@v-charts2/wordcloud": "workspace:*"
+    "@v-charts2/amap": "workspace:^",
+    "@v-charts2/bar": "workspace:^",
+    "@v-charts2/candle": "workspace:^",
+    "@v-charts2/core": "workspace:^",
+    "@v-charts2/funnel": "workspace:^",
+    "@v-charts2/gauge": "workspace:^",
+    "@v-charts2/heatmap": "workspace:^",
+    "@v-charts2/histogram": "workspace:^",
+    "@v-charts2/line": "workspace:^",
+    "@v-charts2/liquidfill": "workspace:^",
+    "@v-charts2/map": "workspace:^",
+    "@v-charts2/pie": "workspace:^",
+    "@v-charts2/radar": "workspace:^",
+    "@v-charts2/ring": "workspace:^",
+    "@v-charts2/sankey": "workspace:^",
+    "@v-charts2/scatter": "workspace:^",
+    "@v-charts2/tree": "workspace:^",
+    "@v-charts2/waterfall": "workspace:^",
+    "@v-charts2/wordcloud": "workspace:^"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",
     "rollup-plugin-copy": "^3.5.0",
-    "vite": "^5.1.6",
+    "vite": "^5.2.10",
     "vite-plugin-banner": "^0.7.1"
   },
   "peerDependencies": {
-    "echarts": ">5.0.0",
-    "vue": ">2.6.0 || >3.2.25"
+    "echarts": "^5.5.0"
   },
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.0.0"

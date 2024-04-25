@@ -19,9 +19,9 @@ let VeHeatmap
 if (useVueVersion() === 2) {
   VeHeatmap = require('./vue2/v-charts.heatmap.mjs')
 } else {
-  VeHeatmap = require('./vue3/v-charts.heatmap.mjs')
+  VeHeatmap = await import('./vue3/v-charts.heatmap.mjs')
 }
 
-VeHeatmap = VeHeatmap.default
+VeHeatmap = VeHeatmap.default || VeHeatmap
 
 export default VeHeatmap

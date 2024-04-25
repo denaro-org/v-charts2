@@ -1,12 +1,12 @@
 import { getFormated } from '@v-charts2/core/utils'
 import { isArray, isObject } from 'utils-lite'
 
-function getTooltip (args) {
+function getTooltip(args) {
   const { tooltipFormatter, dataType, digit } = args
 
   return {
     show: true,
-    formatter (options) {
+    formatter(options) {
       const { seriesName, value } = options
       if (tooltipFormatter) {
         return tooltipFormatter.apply(null, arguments)
@@ -17,7 +17,7 @@ function getTooltip (args) {
   }
 }
 
-function getSeries (args) {
+function getSeries(args) {
   const { dimension, metrics, seriesMap, rows, wave } = args
 
   let itemWave = wave

@@ -1,5 +1,5 @@
 import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
-import { createChart } from '@v-charts2/core/vue3'
+import { createChartVue3 } from '@v-charts2/core/vue3'
 import { SankeyChart } from 'echarts/charts'
 
 import { sankey } from './main'
@@ -7,7 +7,7 @@ import { name, version } from '../package.json'
 
 echartsLib.use([SankeyChart])
 
-const VeSankey = createChart({
+const VeSankey = createChartVue3({
   name: 'VeSankey',
   chartHandler: sankey
 })

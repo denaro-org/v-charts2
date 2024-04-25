@@ -1,6 +1,6 @@
 import { isArray } from 'utils-lite'
 
-function getSeries (args) {
+function getSeries(args) {
   const { dimension, metrics, rows, color, sizeMax, sizeMin, shape } = args
 
   const baseType = {
@@ -43,12 +43,12 @@ function getSeries (args) {
   return [baseType]
 }
 
-function getTooltip (args) {
+function getTooltip(args) {
   const { tooltipFormatter } = args
 
   return {
     show: true,
-    formatter (params) {
+    formatter(params) {
       const {
         data: { name, value }
       } = params

@@ -96,8 +96,7 @@ export const getAmap = (key, v) => {
       const script = document.createElement('script')
       script.src = [
         `https://webapi.amap.com/maps?v=${v || '1.4.3'}`,
-        `key=${key}`,
-        `callback=${callbackName}`
+        `key=${key}`
       ].join('&')
 
       document.body.appendChild(script)
@@ -106,7 +105,7 @@ export const getAmap = (key, v) => {
   return amapPromise
 }
 
-export function setArrayValue (arr, index, value) {
+export function setArrayValue(arr, index, value) {
   if (arr[index] !== undefined) {
     arr[index].push(value)
   } else {
@@ -114,7 +113,7 @@ export function setArrayValue (arr, index, value) {
   }
 }
 
-export function logCopyRight (packageName, packageVersion) {
+export function logCopyRight(packageName, packageVersion) {
   console.log(
     // eslint-disable-next-line max-len
     `\n %c author %c vxhly %c %c email %c <pengchengou@gmail.com> %c \n\n %c ${name} %c v${version} %c %c ${packageName} %c v${packageVersion}  \n`,

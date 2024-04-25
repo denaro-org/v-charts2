@@ -1,5 +1,5 @@
 import { echartsLib, logCopyRight } from '@v-charts2/core/utils'
-import { createChart } from '@v-charts2/core/vue3'
+import { createChartVue3 } from '@v-charts2/core/vue3'
 import { ScatterChart } from 'echarts/charts'
 
 import { scatter } from './main'
@@ -7,7 +7,7 @@ import { name, version } from '../package.json'
 
 echartsLib.use([ScatterChart])
 
-const VeScatter = createChart({
+const VeScatter = createChartVue3({
   name: 'VeScatter',
   chartHandler: scatter
 })

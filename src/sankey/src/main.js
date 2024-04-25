@@ -1,10 +1,10 @@
 import { getFormated, itemPoint } from '@v-charts2/core/utils'
 
-function getTooltip (args) {
+function getTooltip(args) {
   const { itemDataType, linksDataType, digit } = args
   return {
     trigger: 'item',
-    formatter (item) {
+    formatter(item) {
       const tpl = []
       const { name, data, value, color } = item
       tpl.push(itemPoint(color))
@@ -19,7 +19,7 @@ function getTooltip (args) {
   }
 }
 
-function getSeries (args) {
+function getSeries(args) {
   const {
     rows,
     dimension,

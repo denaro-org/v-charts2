@@ -19,9 +19,9 @@ let VeLine
 if (useVueVersion() === 2) {
   VeLine = require('./vue2/v-charts.line.mjs')
 } else {
-  VeLine = require('./vue3/v-charts.line.mjs')
+  VeLine = await import('./vue3/v-charts.line.mjs')
 }
 
-VeLine = VeLine.default
+VeLine = VeLine.default || VeLine
 
 export default VeLine

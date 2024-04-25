@@ -1,12 +1,12 @@
 import { isObject } from 'utils-lite'
 
-function getTreeLegend (args) {
+function getTreeLegend(args) {
   const { dimension, rows } = args
   const result = rows.map(row => row[dimension])
   return { data: result }
 }
 
-function getTreeTooltip (args) {
+function getTreeTooltip(args) {
   const { tooltipFormatter } = args
 
   return {
@@ -16,7 +16,7 @@ function getTreeTooltip (args) {
   }
 }
 
-function getTreeSeries (args) {
+function getTreeSeries(args) {
   const { dimension, metrics, rows, seriesMap } = args
 
   const series = []

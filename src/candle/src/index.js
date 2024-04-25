@@ -19,9 +19,9 @@ let VeCandle
 if (useVueVersion() === 2) {
   VeCandle = require('./vue2/v-charts.candle.mjs')
 } else {
-  VeCandle = require('./vue3/v-charts.candle.mjs')
+  VeCandle = await import('./vue3/v-charts.candle.mjs')
 }
 
-VeCandle = VeCandle.default
+VeCandle = VeCandle.default || VeCandle
 
 export default VeCandle

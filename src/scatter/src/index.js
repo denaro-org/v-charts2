@@ -19,9 +19,9 @@ let VeScatter
 if (useVueVersion() === 2) {
   VeScatter = require('./vue2/v-charts.scatter.mjs')
 } else {
-  VeScatter = require('./vue3/v-charts.scatter.mjs')
+  VeScatter = await import('./vue3/v-charts.scatter.mjs')
 }
 
-VeScatter = VeScatter.default
+VeScatter = VeScatter.default || VeScatter
 
 export default VeScatter

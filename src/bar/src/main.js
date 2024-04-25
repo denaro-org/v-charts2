@@ -3,7 +3,7 @@ import { cloneDeep, get, set } from 'utils-lite'
 // default opacity of bar while dim-axis type is 'value'
 const VALUE_AXIS_OPACITY = 0.5
 
-function getBarDimAxis (args) {
+function getBarDimAxis(args) {
   const { innerRows, dimAxisName, dimension, axisVisible, dimAxisType, dims } =
     args
   return dimension.map(item => ({
@@ -16,7 +16,7 @@ function getBarDimAxis (args) {
         ? getValueAxisData(dims)
         : innerRows.map(row => row[item]),
     axisLabel: {
-      formatter (v) {
+      formatter(v) {
         return String(v)
       }
     },
@@ -24,7 +24,7 @@ function getBarDimAxis (args) {
   }))
 }
 
-function getValueAxisData (dims) {
+function getValueAxisData(dims) {
   const max = Math.max.apply(null, dims)
   const min = Math.min.apply(null, dims)
   const result = []
@@ -34,7 +34,7 @@ function getValueAxisData (dims) {
   return result
 }
 
-function getBarMeaAxis (args) {
+function getBarMeaAxis(args) {
   const { meaAxisName, meaAxisType, axisVisible, digit, scale, min, max } = args
   const meaAxisBase = {
     type: 'value',
@@ -47,7 +47,7 @@ function getBarMeaAxis (args) {
     if (meaAxisType[i]) {
       meaAxis[i] = Object.assign({}, meaAxisBase, {
         axisLabel: {
-          formatter (val) {
+          formatter(val) {
             return getFormated(val, meaAxisType[i], digit)
           }
         }
@@ -64,7 +64,7 @@ function getBarMeaAxis (args) {
   return meaAxis
 }
 
-function getBarTooltip (args) {
+function getBarTooltip(args) {
   const { axisSite, isHistogram, meaAxisType, digit, labelMap } = args
   let secondAxis = isHistogram ? axisSite.right || [] : axisSite.top || []
   if (labelMap) {
@@ -74,7 +74,7 @@ function getBarTooltip (args) {
   }
   return {
     trigger: 'axis',
-    formatter (items) {
+    formatter(items) {
       const tpl = []
       tpl.push(`${items[0].name}<br>`)
       items.forEach(item => {
@@ -93,7 +93,7 @@ function getBarTooltip (args) {
   }
 }
 
-function getValueData (seriesTemp, dims) {
+function getValueData(seriesTemp, dims) {
   const max = Math.max.apply(null, dims)
   const min = Math.min.apply(null, dims)
   const result = []
@@ -108,7 +108,7 @@ function getValueData (seriesTemp, dims) {
   return result
 }
 
-function getBarSeries (args) {
+function getBarSeries(args) {
   const {
     innerRows,
     metrics,
@@ -171,7 +171,7 @@ function getBarSeries (args) {
   return series.length ? series : false
 }
 
-function getLegend (args) {
+function getLegend(args) {
   const { metrics, labelMap, legendName } = args
   if (!legendName && !labelMap) return { data: metrics }
   const data = labelMap
@@ -179,13 +179,13 @@ function getLegend (args) {
     : metrics
   return {
     data,
-    formatter (name) {
+    formatter(name) {
       return legendName[name] != null ? legendName[name] : name
     }
   }
 }
 
-function getDims (rows, dimension) {
+function getDims(rows, dimension) {
   return rows.map(row => row[dimension[0]])
 }
 

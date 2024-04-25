@@ -1,11 +1,11 @@
 import { logCopyRight } from '@v-charts2/core/utils'
-import { createChart } from '@v-charts2/core/vue3'
+import { createChartVue3 } from '@v-charts2/core/vue3'
 
 import { wordcloud } from './main'
 import { name, version } from '../package.json'
 import 'echarts-wordcloud'
 
-const VeWordcloud = createChart({
+const VeWordcloud = createChartVue3({
   name: 'VeWordcloud',
   chartHandler: wordcloud
 })

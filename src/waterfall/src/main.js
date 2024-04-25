@@ -1,10 +1,10 @@
 import { getFormated } from '@v-charts2/core/utils'
 
-function getWaterfallTooltip (dataType, digit) {
+function getWaterfallTooltip(dataType, digit) {
   return {
     trigger: 'axis',
     axisPointer: { type: 'shadow' },
-    formatter (items) {
+    formatter(items) {
       const item = items[1]
       return [
         `${item.name}<br/>${item.seriesName} :`,
@@ -14,7 +14,7 @@ function getWaterfallTooltip (dataType, digit) {
   }
 }
 
-function getWaterfallXAxis (args) {
+function getWaterfallXAxis(args) {
   const {
     dimension,
     rows,
@@ -39,14 +39,14 @@ function getWaterfallXAxis (args) {
   }
 }
 
-function getWaterfallYAxis (args) {
+function getWaterfallYAxis(args) {
   const { dataType, yAxisName, axisVisible, digit, labelMap } = args
   return {
     type: 'value',
     name: labelMap[yAxisName] != null ? labelMap[yAxisName] : yAxisName,
     axisTick: { show: false },
     axisLabel: {
-      formatter (val) {
+      formatter(val) {
         return getFormated(val, dataType, digit)
       }
     },
@@ -54,7 +54,7 @@ function getWaterfallYAxis (args) {
   }
 }
 
-function getWaterfallSeries (args) {
+function getWaterfallSeries(args) {
   const { dataType, rows, metrics, totalNum, remainStatus, dataSum, digit } =
     args
   const seriesBase = {
@@ -107,7 +107,7 @@ function getWaterfallSeries (args) {
         label: {
           show: true,
           position: 'top',
-          formatter (item) {
+          formatter(item) {
             return getFormated(item.value, dataType, digit)
           }
         },
@@ -119,7 +119,7 @@ function getWaterfallSeries (args) {
   return series
 }
 
-function getWaterfallRemainStatus (dataSum, totalNum) {
+function getWaterfallRemainStatus(dataSum, totalNum) {
   if (!totalNum) return 'not-total'
   return totalNum > dataSum ? 'have-remain' : 'none-remain'
 }

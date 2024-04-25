@@ -1,7 +1,7 @@
 import { getFormated, getStackMap } from '@v-charts2/core/utils'
 import { isArray } from 'utils-lite'
 
-function getLineXAxis (args) {
+function getLineXAxis(args) {
   const { dimension, rows, xAxisName, axisVisible, xAxisType } = args
   return dimension.map((item, index) => ({
     type: xAxisType,
@@ -17,7 +17,7 @@ function getLineXAxis (args) {
   }))
 }
 
-function getLineSeries (args) {
+function getLineSeries(args) {
   const {
     rows,
     axisSite,
@@ -75,7 +75,7 @@ function getLineSeries (args) {
   return series
 }
 
-function getLineYAxis (args) {
+function getLineYAxis(args) {
   const { yAxisName, yAxisType, axisVisible, scale, min, max, digit } = args
   const yAxisBase = {
     type: 'value',
@@ -87,7 +87,7 @@ function getLineYAxis (args) {
     if (yAxisType[i]) {
       yAxis[i] = Object.assign({}, yAxisBase, {
         axisLabel: {
-          formatter (val) {
+          formatter(val) {
             return getFormated(val, yAxisType[i], digit)
           }
         }
@@ -103,17 +103,17 @@ function getLineYAxis (args) {
   return yAxis
 }
 
-function getLineTooltip (args) {
+function getLineTooltip(args) {
   const { axisSite, yAxisType, digit, labelMap, tooltipFormatter } = args
   const rightItems = axisSite.right || []
   const rightList = labelMap
     ? rightItems.map(item => {
-      return labelMap[item] === undefined ? item : labelMap[item]
-    })
+        return labelMap[item] === undefined ? item : labelMap[item]
+      })
     : rightItems
   return {
     trigger: 'axis',
-    formatter (items) {
+    formatter(items) {
       if (tooltipFormatter) {
         return tooltipFormatter.apply(null, arguments)
       }
@@ -137,7 +137,7 @@ function getLineTooltip (args) {
   }
 }
 
-function getLegend (args) {
+function getLegend(args) {
   const { metrics, legendName, labelMap } = args
   if (!legendName && !labelMap) {
     return { data: metrics }
@@ -147,7 +147,7 @@ function getLegend (args) {
     : metrics
   return {
     data,
-    formatter (name) {
+    formatter(name) {
       return legendName[name] != null ? legendName[name] : name
     }
   }
