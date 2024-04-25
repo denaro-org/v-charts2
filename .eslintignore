@@ -1,8 +1,11 @@
 node_modules/
 .cache/
 .temp/
+cache/
+temp/
 lib/
 dist/
+!.vitepress/
 !.vuepress/
 !.*.js
 index.dev.html

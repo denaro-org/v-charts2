@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/line
-# or
-npm install @v-charts2/line
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/line
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/line
+```
+
+```bash [yarn]
+yarn add @v-charts2/line
+```
+
+```bash [npm]
+npm i @v-chart2/line
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeLine)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeLine from '@v-charts2/line/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/line/v-charts.css' // 需要手动引入样式
 Vue.use(VeLine)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeLine from '@v-charts2/line/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/line/v-charts.css' // 需要手动引入样式
 app.use(VeLine)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-line :data="chartData" />
 </template>
@@ -111,13 +123,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置显示的指标维度
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-line :data="chartData" :settings="chartSettings" />
 </template>
@@ -177,13 +185,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置双 y 轴
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-line :data="chartData" :settings="chartSettings" />
 </template>
@@ -244,13 +248,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 横坐标倾斜
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-line :data="chartData" :extend="extend" />
 </template>
@@ -343,13 +343,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 堆叠面积图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-line :data="chartData" :settings="chartSettings" />
 </template>
@@ -409,13 +405,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置别名
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-line :data="chartData" :settings="chartSettings" />
 </template>
@@ -478,13 +470,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 显示指标数值
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-line :data="chartData" :extend="extend" />
 </template>
@@ -541,13 +529,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置横轴为连续的数值轴
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-line :data="chartData" :settings="chartSettings" />
 </template>
@@ -604,13 +588,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置横轴为连续的时间轴
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-line :data="chartData" :settings="chartSettings" />
 </template>
@@ -666,8 +646,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

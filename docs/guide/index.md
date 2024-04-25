@@ -8,11 +8,25 @@
 
 - 下载
 
-```bash
-npm i @v-charts2/chart
-# or
-pnpm add @v-charts2/chart
+::: code-group
+
+```bash [bun]
+bun add @v-chart2/chart
 ```
+
+```bash [pnpm]
+pnpm add @v-chart2/chart
+```
+
+```bash [yarn]
+yarn add @v-chart2/chart
+```
+
+```bash [npm]
+npm i @v-chart2/chart
+```
+
+:::
 
 - 安装
 
@@ -30,24 +44,24 @@ Vue.use(VeChart)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeChart from '@v-charts2/chart/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/chart/v-charts.css' // 需要手动引入样式
 Vue.use(VeChart)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeChart from '@v-charts2/chart/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
 import '@v-charts2/chart/v-charts.css' // 需要手动引入样式
 app.use(VeChart)
 ```
+
+:::
 
 ### 按需引入
 

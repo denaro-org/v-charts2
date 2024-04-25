@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/gauge
-# or
-npm install @v-charts2/gauge
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/gauge
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/gauge
+```
+
+```bash [yarn]
+yarn add @v-charts2/gauge
+```
+
+```bash [npm]
+npm i @v-chart2/gauge
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeGauge)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeGauge from '@v-charts2/gauge/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/gauge/v-charts.css' // 需要手动引入样式
 Vue.use(VeGauge)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeGauge from '@v-charts2/gauge/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/gauge/v-charts.css' // 需要手动引入样式
 app.use(VeGauge)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-gauge :data="chartData" />
 </template>
@@ -81,13 +93,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 指标维度配置
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-gauge :data="chartData" :settings="chartSettings" />
 </template>
@@ -117,13 +125,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置数据类型
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-gauge :data="chartData" :settings="chartSettings" />
 </template>
@@ -156,13 +160,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置指标别名与单位
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-gauge :data="chartData" :settings="chartSettings" />
 </template>
@@ -190,13 +190,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置多表盘及修改样式
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-gauge
     :data="chartData"
@@ -429,8 +425,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

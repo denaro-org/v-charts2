@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/waterfall
-# or
-npm install @v-charts2/waterfall
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/waterfall
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/waterfall
+```
+
+```bash [yarn]
+yarn add @v-charts2/waterfall
+```
+
+```bash [npm]
+npm i @v-chart2/waterfall
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeWaterfall)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeWaterfall from '@v-charts2/waterfall/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/waterfall/v-charts.css' // 需要手动引入样式
 Vue.use(VeWaterfall)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeWaterfall from '@v-charts2/waterfall/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/waterfall/v-charts.css' // 需要手动引入样式
 app.use(VeWaterfall)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-waterfall :data="chartData" />
 </template>
@@ -87,13 +99,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置指标维度
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-waterfall :data="chartData" :settings="chartSettings" />
 </template>
@@ -129,13 +137,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置数据类型
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-waterfall :data="chartData" :settings="chartSettings" />
 </template>
@@ -168,13 +172,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 修改指标名称
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-waterfall :data="chartData" :settings="chartSettings" />
 </template>
@@ -207,13 +207,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置 总计、剩余 的名称
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-waterfall :data="chartData" :settings="chartSettings" />
 </template>
@@ -249,8 +245,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

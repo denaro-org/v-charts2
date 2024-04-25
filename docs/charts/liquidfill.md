@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/liquidfill
-# or
-npm install @v-charts2/liquidfill
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/liquidfill
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/liquidfill
+```
+
+```bash [yarn]
+yarn add @v-charts2/liquidfill
+```
+
+```bash [npm]
+npm i @v-chart2/liquidfill
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeLiquidfill)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeLiquidfill from '@v-charts2/liquidfill/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/liquidfill/v-charts.css' // 需要手动引入样式
 Vue.use(VeLiquidfill)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeLiquidfill from '@v-charts2/liquidfill/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/liquidfill/v-charts.css' // 需要手动引入样式
 app.use(VeLiquidfill)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-liquidfill :data="chartData" />
 </template>
@@ -79,13 +91,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 水球图分层
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-liquidfill :data="chartData" :settings="chartSettings" />
 </template>
@@ -113,13 +121,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置多个水球图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-liquidfill :data="chartData" :settings="chartSettings" />
 </template>
@@ -188,13 +192,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置水球图的形状
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-liquidfill :data="chartData" :settings="chartSettings" />
 </template>
@@ -219,13 +219,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 水球图文字标签及样式设置
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-liquidfill
     :data="chartData"
@@ -270,8 +266,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

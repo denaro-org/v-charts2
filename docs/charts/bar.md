@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/bar
-# or
-npm install @v-charts2/bar
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/bar
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/bar
+```
+
+```bash [yarn]
+yarn add @v-charts2/bar
+```
+
+```bash [npm]
+npm i @v-chart2/bar
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeBar)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeBar from '@v-charts2/bar/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/bar/v-charts.css' // 需要手动引入样式
 Vue.use(VeBar)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeBar from '@v-charts2/bar/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/bar/v-charts.css' // 需要手动引入样式
 app.use(VeBar)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-bar :data="chartData" />
 </template>
@@ -111,13 +123,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 指定指标维度
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-bar :data="chartData" :settings="chartSettings" />
 </template>
@@ -177,13 +185,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 排序条形图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-bar :data="chartData" :settings="chartSettings" />
 </template>
@@ -246,13 +250,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 条形轴配置双 y 轴
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-bar :data="chartData" :settings="chartSettings" />
 </template>
@@ -307,13 +307,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置 legend 别名
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-bar :data="chartData" :settings="chartSettings" />
 </template>
@@ -376,13 +372,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 堆叠条形图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-bar :data="chartData" :settings="chartSettings" />
 </template>
@@ -439,13 +431,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置纵轴为连续的数值轴
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-bar :data="chartData" :settings="chartSettings" />
 </template>
@@ -489,8 +477,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

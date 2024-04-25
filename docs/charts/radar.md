@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/radar
-# or
-npm install @v-charts2/radar
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/radar
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/radar
+```
+
+```bash [yarn]
+yarn add @v-charts2/radar
+```
+
+```bash [npm]
+npm i @v-chart2/radar
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeRadar)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeRadar from '@v-charts2/radar/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/radar/v-charts.css' // 需要手动引入样式
 Vue.use(VeRadar)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeRadar from '@v-charts2/radar/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/radar/v-charts.css' // 需要手动引入样式
 app.use(VeRadar)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-radar :data="chartData" />
 </template>
@@ -111,13 +123,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置显示的指标维度
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-radar :data="chartData" :settings="chartSettings" />
 </template>
@@ -177,13 +185,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 修改指标名称
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-radar :data="chartData" :settings="chartSettings" />
 </template>
@@ -246,8 +250,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

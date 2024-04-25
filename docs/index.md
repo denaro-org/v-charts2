@@ -1,14 +1,19 @@
 ---
-home: true
-heroImage: /favicon.ico
+layout: home
 
-actionBtn:
-  text: 快速上手 →
-  link: /guide/
-  type: primary
-  ghost: false
-  size: large
-
+hero:
+  name: v-charts2
+  text: 基于 Vue 的 Echarts5.x 组件
+  image:
+    src: /favicon.ico
+    alt: v-charts2
+  actions:
+    - theme: brand
+      text: 快速上手 →
+      link: /guide/
+    - theme: alt
+      text: 在 github 上查看
+      link: https://github.com/denaro-org/v-charts2
 features:
   - title: 统一的数据格式
     details: 使用对前后端都友好的数据格式, 方便生成和修改。
@@ -20,9 +25,6 @@ features:
     details: 同时支持 Vue2.x 和 Vue3.x, 全部由你自主选择使用。
   - title: 更好的 Tree Shaking
     details: 只要你的打包器支持 Tree Shaking, 无需任何的配置即可打包出更小的包。
-footerColumn: 3
-
-footer: MIT Licensed | Copyright © 2022 vxhly pengchengou@gmail.com
 ---
 
 ## 像数 1, 2, 3 一样容易
@@ -34,6 +36,26 @@ pnpm add @v-chart2/chart
 # or
 npm i @v-chart2/chart
 ```
+
+::: code-group
+
+```bash [bun]
+bun add @v-chart2/chart
+```
+
+```bash [pnpm]
+pnpm add @v-chart2/chart
+```
+
+```bash [yarn]
+yarn add @v-chart2/chart
+```
+
+```bash [npm]
+npm i @v-chart2/chart
+```
+
+:::
 
 ### 使用
 

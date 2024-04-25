@@ -1,0 +1,46 @@
+{
+  "source": [
+    "./package.json",
+    "**/package.json"
+  ],
+  "versionGroups": [
+    {
+      "dependencies": [
+        "vue",
+        "vue-template-compiler"
+      ],
+      "dependencyTypes": [
+        "!peer"
+      ],
+      "packages": [
+        "docs"
+      ],
+      "pinVersion": "2.7.16"
+    },
+    {
+      "dependencies": [
+        "eslint"
+      ],
+      "dependencyTypes": [
+        "!peer"
+      ],
+      "packages": [
+        "**"
+      ],
+      "pinVersion": "8.57.0"
+    },
+    {
+      "dependencies": [
+        "@v-charts2/*"
+      ],
+      "dependencyTypes": [
+        "prod",
+        "dev"
+      ],
+      "packages": [
+        "**"
+      ],
+      "pinVersion": "workspace:^"
+    }
+  ]
+}

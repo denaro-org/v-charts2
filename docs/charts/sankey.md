@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/sankey
-# or
-npm install @v-charts2/sankey
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/sankey
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/sankey
+```
+
+```bash [yarn]
+yarn add @v-charts2/sankey
+```
+
+```bash [npm]
+npm i @v-chart2/sankey
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeSankey)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeSankey from '@v-charts2/sankey/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/sankey/v-charts.css' // 需要手动引入样式
 Vue.use(VeSankey)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeSankey from '@v-charts2/sankey/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/sankey/v-charts.css' // 需要手动引入样式
 app.use(VeSankey)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-sankey :data="chartData" :settings="chartSettings" />
 </template>
@@ -137,13 +149,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置数据类型
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-sankey :data="chartData" :settings="chartSettings" />
 </template>
@@ -225,8 +233,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

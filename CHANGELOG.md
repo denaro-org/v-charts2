@@ -1,13 +1,10 @@
 ## [1.1.3](https://github.com/denaro-org/v-charts2/compare/v1.1.2...v1.1.3) (2024-03-25)
 
-
 ### Bug Fixes
 
-* 更新版本 ([5790d7e](https://github.com/denaro-org/v-charts2/commit/5790d7e7bc4c30c4a9cdbb1a36aa8082f4b29bc2))
-* update md ([af9af86](https://github.com/denaro-org/v-charts2/commit/af9af8627e9b8bda92f49a5beb4f1f0a31e67e68))
-* update version ([751987c](https://github.com/denaro-org/v-charts2/commit/751987c6e96742dedd978c36cea23d0357c7045d))
-
-
+- 更新版本 ([5790d7e](https://github.com/denaro-org/v-charts2/commit/5790d7e7bc4c30c4a9cdbb1a36aa8082f4b29bc2))
+- update md ([af9af86](https://github.com/denaro-org/v-charts2/commit/af9af8627e9b8bda92f49a5beb4f1f0a31e67e68))
+- update version ([751987c](https://github.com/denaro-org/v-charts2/commit/751987c6e96742dedd978c36cea23d0357c7045d))
 
 ## [1.1.2](https://github.com/denaro-org/v-charts2/compare/v1.1.1...v1.1.2) (2024-03-19)
 

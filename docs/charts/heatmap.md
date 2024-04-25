@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/heatmap
-# or
-npm install @v-charts2/heatmap
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/heatmap
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/heatmap
+```
+
+```bash [yarn]
+yarn add @v-charts2/heatmap
+```
+
+```bash [npm]
+npm i @v-chart2/heatmap
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeHeatmap)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeHeatmap from '@v-charts2/heatmap/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/heatmap/v-charts.css' // 需要手动引入样式
 Vue.use(VeHeatmap)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeHeatmap from '@v-charts2/heatmap/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/heatmap/v-charts.css' // 需要手动引入样式
 app.use(VeHeatmap)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-heatmap :data="chartData" />
 </template>
@@ -125,13 +137,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 配置坐标轴
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-heatmap :data="chartData" :settings="chartSettings" />
 </template>
@@ -213,13 +221,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 自定义 visualMap
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-heatmap
     :data="chartData"
@@ -300,13 +304,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 地图热力图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-heatmap :data="chartData" :settings="chartSettings" />
 </template>
@@ -390,13 +390,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 百度地图热力图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-heatmap :data="chartData" :settings="chartSettings" />
 </template>
@@ -464,8 +460,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

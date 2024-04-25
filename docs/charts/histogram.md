@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/histogram
-# or
-npm install @v-charts2/histogram
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/histogram
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/histogram
+```
+
+```bash [yarn]
+yarn add @v-charts2/histogram
+```
+
+```bash [npm]
+npm i @v-chart2/histogram
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeHistogram)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeHistogram from '@v-charts2/histogram/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/histogram/v-charts.css' // 需要手动引入样式
 Vue.use(VeHistogram)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeHistogram from '@v-charts2/histogram/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/histogram/v-charts.css' // 需要手动引入样式
 app.use(VeHistogram)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-histogram :data="chartData" />
 </template>
@@ -111,13 +123,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置显示的指标维度
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-histogram :data="chartData" :settings="chartSettings" />
 </template>
@@ -177,13 +185,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置双y轴
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-histogram :data="chartData" :settings="chartSettings" />
 </template>
@@ -244,13 +248,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 柱状图+折线图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-histogram :data="chartData" :settings="chartSettings" />
 </template>
@@ -307,13 +307,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 堆叠柱状图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-histogram :data="chartData" :settings="chartSettings" />
 </template>
@@ -370,13 +366,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 默认显示柱状图数据
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-histogram :data="chartData" :extend="extend" />
 </template>
@@ -440,13 +432,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 修改别名
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-histogram :data="chartData" :settings="chartSettings" />
 </template>
@@ -509,13 +497,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置横轴为连续的数值轴
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-histogram :data="chartData" :settings="chartSettings" />
 </template>
@@ -571,8 +555,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

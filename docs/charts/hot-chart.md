@@ -10,11 +10,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/hot-chart
-# or
-npm install @v-charts2/hot-chart
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/hot-chart
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/hot-chart
+```
+
+```bash [yarn]
+yarn add @v-charts2/hot-chart
+```
+
+```bash [npm]
+npm i @v-chart2/hot-chart
+```
+
+:::
 
 ### 安装
 
@@ -32,18 +46,16 @@ Vue.use(VeHotChart)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeHotChart from '@v-charts2/hot-chart/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/hot-chart/v-charts.css' // 需要手动引入样式
 Vue.use(VeHotChart)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeHotChart from '@v-charts2/hot-chart/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -51,13 +63,13 @@ import '@v-charts2/hot-chart/v-charts.css' // 需要手动引入样式
 app.use(VeHotChart)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <div>
     <button @click="changeType">切换图表类型</button>
@@ -116,5 +128,3 @@ export default {
 }
 </script>
 ```
-
-:::

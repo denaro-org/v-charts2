@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/scatter
-# or
-npm install @v-charts2/scatter
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/scatter
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/scatter
+```
+
+```bash [yarn]
+yarn add @v-charts2/scatter
+```
+
+```bash [npm]
+npm i @v-chart2/scatter
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeScatter)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeScatter from '@v-charts2/scatter/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/scatter/v-charts.css' // 需要手动引入样式
 Vue.use(VeScatter)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeScatter from '@v-charts2/scatter/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,17 +61,16 @@ import '@v-charts2/scatter/v-charts.css' // 需要手动引入样式
 app.use(VeScatter)
 ```
 
+:::
+
 ## DEMO
 
 ::: tip
 散点图有两种：单维度多指标散点图和双维度多指标散点图。
-:::
 
 ### 单维度多指标散点图示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-scatter :data="chartData" />
 </template>
@@ -121,9 +132,7 @@ export default {
 
 ### 双维度多指标散点图示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-scatter :data="chartData" />
 </template>
@@ -318,9 +327,7 @@ visualMap 中的 dimension 属性用于设置数据的哪个指标映射到视�
 
 ### 指标维度配置
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-scatter :data="chartData" :settings="chartSettings" />
 </template>
@@ -458,13 +465,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 数据类型配置
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-scatter :data="chartData" :settings="chartSettings" />
 </template>
@@ -605,13 +608,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 属性名配置
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-scatter :data="chartData" :settings="chartSettings" />
 </template>
@@ -749,13 +748,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 缩放配置
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-scatter :data="chartData" :settings="chartSettings" />
 </template>
@@ -893,13 +888,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 散点样式配置
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-scatter :data="chartData" :settings="chartSettings" />
 </template>
@@ -1039,13 +1030,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 散点出现覆盖时, 提示框可以改成通过坐标轴触发
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-scatter :data="chartData" :settings="chartSettings" />
 </template>
@@ -1141,8 +1128,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

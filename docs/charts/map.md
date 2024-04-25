@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/map
-# or
-npm install @v-charts2/map
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/map
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/map
+```
+
+```bash [yarn]
+yarn add @v-charts2/map
+```
+
+```bash [npm]
+npm i @v-chart2/map
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeLiquidfill)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeLiquidfill from '@v-charts2/map/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/map/v-charts.css' // 需要手动引入样式
 Vue.use(VeLiquidfill)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeLiquidfill from '@v-charts2/map/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/map/v-charts.css' // 需要手动引入样式
 app.use(VeLiquidfill)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-map :data="chartData" />
 </template>
@@ -99,13 +111,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置指标维度
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-map :data="chartData" :settings="chartSettings" />
 </template>
@@ -155,13 +163,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置城市
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-map :data="chartData" :settings="chartSettings" />
 </template>
@@ -198,13 +202,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 修改指标名称
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-map :data="chartData" :settings="chartSettings" />
 </template>
@@ -244,13 +244,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置选中模式
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <div>
     <span>当前选中了: {{ cityName || '-' }}</span>
@@ -300,13 +296,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置样式
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-map :data="chartData" :settings="chartSettings" />
 </template>
@@ -348,13 +340,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置自定义位置并修改数据源
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-map :data="chartData" :settings="chartSettings" :extend="chartExtend" />
 </template>
@@ -411,8 +399,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

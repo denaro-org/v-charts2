@@ -4,9 +4,7 @@
 
 ## 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <div>
     <p>被点击日期：{{ name }}</p>
@@ -64,5 +62,3 @@ export default {
 }
 </script>
 ```
-
-:::

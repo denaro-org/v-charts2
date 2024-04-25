@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/funnel
-# or
-npm install @v-charts2/funnel
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/funnel
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/funnel
+```
+
+```bash [yarn]
+yarn add @v-charts2/funnel
+```
+
+```bash [npm]
+npm i @v-chart2/funnel
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeFunnel)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeFunnel from '@v-charts2/funnel/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/funnel/v-charts.css' // 需要手动引入样式
 Vue.use(VeFunnel)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeFunnel from '@v-charts2/funnel/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/funnel/v-charts.css' // 需要手动引入样式
 app.use(VeFunnel)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-funnel :data="chartData" />
 </template>
@@ -91,13 +103,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 指定指标维度
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-funnel :data="chartData" :settings="chartSettings" />
 </template>
@@ -141,13 +149,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 自动按照数值排序并过滤0值
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-funnel :data="chartData" :settings="chartSettings" />
 </template>
@@ -191,13 +195,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 定制顺序漏斗图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-funnel :data="chartData" :settings="chartSettings" />
 </template>
@@ -234,13 +234,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 指定数据类型漏斗图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-funnel :data="chartData" :settings="chartSettings" />
 </template>
@@ -277,13 +273,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 修改legend别名漏斗图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-funnel :data="chartData" :settings="chartSettings" />
 </template>
@@ -320,13 +312,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 金字塔
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-funnel :data="chartData" :settings="chartSettings" />
 </template>
@@ -362,8 +350,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

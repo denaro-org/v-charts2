@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/tree
-# or
-npm install @v-charts2/tree
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/tree
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/tree
+```
+
+```bash [yarn]
+yarn add @v-charts2/tree
+```
+
+```bash [npm]
+npm i @v-chart2/tree
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeTree)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeTree from '@v-charts2/tree/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/tree/v-charts.css' // 需要手动引入样式
 Vue.use(VeTree)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeTree from '@v-charts2/tree/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/tree/v-charts.css' // 需要手动引入样式
 app.use(VeTree)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-tree :data="chartData" />
 </template>
@@ -154,13 +166,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 多树图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-tree :data="chartData" :settings="chartSettings" />
 </template>
@@ -279,13 +287,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 径向树图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-tree :data="chartData" :settings="chartSettings" />
 </template>
@@ -385,13 +389,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 纵向树图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-tree :data="chartData" :settings="chartSettings" />
 </template>
@@ -491,13 +491,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 自定义提示框内容
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-tree
     :data="chartData"
@@ -609,8 +605,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

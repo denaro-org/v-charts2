@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/ring
-# or
-npm install @v-charts2/ring
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/ring
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/ring
+```
+
+```bash [yarn]
+yarn add @v-charts2/ring
+```
+
+```bash [npm]
+npm i @v-chart2/ring
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeRing)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeRing from '@v-charts2/ring/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/ring/v-charts.css' // 需要手动引入样式
 Vue.use(VeRing)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeRing from '@v-charts2/ring/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/ring/v-charts.css' // 需要手动引入样式
 app.use(VeRing)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-ring :data="chartData" />
 </template>
@@ -99,13 +111,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置指标维度
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-ring :data="chartData" :settings="chartSettings" />
 </template>
@@ -153,13 +161,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 玫瑰图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-ring :data="chartData" :settings="chartSettings" />
 </template>
@@ -204,13 +208,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 限制显示条数环图
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-ring :data="chartData" :settings="chartSettings" />
 </template>
@@ -255,13 +255,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置数据类型
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-ring :data="chartData" :settings="chartSettings" />
 </template>
@@ -306,13 +302,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置环图半径
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-ring :data="chartData" :settings="chartSettings" />
 </template>
@@ -359,8 +351,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

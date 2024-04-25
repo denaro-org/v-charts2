@@ -10,11 +10,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/amap
-# or
-npm install @v-charts2/amap
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/amap
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/amap
+```
+
+```bash [yarn]
+yarn add @v-charts2/amap
+```
+
+```bash [npm]
+npm i @v-chart2/amap
+```
+
+:::
 
 ### 安装
 
@@ -32,18 +46,16 @@ Vue.use(VeAmap)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeAmap from '@v-charts2/amap/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/amap/v-charts.css' // 需要手动引入样式
 Vue.use(VeAmap)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeAmap from '@v-charts2/amap/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -51,13 +63,17 @@ import '@v-charts2/amap/v-charts.css' // 需要手动引入样式
 app.use(VeAmap)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
+::: danger
+请将下方 key 替换成你自己申请的高德地图 key, 申请地址：[高德开放平台](https://console.amap.com/dev/index)
+:::
 
-```vue
+```vue preview
 <template>
   <ve-amap
     :settings="chartSettings"
@@ -69,8 +85,8 @@ app.use(VeAmap)
 export default {
   data() {
     this.chartSettings = {
-      key: '4b5f2cf2cba25200cc6b68c398468899',
-      v: '1.4.3',
+      key: 'edb6420e0cb4fde4073ab264529507ee',
+      v: '2.0',
       amap: {
         resizeEnable: true,
         center: [120.14322240845, 30.236064370321],
@@ -93,8 +109,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 

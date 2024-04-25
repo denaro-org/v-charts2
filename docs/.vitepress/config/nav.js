@@ -1,5 +1,5 @@
 // 顶部导航条配置
-module.exports = [
+export default [
   // Nav 1
   {
     text: '首页',

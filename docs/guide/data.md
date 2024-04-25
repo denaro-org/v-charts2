@@ -1,4 +1,4 @@
-# 数据
+# 数据格式
 
 ## 指标和维度
 
@@ -16,9 +16,7 @@ v-charts 的数据由指标和维度组成。以一组常见的数据为例：
 
 下面, 以上面的这组数据为例绘制一个折线图：
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-line :data="chartData" />
 </template>
@@ -53,8 +51,6 @@ export default {
 </script>
 ```
 
-:::
-
 ## 设置指标维度
 
 一种典型的 v-charts `data` 属性数据格式如下所示：
@@ -79,9 +75,7 @@ export default {
 - dimension 用于指定维度
 - metrics 用于指定指标
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-line :data="chartData" :settings="chartSettings" />
 </template>
@@ -117,16 +111,12 @@ export default {
 </script>
 ```
 
-:::
-
 ## 设置指标的别名
 
 某些情况下, 数据中指标的名称并不是我们想要展示出来的, 大部分图表的 setting 属性中提供
 统一的配置来解决这个问题。
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-line :data="chartData" :settings="chartSettings" />
 </template>
@@ -166,8 +156,6 @@ export default {
 </script>
 ```
 
-:::
-
 ## 设置数据格式
 
 大部分情况下, 我们需要对数据进行一些格式化, 每种图表组件对数据格式的设置方式略有不同。
@@ -177,9 +165,7 @@ numerify 文档；并且, 为了支持更多未知的情况, 格式的设置也�
 
 ### 基本类型
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-scatter :data="chartData" :settings="chartSettings" />
 </template>
@@ -320,13 +306,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 使用 numerify 格式
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-line :data="chartData" :settings="chartSettings" />
 </template>
@@ -361,13 +343,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 使用回调函数
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-pie :data="chartData" :settings="chartSettings" />
 </template>
@@ -416,13 +394,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 数据请求示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <div>
     <button @click="getData">get Data</button>
@@ -489,5 +463,3 @@ export default {
 }
 </script>
 ```
-
-:::

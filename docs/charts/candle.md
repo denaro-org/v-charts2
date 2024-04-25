@@ -8,11 +8,25 @@
 
 ### 下载
 
-```bash
-pnpm add @v-charts2/candle
-# or
-npm install @v-charts2/candle
+::: code-group
+
+```bash [bun]
+bun add @v-charts2/candle
 ```
+
+```bash [pnpm]
+pnpm add @v-charts2/candle
+```
+
+```bash [yarn]
+yarn add @v-charts2/candle
+```
+
+```bash [npm]
+npm i @v-chart2/candle
+```
+
+:::
 
 ### 安装
 
@@ -30,18 +44,16 @@ Vue.use(VeCandle)
 
 当你当前的打包工具为 vite 或者 rollup 时, 推荐你进行以下的安装步骤
 
-- Vue 2.x
+::: code-group
 
-```javascript
+```javascript [Vue 2.x]
 import Vue from 'vue'
 import VeCandle from '@v-charts2/candle/vue2' // 更好的 Tree Shaking 推荐引入 vue2.x 的专属支持包
 import '@v-charts2/candle/v-charts.css' // 需要手动引入样式
 Vue.use(VeCandle)
 ```
 
-- Vue 3.x
-
-```javascript
+```javascript [Vue 3.x]
 import { createApp } from 'vue'
 const app = createApp()
 import VeCandle from '@v-charts2/candle/vue3' // 更好的 Tree Shaking 推荐引入 vue3.x 的专属支持包
@@ -49,13 +61,13 @@ import '@v-charts2/candle/v-charts.css' // 需要手动引入样式
 app.use(VeCandle)
 ```
 
+:::
+
 ## DEMO
 
 ### 示例
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-candle :data="chartData" />
 </template>
@@ -379,13 +391,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 使用简化的数据格式
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-candle :data="chartData" />
 </template>
@@ -443,13 +451,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置数据格式
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-candle :data="chartData" :settings="chartSettings" />
 </template>
@@ -774,13 +778,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 显示MA, VOL
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-candle :data="chartData" :settings="chartSettings" />
 </template>
@@ -1108,13 +1108,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 修改指标名和图例文字
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-candle :data="chartData" :settings="chartSettings" />
 </template>
@@ -1445,13 +1441,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 修改 MA 显示周期
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-candle :data="chartData" :settings="chartSettings" />
 </template>
@@ -1779,13 +1771,9 @@ export default {
 </script>
 ```
 
-:::
-
 ### 设置 dataRoom 控件
 
-::: demo
-
-```vue
+```vue preview
 <template>
   <ve-candle :data="chartData" :settings="chartSettings" />
 </template>
@@ -2113,8 +2101,6 @@ export default {
 }
 </script>
 ```
-
-:::
 
 ## settings 配置项
 
