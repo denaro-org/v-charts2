@@ -57,7 +57,9 @@ export default ({ mode }) => {
           'echarts/charts',
           'numerify',
           'utils-lite',
-          'echarts/extension/bmap/bmap'
+          'echarts/extension/bmap/bmap',
+          '@v-charts2/core/vue3',
+          '@v-charts2/core/vue2'
         ],
         output: {
           exports: 'named',
@@ -73,7 +75,9 @@ export default ({ mode }) => {
             'echarts/charts': 'echarts/charts',
             numerify: 'numerify',
             'utils-lite': 'utilsLite',
-            'echarts/extension/bmap/bmap': 'echarts/extension/bmap/bmap'
+            'echarts/extension/bmap/bmap': 'echarts/extension/bmap/bmap',
+            '@v-charts2/core/vue3': 'vCore3',
+            '@v-charts2/core/vue2': 'vCore2'
           }
         }
       }
