@@ -3,9 +3,7 @@ node_modules
 .idea
 yarn.lock
 .DS_Store
-.vscode
-package-lock.json
-pnpm-lock.yaml
+.vscode 
 lib
 libs
 dist
