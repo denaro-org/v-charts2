@@ -1,3 +1,12 @@
+## [1.2.1](https://github.com/denaro-org/v-charts2/compare/v1.2.0...v1.2.1) (2024-04-30)
+
+
+### Bug Fixes
+
+* 🐛 还原错误的提交 ([e2cf252](https://github.com/denaro-org/v-charts2/commit/e2cf252257a10d4be36fde9f6248b6da94e62115))
+
+
+
 # [1.2.0](https://github.com/denaro-org/v-charts2/compare/v1.1.3...v1.2.0) (2024-04-30)
 
 

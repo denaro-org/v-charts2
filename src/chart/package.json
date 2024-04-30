@@ -1,6 +1,6 @@
 {
   "name": "@v-charts2/chart",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "v-charts2 全部引入图表专用包",
   "keywords": [
     "echarts",
