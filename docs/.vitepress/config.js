@@ -1,5 +1,4 @@
 import MarkdownPreview from 'vite-plugin-markdown-preview'
-import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
 import nav from './config/nav'
 import sidebar from './config/sidebar'
@@ -8,7 +7,7 @@ export default {
   title: 'v-charts2',
   description: '基于 Vue 的 Echarts5.x 组件',
   outDir: 'publish-pages',
-  // base: '/v-charts2/',
+  base: '/v-charts2/',
   lastUpdated: true,
   head: [
     [
@@ -35,6 +34,9 @@ export default {
     }
   },
   vite: {
-    plugins: [nodePolyfills(), MarkdownPreview()]
+    plugins: [MarkdownPreview()],
+    build: {
+      target: 'esnext'
+    }
   }
 }

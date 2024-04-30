@@ -1,5 +1,13 @@
 import { camelToKebab, getType } from 'utils-lite'
-import { computed, h, nextTick, onBeforeUnmount, onMounted, watch } from 'vue'
+import {
+  computed,
+  h,
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+  toRefs,
+  watch
+} from 'vue'
 
 import {
   changeHandler,
@@ -143,7 +151,7 @@ export const createChart = ({ name, chartHandler, chartLib }) => {
 
           await nextTick()
           stateChangeHandler({
-            props,
+            props: toRefs(props),
             options: initPayload.options,
             echarts
           })
@@ -222,7 +230,7 @@ export const createChart = ({ name, chartHandler, chartLib }) => {
               () => prop,
               () =>
                 stateChangeHandler({
-                  props,
+                  props: toRefs(props),
                   options,
                   echarts
                 }),

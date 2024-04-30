@@ -2,6 +2,10 @@
 
 为了使在echarts上更简单的使用高德地图, v-charts封装了一个高德地图的‘壳子’, 在settings中添加关于图表的配置（key,amap）, 在组件上直接设置 series, tooltip 等, 便可生成以高德地图为坐标系的 Echarts 图表。
 
+::: danger
+该组件涉及到高德地图 key 的敏感信息，暂停维护该组件，请自行参照 [echarts-extension-amap](https://github.com/plainheart/echarts-extension-amap/blob/master/README.zh-CN.md) echarts 的高德地图扩展进行自主封装组件。
+:::
+
 ## 下载和安装
 
 ::: tip

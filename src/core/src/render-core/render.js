@@ -111,7 +111,8 @@ export const dataHandler = ({ props, options, echarts } = {}) => {
     tooltipFormatter: props?.tooltipFormatter,
     _once
   }
-  if (props?.beforeConfig) data = props?.beforeConfig(data)
+  if (props?.beforeConfig && props instanceof Function)
+    data = props?.beforeConfig(data)
 
   const chartOptions = chartHandler(columns, rows, props?.settings, extra)
 
@@ -179,7 +180,8 @@ export const optionsHandler = ({
   }
   // change inited echarts settings
   if (props?.extend) setExtend(chartOptions, props?.extend)
-  if (props?.afterConfig) chartOptions = props?.afterConfig(chartOptions)
+  if (props?.afterConfig && props?.afterConfig instanceof Function)
+    chartOptions = props?.afterConfig(chartOptions)
   let setOptionOpts = props?.setOptionOpts
   // map chart not merge
   if (
@@ -226,12 +228,13 @@ export const optionsHandler = ({
       echarts
     })
   }
-  if (props?.afterSetOption) {
+  if (props?.afterSetOption && props?.afterSetOption instanceof Function) {
     props?.afterSetOption(echarts, chartOptions, echartsLib)
   }
   if (props?.afterSetOptionOnce && !_once.afterSetOptionOnce) {
     _once.afterSetOptionOnce = true
-    props?.afterSetOptionOnce(echarts, chartOptions, echartsLib)
+    if (props?.afterSetOptionOnce instanceof Function)
+      props?.afterSetOptionOnce(echarts, chartOptions, echartsLib)
   }
 }
 

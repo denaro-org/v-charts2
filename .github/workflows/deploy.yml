@@ -1,46 +1,64 @@
-name: VUEPRESS DEPLOY
+# 构建 VitePress 站点并将其部署到 GitHub Pages 的示例工作流程
+#
+name: Deploy VitePress site to Pages
 
-on: # 触发条件
-  # 每当 push 到 master 分支时触发部署
+on:
+  # 在针对 `main` 分支的推送上运行。如果你
+  # 使用 `master` 分支作为默认分支，请将其更改为 `master`
   push:
     branches: [main]
-  # 手动触发部署
+
+  # 允许你从 Actions 选项卡手动运行此工作流程
   workflow_dispatch:
 
+# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 只允许同时进行一次部署，跳过正在运行和最新队列之间的运行队列
+# 但是，不要取消正在进行的运行，因为我们希望允许这些生产部署完成
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
-  docs:
+  # 构建工作
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
-          fetch-depth: 0
-
-      - name: 安装 pnpm
-        uses: pnpm/action-setup@v2
+          fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
+      # - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
+      # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          version: 7
-          run_install: true
-
-      - name: 设置 Node.js
-        uses: actions/setup-node@v3
+          node-version: 20
+          cache: npm # 或 pnpm / yarn
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Install dependencies
+        run: npm ci # 或 pnpm install / yarn install / bun install
+      - name: Build with VitePress
+        run: npm run docs:build # 或 pnpm docs:build / yarn docs:build / bun run docs:build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          node-version: 18
-          cache: pnpm
+          path: docs/.vitepress/publish-pages
 
-      # 运行构建脚本
-      - name: Build VuePress site
-        run: pnpm deploy-docs
-
-      # 查看 workflow 的文档来获取更多信息
-      # @see https://github.com/crazy-max/ghaction-github-pages
+  # 部署工作
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2
-        with:
-          # 部署到 gh-pages 分支
-          target_branch: gh-pages
-          # 部署目录为 VuePress 的默认输出目录
-          build_dir: docs/publish-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        id: deployment
+        uses: actions/deploy-pages@v4
