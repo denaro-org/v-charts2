@@ -16,8 +16,6 @@ const useVueVersion = () => {
 
 let VeHotChart
 
-console.log('useVueVersion()', useVueVersion())
-
 if (useVueVersion() === 2) {
   VeHotChart = require('./vue2/v-charts.hot-chart.mjs')
 } else {

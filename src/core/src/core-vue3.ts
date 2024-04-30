@@ -135,16 +135,20 @@ export const createChart = ({ name, chartHandler, chartLib }) => {
       )
       watch(
         () => props?.settings,
-        v => {
-          if (v.type && chartLib) chartHandler = chartLib[v.type]
-          initPayload.options.chartHandler = chartLib[v.type]
+        async v => {
+          if (v.type && chartLib) {
+            chartHandler = chartLib[v.type]
+            initPayload.options.chartHandler = chartLib[v.type]
+          }
+
+          await nextTick()
           stateChangeHandler({
             props,
             options: initPayload.options,
             echarts
           })
         },
-        { deep: true }
+        { deep: true, immediate: true }
       )
       watch(
         () => props?.width,
@@ -234,6 +238,7 @@ export const createChart = ({ name, chartHandler, chartLib }) => {
 
         const { echarts: initEcharts } = init(initPayload) || {}
         echarts = initEcharts
+
         addWatchToProps({
           _watchers,
           props,

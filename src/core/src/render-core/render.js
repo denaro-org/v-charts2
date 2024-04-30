@@ -208,6 +208,8 @@ export const optionsHandler = ({
   }
 
   if (props?.log) console.log(chartOptions)
+  if (!echarts) throw new Error('echarts is not defined')
+
   echarts.setOption(chartOptions, setOptionOpts)
   readyCallback instanceof Function &&
     readyCallback(echarts, chartOptions, echartsLib)
