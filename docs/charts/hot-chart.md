@@ -72,7 +72,11 @@ app.use(VeHotChart)
 ```vue preview
 <template>
   <div>
-    <button @click="changeType">切换图表类型</button>
+    <button
+      @click="changeType"
+      style="padding: revert;background-color: revert;border-radius: 4px;">
+      切换图表类型
+    </button>
     <ve-hot-chart :data="chartData" :settings="chartSettings" />
   </div>
 </template>

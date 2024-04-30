@@ -9,6 +9,7 @@
 - [仪表图](./gauge)
 - [热力图](./heatmap)
 - [柱状图](./histogram)
+- [热门图表切换](./hot-chart)
 - [折线图](./line)
 - [水球图](./liquidfill)
 - [地图](./map)
