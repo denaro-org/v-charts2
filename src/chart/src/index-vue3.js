@@ -1,4 +1,4 @@
-import VeAmap from '@v-charts2/amap/vue3'
+// import VeAmap from '@v-charts2/amap/vue3'
 import VeBar from '@v-charts2/bar/vue3'
 import VeCandle from '@v-charts2/candle/vue3'
 import { logCopyRight } from '@v-charts2/core/utils'
@@ -28,7 +28,7 @@ const charts = [
   VeRing,
   VeCandle,
   VeFunnel,
-  VeAmap,
+  // VeAmap,
   VeGauge,
   VeLiquidfill,
   VeWordcloud,
