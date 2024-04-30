@@ -32,14 +32,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
-      # - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
+      - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
       # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
-      
-      - name: Install PNPM
-        uses: pnpm/action-setup@v2
-        with:
-          version: 9
-          run_install: true
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -50,11 +44,17 @@ jobs:
       - name: Install dependencies
         run: npm run bootstrap # 或 pnpm install / yarn install / bun install
       - name: Build with VitePress
-        run: npm run docs:build # 或 pnpm docs:build / yarn docs:build / bun run docs:build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        run: pnpm run deploy-docs # 或 pnpm docs:build / yarn docs:build / bun run docs:build
+      
+      # 查看 workflow 的文档来获取更多信息
+      # @see https://github.com/crazy-max/ghaction-github-pages
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
         with:
-          path: docs/.vitepress/publish-pages
+          # 部署到 gh-pages 分支
+          target_branch: gh-pages
+          # 部署目录为 VuePress 的默认输出目录
+          build_dir: docs/publish-pages
 
   # 部署工作
   deploy:
