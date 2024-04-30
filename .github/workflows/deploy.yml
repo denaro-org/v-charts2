@@ -42,7 +42,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install PNPM
-+       run: npm i -g pnpm
+        run: npm i -g pnpm
       - name: Install dependencies
         run: npm run bootstrap # 或 pnpm install / yarn install / bun install
       - name: Build with VitePress
