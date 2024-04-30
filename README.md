@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/denaro-org/v-charts2/main/docs/.vuepress/public/favicon.ico" alt="mark text" width="100" height="100">
+<img src="https://raw.githubusercontent.com/denaro-org/v-charts2/main/docs/public/favicon.ico" alt="mark text" width="100" height="100">
 </p>
 
 <h3 align="center">v-charts2</h3>
