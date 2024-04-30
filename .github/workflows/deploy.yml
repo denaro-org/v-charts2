@@ -23,7 +23,7 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
-permissions: 
+permissions:
   contents: write
 
 jobs:
