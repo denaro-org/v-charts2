@@ -34,6 +34,12 @@ jobs:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
       # - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
       # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
+      
+      - name: Install PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+          run_install: true
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -41,8 +47,6 @@ jobs:
           cache: pnpm # 或 pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Install PNPM
-        run: npm i -g pnpm
       - name: Install dependencies
         run: npm run bootstrap # 或 pnpm install / yarn install / bun install
       - name: Build with VitePress
