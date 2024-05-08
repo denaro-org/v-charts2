@@ -17,7 +17,7 @@ const useVueVersion = () => {
 let VeBar
 
 if (useVueVersion() === 2) {
-  VeBar = await import('./vue2/v-charts.bar.mjs')
+  VeBar = require('./vue2/v-charts.bar.mjs')
 } else {
   VeBar = await import('./vue3/v-charts.bar.mjs')
 }
