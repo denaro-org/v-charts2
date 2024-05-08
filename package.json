@@ -58,6 +58,7 @@
     "@commitlint/cz-commitlint": "^19.2.0",
     "@denaro-config/eslint-config-javascript": "^1.4.6",
     "@denaro-config/eslint-config-prettier": "^1.4.6",
+    "@denaro-config/eslint-config-vue3": "^1.4.6",
     "@denaro-config/prettier": "^1.4.6",
     "bumpp": "^9.4.1",
     "conventional-changelog-cli": "^4.1.0",

@@ -1,0 +1,22 @@
+{
+  "name": "vue2-vite-demo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@v-charts2/bar": "workspace:^",
+    "vite-plugin-commonjs": "^0.10.1",
+    "vite-plugin-vue2": "^2.0.3",
+    "vue": "2.6.14"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.2.11",
+    "vue-template-compiler": "2.6.14"
+  }
+}

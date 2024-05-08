@@ -13,9 +13,9 @@
         "!peer"
       ],
       "packages": [
-        "docs"
+        "vue2-vite-demo"
       ],
-      "pinVersion": "2.7.16"
+      "pinVersion": "2.6.14"
     },
     {
       "dependencies": [

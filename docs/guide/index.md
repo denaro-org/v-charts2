@@ -71,6 +71,71 @@ app.use(VeChart)
 
 :::
 
+## 特别说明
+
+::: warning
+在使用 vue2、vue3 兼容导入时因本地的 vue 版本与本库 lib 包版本会有所冲突，所以需要在构建时将其进行排除处理，下方提供 vite 构建工具的排除方案。
+:::
+
+::: code-group
+
+```js [vue2]
+import { defineConfig } from 'vite'
+import { createVuePlugin } from 'vite-plugin-vue2'
+import commonjs from 'vite-plugin-commonjs'
+import packageJson from './package.json'
+
+const deps = Object.keys(packageJson.dependencies)
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [createVuePlugin(), commonjs()],
+  build: {
+    minify: 'esbuild',
+    target: 'esnext',
+    emptyOutDir: true,
+    rollupOptions: {
+      // 忽略打包vue文件
+      external(id) {
+        return deps.some(k => new RegExp(`^${k}`).test(id))
+      }
+    }
+  }
+})
+```
+
+```js [vue3]
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import packageJson from './package.json'
+
+const deps = Object.keys(packageJson.dependencies)
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue()],
+  build: {
+    minify: 'esbuild',
+    target: 'esnext',
+    emptyOutDir: true,
+    rollupOptions: {
+      // 忽略打包vue文件
+      external(id) {
+        return deps.some(k => new RegExp(`^${k}`).test(id))
+      }
+    }
+  }
+})
+```
+
+:::
+
+### 最佳导入方案
+
+::: tip
+应该以当前的 vue 版本为准，例如需要导入 bar 组件，vue2 的导入语句即是 `import VeBar from '@v-charts2/bar/vue2'`, vue3 的导入语句即是 `import VeBar from '@v-charts2/bar/vue3'`
+:::
+
 ## 图表组件
 
 ::: tip

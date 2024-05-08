@@ -47,7 +47,7 @@ jobs:
         run: npm run bootstrap # 或 pnpm install / yarn install / bun install
       - name: Build with VitePress
         run: pnpm run deploy-docs # 或 pnpm docs:build / yarn docs:build / bun run docs:build
-      
+
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to GitHub Pages

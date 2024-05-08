@@ -77,7 +77,7 @@ app.use(VeAmap)
 请将下方 key 替换成你自己申请的高德地图 key, 申请地址：[高德开放平台](https://console.amap.com/dev/index)
 :::
 
-<!-- 
+<!--
 ```vue preview
 <template>
   <ve-amap
@@ -113,7 +113,7 @@ export default {
   }
 }
 </script>
-``` 
+```
 -->
 
 ## settings 配置项

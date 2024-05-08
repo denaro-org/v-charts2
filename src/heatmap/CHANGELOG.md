@@ -1,19 +1,21 @@
-# [1.2.0](https://github.com/denaro-org/v-charts2/compare/v1.1.3...v1.2.0) (2024-04-30)
-
+## [1.2.1](https://github.com/denaro-org/v-charts2/compare/v1.2.0...v1.2.1) (2024-04-30)
 
 ### Bug Fixes
 
-* 🐛 修复 hot-chart 未能正确显示 ([75c02b9](https://github.com/denaro-org/v-charts2/commit/75c02b992fcd8b5a23862ac9a1d324dbb765dde5))
-* 🐛 修复核心包 core 的一些bug ([7bf19f2](https://github.com/denaro-org/v-charts2/commit/7bf19f290295fc960702ac2fe15e901f35d86cc8))
-* 🐛 修改 vite.config.ts 的配置，排除 vue 依赖 ([da4e150](https://github.com/denaro-org/v-charts2/commit/da4e1506bd09b5289576da6766f734c7474ffc2e))
-* 🐛 修改部分 vite.config, 修改依赖包版本，修改 vue3 的自动导入 ([7460cac](https://github.com/denaro-org/v-charts2/commit/7460cacecf5a27289ff90d2ebcf7aae4367bad05))
+- 🐛 还原错误的提交 ([e2cf252](https://github.com/denaro-org/v-charts2/commit/e2cf252257a10d4be36fde9f6248b6da94e62115))
 
+# [1.2.0](https://github.com/denaro-org/v-charts2/compare/v1.1.3...v1.2.0) (2024-04-30)
+
+### Bug Fixes
+
+- 🐛 修复 hot-chart 未能正确显示 ([75c02b9](https://github.com/denaro-org/v-charts2/commit/75c02b992fcd8b5a23862ac9a1d324dbb765dde5))
+- 🐛 修复核心包 core 的一些bug ([7bf19f2](https://github.com/denaro-org/v-charts2/commit/7bf19f290295fc960702ac2fe15e901f35d86cc8))
+- 🐛 修改 vite.config.ts 的配置，排除 vue 依赖 ([da4e150](https://github.com/denaro-org/v-charts2/commit/da4e1506bd09b5289576da6766f734c7474ffc2e))
+- 🐛 修改部分 vite.config, 修改依赖包版本，修改 vue3 的自动导入 ([7460cac](https://github.com/denaro-org/v-charts2/commit/7460cacecf5a27289ff90d2ebcf7aae4367bad05))
 
 ### Features
 
-* 打包优化。常用组件将core提取出来，防止重复打包，造成打包文件过大 ([9a6ad3d](https://github.com/denaro-org/v-charts2/commit/9a6ad3dbbafaf42b3c631ee3f83b18d1dca177a6))
-
-
+- 打包优化。常用组件将core提取出来，防止重复打包，造成打包文件过大 ([9a6ad3d](https://github.com/denaro-org/v-charts2/commit/9a6ad3dbbafaf42b3c631ee3f83b18d1dca177a6))
 
 ## [1.1.3](https://github.com/denaro-org/v-charts2/compare/v1.1.2...v1.1.3) (2024-03-25)
 
