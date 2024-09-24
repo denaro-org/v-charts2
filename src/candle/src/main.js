@@ -86,14 +86,14 @@ function getCandleGrid(args) {
     {
       left: '10%',
       right: '8%',
-      top: '15%',
+      top: '5%',
       height: showVol ? '55%' : '75%',
       containLabel: false
     },
     {
       left: '10%',
       right: '8%',
-      top: '75%',
+      top: '60%',
       height: '20%',
       containLabel: false
     }
