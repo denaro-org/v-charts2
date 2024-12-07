@@ -1,3 +1,17 @@
+## [1.2.2](https://github.com/denaro-org/v-charts2/compare/v1.2.1...v1.2.2) (2024-12-07)
+
+
+### Bug Fixes
+
+* 🐛 还原错误的提交 ([2985d18](https://github.com/denaro-org/v-charts2/commit/2985d1825edb7274ac2da64497174987409b0107))
+
+
+### Features
+
+* 🎸 新增使用例子 vite 构建工具版本 ([98df9a7](https://github.com/denaro-org/v-charts2/commit/98df9a739525a8944e9a3f111f6895838e08f6d2))
+
+
+
 ## [1.2.1](https://github.com/denaro-org/v-charts2/compare/v1.2.0...v1.2.1) (2024-04-30)
 
 ### Bug Fixes
