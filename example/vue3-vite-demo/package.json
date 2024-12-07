@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "@v-charts2/bar": "workspace:^",
-    "vue": "^3.4.27"
+    "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.4",
-    "vite": "^5.2.11"
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^5.4.11"
   }
 }
